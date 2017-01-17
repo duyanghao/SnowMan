@@ -1,0 +1,14 @@
+package CodeBattle;
+
+message Client_Frame {
+    required string ip = 1;
+    required int32 direction = 2;
+}
+
+
+message Server_Frame {
+    required bool empty =1;
+    required int32 frameseq =2;
+    required Client_Frame preframe =3;
+    required Client_Frame laterframe =4;
+}
