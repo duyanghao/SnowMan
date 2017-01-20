@@ -38,7 +38,10 @@ void protobuf_AssignDesc_msg_2eproto();
 void protobuf_ShutdownFile_msg_2eproto();
 
 class Client_Frame;
+class Login_Frame;
+class Login_Response;
 class Server_Frame;
+class Userinfo_Frame;
 
 // ===================================================================
 
@@ -291,6 +294,394 @@ class Server_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
 };
 extern ::google::protobuf::internal::ExplicitlyConstructed<Server_Frame> Server_Frame_default_instance_;
 
+// -------------------------------------------------------------------
+
+class Login_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Login_Frame) */ {
+ public:
+  Login_Frame();
+  virtual ~Login_Frame();
+
+  Login_Frame(const Login_Frame& from);
+
+  inline Login_Frame& operator=(const Login_Frame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Login_Frame& default_instance();
+
+  static const Login_Frame* internal_default_instance();
+
+  void Swap(Login_Frame* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Login_Frame* New() const { return New(NULL); }
+
+  Login_Frame* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Login_Frame& from);
+  void MergeFrom(const Login_Frame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Login_Frame* other);
+  void UnsafeMergeFrom(const Login_Frame& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool login = 1;
+  bool has_login() const;
+  void clear_login();
+  static const int kLoginFieldNumber = 1;
+  bool login() const;
+  void set_login(bool value);
+
+  // required string username = 2;
+  bool has_username() const;
+  void clear_username();
+  static const int kUsernameFieldNumber = 2;
+  const ::std::string& username() const;
+  void set_username(const ::std::string& value);
+  void set_username(const char* value);
+  void set_username(const char* value, size_t size);
+  ::std::string* mutable_username();
+  ::std::string* release_username();
+  void set_allocated_username(::std::string* username);
+
+  // required string password = 3;
+  bool has_password() const;
+  void clear_password();
+  static const int kPasswordFieldNumber = 3;
+  const ::std::string& password() const;
+  void set_password(const ::std::string& value);
+  void set_password(const char* value);
+  void set_password(const char* value, size_t size);
+  ::std::string* mutable_password();
+  ::std::string* release_password();
+  void set_allocated_password(::std::string* password);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Login_Frame)
+ private:
+  inline void set_has_login();
+  inline void clear_has_login();
+  inline void set_has_username();
+  inline void clear_has_username();
+  inline void set_has_password();
+  inline void clear_has_password();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr username_;
+  ::google::protobuf::internal::ArenaStringPtr password_;
+  bool login_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Login_Frame> Login_Frame_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Userinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Userinfo_Frame) */ {
+ public:
+  Userinfo_Frame();
+  virtual ~Userinfo_Frame();
+
+  Userinfo_Frame(const Userinfo_Frame& from);
+
+  inline Userinfo_Frame& operator=(const Userinfo_Frame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Userinfo_Frame& default_instance();
+
+  static const Userinfo_Frame* internal_default_instance();
+
+  void Swap(Userinfo_Frame* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Userinfo_Frame* New() const { return New(NULL); }
+
+  Userinfo_Frame* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Userinfo_Frame& from);
+  void MergeFrom(const Userinfo_Frame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Userinfo_Frame* other);
+  void UnsafeMergeFrom(const Userinfo_Frame& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required int32 id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // required string username = 2;
+  bool has_username() const;
+  void clear_username();
+  static const int kUsernameFieldNumber = 2;
+  const ::std::string& username() const;
+  void set_username(const ::std::string& value);
+  void set_username(const char* value);
+  void set_username(const char* value, size_t size);
+  ::std::string* mutable_username();
+  ::std::string* release_username();
+  void set_allocated_username(::std::string* username);
+
+  // required int32 winnumbers = 3;
+  bool has_winnumbers() const;
+  void clear_winnumbers();
+  static const int kWinnumbersFieldNumber = 3;
+  ::google::protobuf::int32 winnumbers() const;
+  void set_winnumbers(::google::protobuf::int32 value);
+
+  // required int32 losenumbers = 4;
+  bool has_losenumbers() const;
+  void clear_losenumbers();
+  static const int kLosenumbersFieldNumber = 4;
+  ::google::protobuf::int32 losenumbers() const;
+  void set_losenumbers(::google::protobuf::int32 value);
+
+  // required int32 winrate = 5;
+  bool has_winrate() const;
+  void clear_winrate();
+  static const int kWinrateFieldNumber = 5;
+  ::google::protobuf::int32 winrate() const;
+  void set_winrate(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Userinfo_Frame)
+ private:
+  inline void set_has_id();
+  inline void clear_has_id();
+  inline void set_has_username();
+  inline void clear_has_username();
+  inline void set_has_winnumbers();
+  inline void clear_has_winnumbers();
+  inline void set_has_losenumbers();
+  inline void clear_has_losenumbers();
+  inline void set_has_winrate();
+  inline void clear_has_winrate();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr username_;
+  ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 winnumbers_;
+  ::google::protobuf::int32 losenumbers_;
+  ::google::protobuf::int32 winrate_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Userinfo_Frame> Userinfo_Frame_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Login_Response : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Login_Response) */ {
+ public:
+  Login_Response();
+  virtual ~Login_Response();
+
+  Login_Response(const Login_Response& from);
+
+  inline Login_Response& operator=(const Login_Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Login_Response& default_instance();
+
+  static const Login_Response* internal_default_instance();
+
+  void Swap(Login_Response* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Login_Response* New() const { return New(NULL); }
+
+  Login_Response* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Login_Response& from);
+  void MergeFrom(const Login_Response& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Login_Response* other);
+  void UnsafeMergeFrom(const Login_Response& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool succeed = 1;
+  bool has_succeed() const;
+  void clear_succeed();
+  static const int kSucceedFieldNumber = 1;
+  bool succeed() const;
+  void set_succeed(bool value);
+
+  // required int32 errcode = 2;
+  bool has_errcode() const;
+  void clear_errcode();
+  static const int kErrcodeFieldNumber = 2;
+  ::google::protobuf::int32 errcode() const;
+  void set_errcode(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Login_Response)
+ private:
+  inline void set_has_succeed();
+  inline void clear_has_succeed();
+  inline void set_has_errcode();
+  inline void clear_has_errcode();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  bool succeed_;
+  ::google::protobuf::int32 errcode_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Login_Response> Login_Response_default_instance_;
+
 // ===================================================================
 
 
@@ -525,7 +916,364 @@ inline void Server_Frame::set_allocated_laterframe(::CodeBattle::Client_Frame* l
 inline const Server_Frame* Server_Frame::internal_default_instance() {
   return &Server_Frame_default_instance_.get();
 }
+// -------------------------------------------------------------------
+
+// Login_Frame
+
+// required bool login = 1;
+inline bool Login_Frame::has_login() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Login_Frame::set_has_login() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Login_Frame::clear_has_login() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Login_Frame::clear_login() {
+  login_ = false;
+  clear_has_login();
+}
+inline bool Login_Frame::login() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Frame.login)
+  return login_;
+}
+inline void Login_Frame::set_login(bool value) {
+  set_has_login();
+  login_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.login)
+}
+
+// required string username = 2;
+inline bool Login_Frame::has_username() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Login_Frame::set_has_username() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Login_Frame::clear_has_username() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Login_Frame::clear_username() {
+  username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_username();
+}
+inline const ::std::string& Login_Frame::username() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Frame.username)
+  return username_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_username(const ::std::string& value) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.username)
+}
+inline void Login_Frame::set_username(const char* value) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Login_Frame.username)
+}
+inline void Login_Frame::set_username(const char* value, size_t size) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Login_Frame.username)
+}
+inline ::std::string* Login_Frame::mutable_username() {
+  set_has_username();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Login_Frame.username)
+  return username_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Login_Frame::release_username() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Login_Frame.username)
+  clear_has_username();
+  return username_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_allocated_username(::std::string* username) {
+  if (username != NULL) {
+    set_has_username();
+  } else {
+    clear_has_username();
+  }
+  username_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), username);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.username)
+}
+
+// required string password = 3;
+inline bool Login_Frame::has_password() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Login_Frame::set_has_password() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Login_Frame::clear_has_password() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Login_Frame::clear_password() {
+  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_password();
+}
+inline const ::std::string& Login_Frame::password() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Frame.password)
+  return password_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_password(const ::std::string& value) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.password)
+}
+inline void Login_Frame::set_password(const char* value) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Login_Frame.password)
+}
+inline void Login_Frame::set_password(const char* value, size_t size) {
+  set_has_password();
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Login_Frame.password)
+}
+inline ::std::string* Login_Frame::mutable_password() {
+  set_has_password();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Login_Frame.password)
+  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Login_Frame::release_password() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Login_Frame.password)
+  clear_has_password();
+  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_allocated_password(::std::string* password) {
+  if (password != NULL) {
+    set_has_password();
+  } else {
+    clear_has_password();
+  }
+  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.password)
+}
+
+inline const Login_Frame* Login_Frame::internal_default_instance() {
+  return &Login_Frame_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Userinfo_Frame
+
+// required int32 id = 1;
+inline bool Userinfo_Frame::has_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Userinfo_Frame::set_has_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Userinfo_Frame::clear_has_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Userinfo_Frame::clear_id() {
+  id_ = 0;
+  clear_has_id();
+}
+inline ::google::protobuf::int32 Userinfo_Frame::id() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.id)
+  return id_;
+}
+inline void Userinfo_Frame::set_id(::google::protobuf::int32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.id)
+}
+
+// required string username = 2;
+inline bool Userinfo_Frame::has_username() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Userinfo_Frame::set_has_username() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Userinfo_Frame::clear_has_username() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Userinfo_Frame::clear_username() {
+  username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_username();
+}
+inline const ::std::string& Userinfo_Frame::username() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.username)
+  return username_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Userinfo_Frame::set_username(const ::std::string& value) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.username)
+}
+inline void Userinfo_Frame::set_username(const char* value) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Userinfo_Frame.username)
+}
+inline void Userinfo_Frame::set_username(const char* value, size_t size) {
+  set_has_username();
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Userinfo_Frame.username)
+}
+inline ::std::string* Userinfo_Frame::mutable_username() {
+  set_has_username();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Userinfo_Frame.username)
+  return username_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Userinfo_Frame::release_username() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Userinfo_Frame.username)
+  clear_has_username();
+  return username_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Userinfo_Frame::set_allocated_username(::std::string* username) {
+  if (username != NULL) {
+    set_has_username();
+  } else {
+    clear_has_username();
+  }
+  username_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), username);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Userinfo_Frame.username)
+}
+
+// required int32 winnumbers = 3;
+inline bool Userinfo_Frame::has_winnumbers() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Userinfo_Frame::set_has_winnumbers() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Userinfo_Frame::clear_has_winnumbers() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Userinfo_Frame::clear_winnumbers() {
+  winnumbers_ = 0;
+  clear_has_winnumbers();
+}
+inline ::google::protobuf::int32 Userinfo_Frame::winnumbers() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.winnumbers)
+  return winnumbers_;
+}
+inline void Userinfo_Frame::set_winnumbers(::google::protobuf::int32 value) {
+  set_has_winnumbers();
+  winnumbers_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.winnumbers)
+}
+
+// required int32 losenumbers = 4;
+inline bool Userinfo_Frame::has_losenumbers() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Userinfo_Frame::set_has_losenumbers() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Userinfo_Frame::clear_has_losenumbers() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Userinfo_Frame::clear_losenumbers() {
+  losenumbers_ = 0;
+  clear_has_losenumbers();
+}
+inline ::google::protobuf::int32 Userinfo_Frame::losenumbers() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.losenumbers)
+  return losenumbers_;
+}
+inline void Userinfo_Frame::set_losenumbers(::google::protobuf::int32 value) {
+  set_has_losenumbers();
+  losenumbers_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.losenumbers)
+}
+
+// required int32 winrate = 5;
+inline bool Userinfo_Frame::has_winrate() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Userinfo_Frame::set_has_winrate() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Userinfo_Frame::clear_has_winrate() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Userinfo_Frame::clear_winrate() {
+  winrate_ = 0;
+  clear_has_winrate();
+}
+inline ::google::protobuf::int32 Userinfo_Frame::winrate() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.winrate)
+  return winrate_;
+}
+inline void Userinfo_Frame::set_winrate(::google::protobuf::int32 value) {
+  set_has_winrate();
+  winrate_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.winrate)
+}
+
+inline const Userinfo_Frame* Userinfo_Frame::internal_default_instance() {
+  return &Userinfo_Frame_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Login_Response
+
+// required bool succeed = 1;
+inline bool Login_Response::has_succeed() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Login_Response::set_has_succeed() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Login_Response::clear_has_succeed() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Login_Response::clear_succeed() {
+  succeed_ = false;
+  clear_has_succeed();
+}
+inline bool Login_Response::succeed() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Response.succeed)
+  return succeed_;
+}
+inline void Login_Response::set_succeed(bool value) {
+  set_has_succeed();
+  succeed_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Response.succeed)
+}
+
+// required int32 errcode = 2;
+inline bool Login_Response::has_errcode() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Login_Response::set_has_errcode() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Login_Response::clear_has_errcode() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Login_Response::clear_errcode() {
+  errcode_ = 0;
+  clear_has_errcode();
+}
+inline ::google::protobuf::int32 Login_Response::errcode() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Response.errcode)
+  return errcode_;
+}
+inline void Login_Response::set_errcode(::google::protobuf::int32 value) {
+  set_has_errcode();
+  errcode_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Response.errcode)
+}
+
+inline const Login_Response* Login_Response::internal_default_instance() {
+  return &Login_Response_default_instance_.get();
+}
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

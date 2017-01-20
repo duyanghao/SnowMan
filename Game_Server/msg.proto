@@ -12,3 +12,22 @@ message Server_Frame {
     required Client_Frame preframe =3;
     required Client_Frame laterframe =4;
 }
+
+message Login_Frame {
+    required bool login =1;
+    required string username =2;
+    required string password =3;
+}
+
+message Userinfo_Frame {
+    required int32 id =1;
+    required string username =2;
+    required int32 winnumbers =3;
+    required int32 losenumbers =4;
+    required int32 winrate =5;
+}
+
+message Login_Response {
+    required bool succeed =1;
+    required int32 errcode =2;
+}
