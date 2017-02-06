@@ -21,9 +21,27 @@ namespace CodeBattle {
 
 namespace {
 
+const ::google::protobuf::Descriptor* Move_Direction_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Move_Direction_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Generated_Position_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Generated_Position_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Generated_Object_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Generated_Object_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Hp_Object_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Hp_Object_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Client_Frame_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Client_Frame_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Common_Frame_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Common_Frame_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Single_Frame_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Single_Frame_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Server_Frame_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Server_Frame_reflection_ = NULL;
@@ -33,6 +51,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* Userinfo_Frame_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Userinfo_Frame_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Totalinfo_Frame_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Totalinfo_Frame_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Login_Response_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Login_Response_reflection_ = NULL;
@@ -47,10 +68,80 @@ void protobuf_AssignDesc_msg_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "msg.proto");
   GOOGLE_CHECK(file != NULL);
-  Client_Frame_descriptor_ = file->message_type(0);
-  static const int Client_Frame_offsets_[2] = {
+  Move_Direction_descriptor_ = file->message_type(0);
+  static const int Move_Direction_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Move_Direction, left_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Move_Direction, right_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Move_Direction, up_),
+  };
+  Move_Direction_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Move_Direction_descriptor_,
+      Move_Direction::internal_default_instance(),
+      Move_Direction_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Move_Direction, _has_bits_),
+      -1,
+      -1,
+      sizeof(Move_Direction),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Move_Direction, _internal_metadata_));
+  Generated_Position_descriptor_ = file->message_type(1);
+  static const int Generated_Position_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Position, x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Position, y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Position, z_),
+  };
+  Generated_Position_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Generated_Position_descriptor_,
+      Generated_Position::internal_default_instance(),
+      Generated_Position_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Position, _has_bits_),
+      -1,
+      -1,
+      sizeof(Generated_Position),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Position, _internal_metadata_));
+  Generated_Object_descriptor_ = file->message_type(2);
+  static const int Generated_Object_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Object, isgenerated_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Object, pos_),
+  };
+  Generated_Object_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Generated_Object_descriptor_,
+      Generated_Object::internal_default_instance(),
+      Generated_Object_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Object, _has_bits_),
+      -1,
+      -1,
+      sizeof(Generated_Object),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Generated_Object, _internal_metadata_));
+  Hp_Object_descriptor_ = file->message_type(3);
+  static const int Hp_Object_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Hp_Object, ischanged_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Hp_Object, changevalue_),
+  };
+  Hp_Object_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Hp_Object_descriptor_,
+      Hp_Object::internal_default_instance(),
+      Hp_Object_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Hp_Object, _has_bits_),
+      -1,
+      -1,
+      sizeof(Hp_Object),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Hp_Object, _internal_metadata_));
+  Client_Frame_descriptor_ = file->message_type(4);
+  static const int Client_Frame_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, ip_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, died_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, moved_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, direction_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, hpchanged_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, playertype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, changevalue_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, generated_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, objecttype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, pos_),
   };
   Client_Frame_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -62,12 +153,52 @@ void protobuf_AssignDesc_msg_2eproto() {
       -1,
       sizeof(Client_Frame),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Client_Frame, _internal_metadata_));
-  Server_Frame_descriptor_ = file->message_type(1);
-  static const int Server_Frame_offsets_[4] = {
+  Common_Frame_descriptor_ = file->message_type(5);
+  static const int Common_Frame_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, generated_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, chooseip_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, animal_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, bird_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, food_),
+  };
+  Common_Frame_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Common_Frame_descriptor_,
+      Common_Frame::internal_default_instance(),
+      Common_Frame_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, _has_bits_),
+      -1,
+      -1,
+      sizeof(Common_Frame),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Common_Frame, _internal_metadata_));
+  Single_Frame_descriptor_ = file->message_type(6);
+  static const int Single_Frame_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, ip_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, died_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, moved_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, direction_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, hpchanged_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, playerhp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, enemyhp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, snow_),
+  };
+  Single_Frame_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Single_Frame_descriptor_,
+      Single_Frame::internal_default_instance(),
+      Single_Frame_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, _has_bits_),
+      -1,
+      -1,
+      sizeof(Single_Frame),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Single_Frame, _internal_metadata_));
+  Server_Frame_descriptor_ = file->message_type(7);
+  static const int Server_Frame_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, empty_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, frameseq_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, preframe_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, laterframe_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, comframe_),
   };
   Server_Frame_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -79,8 +210,9 @@ void protobuf_AssignDesc_msg_2eproto() {
       -1,
       sizeof(Server_Frame),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Server_Frame, _internal_metadata_));
-  Login_Frame_descriptor_ = file->message_type(2);
-  static const int Login_Frame_offsets_[3] = {
+  Login_Frame_descriptor_ = file->message_type(8);
+  static const int Login_Frame_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Frame, ip_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Frame, login_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Frame, username_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Frame, password_),
@@ -95,8 +227,9 @@ void protobuf_AssignDesc_msg_2eproto() {
       -1,
       sizeof(Login_Frame),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Frame, _internal_metadata_));
-  Userinfo_Frame_descriptor_ = file->message_type(3);
-  static const int Userinfo_Frame_offsets_[5] = {
+  Userinfo_Frame_descriptor_ = file->message_type(9);
+  static const int Userinfo_Frame_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Userinfo_Frame, ip_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Userinfo_Frame, id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Userinfo_Frame, username_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Userinfo_Frame, winnumbers_),
@@ -113,7 +246,22 @@ void protobuf_AssignDesc_msg_2eproto() {
       -1,
       sizeof(Userinfo_Frame),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Userinfo_Frame, _internal_metadata_));
-  Login_Response_descriptor_ = file->message_type(4);
+  Totalinfo_Frame_descriptor_ = file->message_type(10);
+  static const int Totalinfo_Frame_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Totalinfo_Frame, preinfo_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Totalinfo_Frame, laterinfo_),
+  };
+  Totalinfo_Frame_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Totalinfo_Frame_descriptor_,
+      Totalinfo_Frame::internal_default_instance(),
+      Totalinfo_Frame_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Totalinfo_Frame, _has_bits_),
+      -1,
+      -1,
+      sizeof(Totalinfo_Frame),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Totalinfo_Frame, _internal_metadata_));
+  Login_Response_descriptor_ = file->message_type(11);
   static const int Login_Response_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Response, succeed_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Login_Response, errcode_),
@@ -142,7 +290,19 @@ void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Move_Direction_descriptor_, Move_Direction::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Generated_Position_descriptor_, Generated_Position::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Generated_Object_descriptor_, Generated_Object::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Hp_Object_descriptor_, Hp_Object::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Client_Frame_descriptor_, Client_Frame::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Common_Frame_descriptor_, Common_Frame::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Single_Frame_descriptor_, Single_Frame::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Server_Frame_descriptor_, Server_Frame::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -150,20 +310,36 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Userinfo_Frame_descriptor_, Userinfo_Frame::internal_default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Totalinfo_Frame_descriptor_, Totalinfo_Frame::internal_default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Login_Response_descriptor_, Login_Response::internal_default_instance());
 }
 
 }  // namespace
 
 void protobuf_ShutdownFile_msg_2eproto() {
+  Move_Direction_default_instance_.Shutdown();
+  delete Move_Direction_reflection_;
+  Generated_Position_default_instance_.Shutdown();
+  delete Generated_Position_reflection_;
+  Generated_Object_default_instance_.Shutdown();
+  delete Generated_Object_reflection_;
+  Hp_Object_default_instance_.Shutdown();
+  delete Hp_Object_reflection_;
   Client_Frame_default_instance_.Shutdown();
   delete Client_Frame_reflection_;
+  Common_Frame_default_instance_.Shutdown();
+  delete Common_Frame_reflection_;
+  Single_Frame_default_instance_.Shutdown();
+  delete Single_Frame_reflection_;
   Server_Frame_default_instance_.Shutdown();
   delete Server_Frame_reflection_;
   Login_Frame_default_instance_.Shutdown();
   delete Login_Frame_reflection_;
   Userinfo_Frame_default_instance_.Shutdown();
   delete Userinfo_Frame_reflection_;
+  Totalinfo_Frame_default_instance_.Shutdown();
+  delete Totalinfo_Frame_reflection_;
   Login_Response_default_instance_.Shutdown();
   delete Login_Response_reflection_;
 }
@@ -171,18 +347,34 @@ void protobuf_ShutdownFile_msg_2eproto() {
 void protobuf_InitDefaults_msg_2eproto_impl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  Move_Direction_default_instance_.DefaultConstruct();
+  Generated_Position_default_instance_.DefaultConstruct();
+  Generated_Object_default_instance_.DefaultConstruct();
+  Hp_Object_default_instance_.DefaultConstruct();
   ::google::protobuf::internal::GetEmptyString();
   Client_Frame_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Common_Frame_default_instance_.DefaultConstruct();
+  ::google::protobuf::internal::GetEmptyString();
+  Single_Frame_default_instance_.DefaultConstruct();
   Server_Frame_default_instance_.DefaultConstruct();
   ::google::protobuf::internal::GetEmptyString();
   Login_Frame_default_instance_.DefaultConstruct();
   ::google::protobuf::internal::GetEmptyString();
   Userinfo_Frame_default_instance_.DefaultConstruct();
+  Totalinfo_Frame_default_instance_.DefaultConstruct();
   Login_Response_default_instance_.DefaultConstruct();
+  Move_Direction_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Generated_Position_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Generated_Object_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Hp_Object_default_instance_.get_mutable()->InitAsDefaultInstance();
   Client_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Common_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Single_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
   Server_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
   Login_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
   Userinfo_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
+  Totalinfo_Frame_default_instance_.get_mutable()->InitAsDefaultInstance();
   Login_Response_default_instance_.get_mutable()->InitAsDefaultInstance();
 }
 
@@ -196,17 +388,44 @@ void protobuf_AddDesc_msg_2eproto_impl() {
 
   protobuf_InitDefaults_msg_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\tmsg.proto\022\nCodeBattle\"-\n\014Client_Frame\022"
-    "\n\n\002ip\030\001 \002(\t\022\021\n\tdirection\030\002 \002(\005\"\211\001\n\014Serve"
-    "r_Frame\022\r\n\005empty\030\001 \002(\010\022\020\n\010frameseq\030\002 \002(\005"
-    "\022*\n\010preframe\030\003 \002(\0132\030.CodeBattle.Client_F"
-    "rame\022,\n\nlaterframe\030\004 \002(\0132\030.CodeBattle.Cl"
-    "ient_Frame\"@\n\013Login_Frame\022\r\n\005login\030\001 \002(\010"
-    "\022\020\n\010username\030\002 \002(\t\022\020\n\010password\030\003 \002(\t\"h\n\016"
-    "Userinfo_Frame\022\n\n\002id\030\001 \002(\005\022\020\n\010username\030\002"
-    " \002(\t\022\022\n\nwinnumbers\030\003 \002(\005\022\023\n\013losenumbers\030"
-    "\004 \002(\005\022\017\n\007winrate\030\005 \002(\005\"2\n\016Login_Response"
-    "\022\017\n\007succeed\030\001 \002(\010\022\017\n\007errcode\030\002 \002(\005", 434);
+    "\n\tmsg.proto\022\nCodeBattle\"9\n\016Move_Directio"
+    "n\022\014\n\004left\030\001 \002(\010\022\r\n\005right\030\002 \002(\010\022\n\n\002up\030\003 \002"
+    "(\010\"5\n\022Generated_Position\022\t\n\001x\030\001 \002(\002\022\t\n\001y"
+    "\030\002 \002(\002\022\t\n\001z\030\003 \002(\002\"T\n\020Generated_Object\022\023\n"
+    "\013isgenerated\030\001 \002(\010\022+\n\003pos\030\002 \002(\0132\036.CodeBa"
+    "ttle.Generated_Position\"3\n\tHp_Object\022\021\n\t"
+    "ischanged\030\001 \002(\010\022\023\n\013changevalue\030\002 \002(\002\"\366\001\n"
+    "\014Client_Frame\022\n\n\002ip\030\001 \002(\t\022\014\n\004died\030\002 \002(\010\022"
+    "\r\n\005moved\030\003 \002(\010\022-\n\tdirection\030\004 \002(\0132\032.Code"
+    "Battle.Move_Direction\022\021\n\thpchanged\030\005 \002(\010"
+    "\022\022\n\nplayertype\030\006 \002(\010\022\023\n\013changevalue\030\007 \002("
+    "\002\022\021\n\tgenerated\030\010 \002(\010\022\022\n\nobjecttype\030\t \002(\005"
+    "\022+\n\003pos\030\n \002(\0132\036.CodeBattle.Generated_Pos"
+    "ition\"\271\001\n\014Common_Frame\022\021\n\tgenerated\030\001 \002("
+    "\010\022\020\n\010chooseip\030\002 \002(\t\022,\n\006animal\030\003 \002(\0132\034.Co"
+    "deBattle.Generated_Object\022*\n\004bird\030\004 \002(\0132"
+    "\034.CodeBattle.Generated_Object\022*\n\004food\030\005 "
+    "\002(\0132\034.CodeBattle.Generated_Object\"\366\001\n\014Si"
+    "ngle_Frame\022\n\n\002ip\030\001 \002(\t\022\014\n\004died\030\002 \002(\010\022\r\n\005"
+    "moved\030\003 \002(\010\022-\n\tdirection\030\004 \002(\0132\032.CodeBat"
+    "tle.Move_Direction\022\021\n\thpchanged\030\005 \002(\010\022\'\n"
+    "\010playerhp\030\006 \002(\0132\025.CodeBattle.Hp_Object\022&"
+    "\n\007enemyhp\030\007 \002(\0132\025.CodeBattle.Hp_Object\022*"
+    "\n\004snow\030\010 \002(\0132\034.CodeBattle.Generated_Obje"
+    "ct\"\265\001\n\014Server_Frame\022\r\n\005empty\030\001 \002(\010\022\020\n\010fr"
+    "ameseq\030\002 \002(\005\022*\n\010preframe\030\003 \002(\0132\030.CodeBat"
+    "tle.Single_Frame\022,\n\nlaterframe\030\004 \002(\0132\030.C"
+    "odeBattle.Single_Frame\022*\n\010comframe\030\005 \002(\013"
+    "2\030.CodeBattle.Common_Frame\"L\n\013Login_Fram"
+    "e\022\n\n\002ip\030\001 \002(\t\022\r\n\005login\030\002 \002(\010\022\020\n\010username"
+    "\030\003 \002(\t\022\020\n\010password\030\004 \002(\t\"t\n\016Userinfo_Fra"
+    "me\022\n\n\002ip\030\001 \002(\t\022\n\n\002id\030\002 \002(\005\022\020\n\010username\030\003"
+    " \002(\t\022\022\n\nwinnumbers\030\004 \002(\005\022\023\n\013losenumbers\030"
+    "\005 \002(\005\022\017\n\007winrate\030\006 \002(\005\"m\n\017Totalinfo_Fram"
+    "e\022+\n\007preinfo\030\001 \002(\0132\032.CodeBattle.Userinfo"
+    "_Frame\022-\n\tlaterinfo\030\002 \002(\0132\032.CodeBattle.U"
+    "serinfo_Frame\"2\n\016Login_Response\022\017\n\007succe"
+    "ed\030\001 \002(\010\022\017\n\007errcode\030\002 \002(\005", 1505);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "msg.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_msg_2eproto);
@@ -237,8 +456,1655 @@ static void MergeFromFail(int line) {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Move_Direction::kLeftFieldNumber;
+const int Move_Direction::kRightFieldNumber;
+const int Move_Direction::kUpFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Move_Direction::Move_Direction()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Move_Direction)
+}
+
+void Move_Direction::InitAsDefaultInstance() {
+}
+
+Move_Direction::Move_Direction(const Move_Direction& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Move_Direction)
+}
+
+void Move_Direction::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(&left_, 0, reinterpret_cast<char*>(&up_) -
+    reinterpret_cast<char*>(&left_) + sizeof(up_));
+}
+
+Move_Direction::~Move_Direction() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Move_Direction)
+  SharedDtor();
+}
+
+void Move_Direction::SharedDtor() {
+}
+
+void Move_Direction::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Move_Direction::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Move_Direction_descriptor_;
+}
+
+const Move_Direction& Move_Direction::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Move_Direction> Move_Direction_default_instance_;
+
+Move_Direction* Move_Direction::New(::google::protobuf::Arena* arena) const {
+  Move_Direction* n = new Move_Direction;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Move_Direction::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Move_Direction)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Move_Direction, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Move_Direction*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(left_, up_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Move_Direction::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Move_Direction)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool left = 1;
+      case 1: {
+        if (tag == 8) {
+          set_has_left();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &left_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_right;
+        break;
+      }
+
+      // required bool right = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_right:
+          set_has_right();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &right_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_up;
+        break;
+      }
+
+      // required bool up = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_up:
+          set_has_up();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &up_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Move_Direction)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Move_Direction)
+  return false;
+#undef DO_
+}
+
+void Move_Direction::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Move_Direction)
+  // required bool left = 1;
+  if (has_left()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->left(), output);
+  }
+
+  // required bool right = 2;
+  if (has_right()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->right(), output);
+  }
+
+  // required bool up = 3;
+  if (has_up()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->up(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Move_Direction)
+}
+
+::google::protobuf::uint8* Move_Direction::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Move_Direction)
+  // required bool left = 1;
+  if (has_left()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->left(), target);
+  }
+
+  // required bool right = 2;
+  if (has_right()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->right(), target);
+  }
+
+  // required bool up = 3;
+  if (has_up()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->up(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Move_Direction)
+  return target;
+}
+
+size_t Move_Direction::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Move_Direction)
+  size_t total_size = 0;
+
+  if (has_left()) {
+    // required bool left = 1;
+    total_size += 1 + 1;
+  }
+
+  if (has_right()) {
+    // required bool right = 2;
+    total_size += 1 + 1;
+  }
+
+  if (has_up()) {
+    // required bool up = 3;
+    total_size += 1 + 1;
+  }
+
+  return total_size;
+}
+size_t Move_Direction::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Move_Direction)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required bool left = 1;
+    total_size += 1 + 1;
+
+    // required bool right = 2;
+    total_size += 1 + 1;
+
+    // required bool up = 3;
+    total_size += 1 + 1;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Move_Direction::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Move_Direction)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Move_Direction* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Move_Direction>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Move_Direction)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Move_Direction)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Move_Direction::MergeFrom(const Move_Direction& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Move_Direction)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Move_Direction::UnsafeMergeFrom(const Move_Direction& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_left()) {
+      set_left(from.left());
+    }
+    if (from.has_right()) {
+      set_right(from.right());
+    }
+    if (from.has_up()) {
+      set_up(from.up());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Move_Direction::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Move_Direction)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Move_Direction::CopyFrom(const Move_Direction& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Move_Direction)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Move_Direction::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  return true;
+}
+
+void Move_Direction::Swap(Move_Direction* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Move_Direction::InternalSwap(Move_Direction* other) {
+  std::swap(left_, other->left_);
+  std::swap(right_, other->right_);
+  std::swap(up_, other->up_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Move_Direction::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Move_Direction_descriptor_;
+  metadata.reflection = Move_Direction_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Move_Direction
+
+// required bool left = 1;
+bool Move_Direction::has_left() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Move_Direction::set_has_left() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Move_Direction::clear_has_left() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Move_Direction::clear_left() {
+  left_ = false;
+  clear_has_left();
+}
+bool Move_Direction::left() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.left)
+  return left_;
+}
+void Move_Direction::set_left(bool value) {
+  set_has_left();
+  left_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.left)
+}
+
+// required bool right = 2;
+bool Move_Direction::has_right() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Move_Direction::set_has_right() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Move_Direction::clear_has_right() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Move_Direction::clear_right() {
+  right_ = false;
+  clear_has_right();
+}
+bool Move_Direction::right() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.right)
+  return right_;
+}
+void Move_Direction::set_right(bool value) {
+  set_has_right();
+  right_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.right)
+}
+
+// required bool up = 3;
+bool Move_Direction::has_up() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Move_Direction::set_has_up() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Move_Direction::clear_has_up() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Move_Direction::clear_up() {
+  up_ = false;
+  clear_has_up();
+}
+bool Move_Direction::up() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.up)
+  return up_;
+}
+void Move_Direction::set_up(bool value) {
+  set_has_up();
+  up_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.up)
+}
+
+inline const Move_Direction* Move_Direction::internal_default_instance() {
+  return &Move_Direction_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Generated_Position::kXFieldNumber;
+const int Generated_Position::kYFieldNumber;
+const int Generated_Position::kZFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Generated_Position::Generated_Position()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Generated_Position)
+}
+
+void Generated_Position::InitAsDefaultInstance() {
+}
+
+Generated_Position::Generated_Position(const Generated_Position& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Generated_Position)
+}
+
+void Generated_Position::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(&x_, 0, reinterpret_cast<char*>(&z_) -
+    reinterpret_cast<char*>(&x_) + sizeof(z_));
+}
+
+Generated_Position::~Generated_Position() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Generated_Position)
+  SharedDtor();
+}
+
+void Generated_Position::SharedDtor() {
+}
+
+void Generated_Position::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Generated_Position::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Generated_Position_descriptor_;
+}
+
+const Generated_Position& Generated_Position::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Generated_Position> Generated_Position_default_instance_;
+
+Generated_Position* Generated_Position::New(::google::protobuf::Arena* arena) const {
+  Generated_Position* n = new Generated_Position;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Generated_Position::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Generated_Position)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Generated_Position, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Generated_Position*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(x_, z_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Generated_Position::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Generated_Position)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required float x = 1;
+      case 1: {
+        if (tag == 13) {
+          set_has_x();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &x_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(21)) goto parse_y;
+        break;
+      }
+
+      // required float y = 2;
+      case 2: {
+        if (tag == 21) {
+         parse_y:
+          set_has_y();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &y_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(29)) goto parse_z;
+        break;
+      }
+
+      // required float z = 3;
+      case 3: {
+        if (tag == 29) {
+         parse_z:
+          set_has_z();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &z_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Generated_Position)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Generated_Position)
+  return false;
+#undef DO_
+}
+
+void Generated_Position::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Generated_Position)
+  // required float x = 1;
+  if (has_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->x(), output);
+  }
+
+  // required float y = 2;
+  if (has_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->y(), output);
+  }
+
+  // required float z = 3;
+  if (has_z()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->z(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Generated_Position)
+}
+
+::google::protobuf::uint8* Generated_Position::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Generated_Position)
+  // required float x = 1;
+  if (has_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->x(), target);
+  }
+
+  // required float y = 2;
+  if (has_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->y(), target);
+  }
+
+  // required float z = 3;
+  if (has_z()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->z(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Generated_Position)
+  return target;
+}
+
+size_t Generated_Position::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Generated_Position)
+  size_t total_size = 0;
+
+  if (has_x()) {
+    // required float x = 1;
+    total_size += 1 + 4;
+  }
+
+  if (has_y()) {
+    // required float y = 2;
+    total_size += 1 + 4;
+  }
+
+  if (has_z()) {
+    // required float z = 3;
+    total_size += 1 + 4;
+  }
+
+  return total_size;
+}
+size_t Generated_Position::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Generated_Position)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required float x = 1;
+    total_size += 1 + 4;
+
+    // required float y = 2;
+    total_size += 1 + 4;
+
+    // required float z = 3;
+    total_size += 1 + 4;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Generated_Position::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Generated_Position)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Generated_Position* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Generated_Position>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Generated_Position)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Generated_Position)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Generated_Position::MergeFrom(const Generated_Position& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Generated_Position)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Generated_Position::UnsafeMergeFrom(const Generated_Position& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_x()) {
+      set_x(from.x());
+    }
+    if (from.has_y()) {
+      set_y(from.y());
+    }
+    if (from.has_z()) {
+      set_z(from.z());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Generated_Position::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Generated_Position)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Generated_Position::CopyFrom(const Generated_Position& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Generated_Position)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Generated_Position::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+
+  return true;
+}
+
+void Generated_Position::Swap(Generated_Position* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Generated_Position::InternalSwap(Generated_Position* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Generated_Position::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Generated_Position_descriptor_;
+  metadata.reflection = Generated_Position_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Generated_Position
+
+// required float x = 1;
+bool Generated_Position::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Generated_Position::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Generated_Position::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Generated_Position::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+float Generated_Position::x() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.x)
+  return x_;
+}
+void Generated_Position::set_x(float value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.x)
+}
+
+// required float y = 2;
+bool Generated_Position::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Generated_Position::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Generated_Position::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Generated_Position::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+float Generated_Position::y() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.y)
+  return y_;
+}
+void Generated_Position::set_y(float value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.y)
+}
+
+// required float z = 3;
+bool Generated_Position::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Generated_Position::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Generated_Position::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Generated_Position::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+float Generated_Position::z() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.z)
+  return z_;
+}
+void Generated_Position::set_z(float value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.z)
+}
+
+inline const Generated_Position* Generated_Position::internal_default_instance() {
+  return &Generated_Position_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Generated_Object::kIsgeneratedFieldNumber;
+const int Generated_Object::kPosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Generated_Object::Generated_Object()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Generated_Object)
+}
+
+void Generated_Object::InitAsDefaultInstance() {
+  pos_ = const_cast< ::CodeBattle::Generated_Position*>(
+      ::CodeBattle::Generated_Position::internal_default_instance());
+}
+
+Generated_Object::Generated_Object(const Generated_Object& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Generated_Object)
+}
+
+void Generated_Object::SharedCtor() {
+  _cached_size_ = 0;
+  pos_ = NULL;
+  isgenerated_ = false;
+}
+
+Generated_Object::~Generated_Object() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Generated_Object)
+  SharedDtor();
+}
+
+void Generated_Object::SharedDtor() {
+  if (this != &Generated_Object_default_instance_.get()) {
+    delete pos_;
+  }
+}
+
+void Generated_Object::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Generated_Object::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Generated_Object_descriptor_;
+}
+
+const Generated_Object& Generated_Object::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Generated_Object> Generated_Object_default_instance_;
+
+Generated_Object* Generated_Object::New(::google::protobuf::Arena* arena) const {
+  Generated_Object* n = new Generated_Object;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Generated_Object::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Generated_Object)
+  if (_has_bits_[0 / 32] & 3u) {
+    isgenerated_ = false;
+    if (has_pos()) {
+      if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+    }
+  }
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Generated_Object::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Generated_Object)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool isgenerated = 1;
+      case 1: {
+        if (tag == 8) {
+          set_has_isgenerated();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &isgenerated_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_pos;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Position pos = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_pos:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_pos()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Generated_Object)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Generated_Object)
+  return false;
+#undef DO_
+}
+
+void Generated_Object::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Generated_Object)
+  // required bool isgenerated = 1;
+  if (has_isgenerated()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->isgenerated(), output);
+  }
+
+  // required .CodeBattle.Generated_Position pos = 2;
+  if (has_pos()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->pos_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Generated_Object)
+}
+
+::google::protobuf::uint8* Generated_Object::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Generated_Object)
+  // required bool isgenerated = 1;
+  if (has_isgenerated()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->isgenerated(), target);
+  }
+
+  // required .CodeBattle.Generated_Position pos = 2;
+  if (has_pos()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->pos_, false, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Generated_Object)
+  return target;
+}
+
+size_t Generated_Object::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Generated_Object)
+  size_t total_size = 0;
+
+  if (has_isgenerated()) {
+    // required bool isgenerated = 1;
+    total_size += 1 + 1;
+  }
+
+  if (has_pos()) {
+    // required .CodeBattle.Generated_Position pos = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pos_);
+  }
+
+  return total_size;
+}
+size_t Generated_Object::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Generated_Object)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required bool isgenerated = 1;
+    total_size += 1 + 1;
+
+    // required .CodeBattle.Generated_Position pos = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pos_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Generated_Object::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Generated_Object)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Generated_Object* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Generated_Object>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Generated_Object)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Generated_Object)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Generated_Object::MergeFrom(const Generated_Object& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Generated_Object)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Generated_Object::UnsafeMergeFrom(const Generated_Object& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_isgenerated()) {
+      set_isgenerated(from.isgenerated());
+    }
+    if (from.has_pos()) {
+      mutable_pos()->::CodeBattle::Generated_Position::MergeFrom(from.pos());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Generated_Object::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Generated_Object)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Generated_Object::CopyFrom(const Generated_Object& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Generated_Object)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Generated_Object::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (has_pos()) {
+    if (!this->pos_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Generated_Object::Swap(Generated_Object* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Generated_Object::InternalSwap(Generated_Object* other) {
+  std::swap(isgenerated_, other->isgenerated_);
+  std::swap(pos_, other->pos_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Generated_Object::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Generated_Object_descriptor_;
+  metadata.reflection = Generated_Object_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Generated_Object
+
+// required bool isgenerated = 1;
+bool Generated_Object::has_isgenerated() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Generated_Object::set_has_isgenerated() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Generated_Object::clear_has_isgenerated() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Generated_Object::clear_isgenerated() {
+  isgenerated_ = false;
+  clear_has_isgenerated();
+}
+bool Generated_Object::isgenerated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Object.isgenerated)
+  return isgenerated_;
+}
+void Generated_Object::set_isgenerated(bool value) {
+  set_has_isgenerated();
+  isgenerated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Object.isgenerated)
+}
+
+// required .CodeBattle.Generated_Position pos = 2;
+bool Generated_Object::has_pos() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Generated_Object::set_has_pos() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Generated_Object::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Generated_Object::clear_pos() {
+  if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+  clear_has_pos();
+}
+const ::CodeBattle::Generated_Position& Generated_Object::pos() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Object.pos)
+  return pos_ != NULL ? *pos_
+                         : *::CodeBattle::Generated_Position::internal_default_instance();
+}
+::CodeBattle::Generated_Position* Generated_Object::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) {
+    pos_ = new ::CodeBattle::Generated_Position;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Generated_Object.pos)
+  return pos_;
+}
+::CodeBattle::Generated_Position* Generated_Object::release_pos() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Generated_Object.pos)
+  clear_has_pos();
+  ::CodeBattle::Generated_Position* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+void Generated_Object::set_allocated_pos(::CodeBattle::Generated_Position* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Generated_Object.pos)
+}
+
+inline const Generated_Object* Generated_Object::internal_default_instance() {
+  return &Generated_Object_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Hp_Object::kIschangedFieldNumber;
+const int Hp_Object::kChangevalueFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Hp_Object::Hp_Object()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Hp_Object)
+}
+
+void Hp_Object::InitAsDefaultInstance() {
+}
+
+Hp_Object::Hp_Object(const Hp_Object& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Hp_Object)
+}
+
+void Hp_Object::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(&ischanged_, 0, reinterpret_cast<char*>(&changevalue_) -
+    reinterpret_cast<char*>(&ischanged_) + sizeof(changevalue_));
+}
+
+Hp_Object::~Hp_Object() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Hp_Object)
+  SharedDtor();
+}
+
+void Hp_Object::SharedDtor() {
+}
+
+void Hp_Object::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Hp_Object::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Hp_Object_descriptor_;
+}
+
+const Hp_Object& Hp_Object::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Hp_Object> Hp_Object_default_instance_;
+
+Hp_Object* Hp_Object::New(::google::protobuf::Arena* arena) const {
+  Hp_Object* n = new Hp_Object;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Hp_Object::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Hp_Object)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Hp_Object, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Hp_Object*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  ZR_(ischanged_, changevalue_);
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Hp_Object::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Hp_Object)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool ischanged = 1;
+      case 1: {
+        if (tag == 8) {
+          set_has_ischanged();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &ischanged_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(21)) goto parse_changevalue;
+        break;
+      }
+
+      // required float changevalue = 2;
+      case 2: {
+        if (tag == 21) {
+         parse_changevalue:
+          set_has_changevalue();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &changevalue_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Hp_Object)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Hp_Object)
+  return false;
+#undef DO_
+}
+
+void Hp_Object::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Hp_Object)
+  // required bool ischanged = 1;
+  if (has_ischanged()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->ischanged(), output);
+  }
+
+  // required float changevalue = 2;
+  if (has_changevalue()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->changevalue(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Hp_Object)
+}
+
+::google::protobuf::uint8* Hp_Object::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Hp_Object)
+  // required bool ischanged = 1;
+  if (has_ischanged()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->ischanged(), target);
+  }
+
+  // required float changevalue = 2;
+  if (has_changevalue()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->changevalue(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Hp_Object)
+  return target;
+}
+
+size_t Hp_Object::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Hp_Object)
+  size_t total_size = 0;
+
+  if (has_ischanged()) {
+    // required bool ischanged = 1;
+    total_size += 1 + 1;
+  }
+
+  if (has_changevalue()) {
+    // required float changevalue = 2;
+    total_size += 1 + 4;
+  }
+
+  return total_size;
+}
+size_t Hp_Object::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Hp_Object)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required bool ischanged = 1;
+    total_size += 1 + 1;
+
+    // required float changevalue = 2;
+    total_size += 1 + 4;
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Hp_Object::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Hp_Object)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Hp_Object* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Hp_Object>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Hp_Object)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Hp_Object)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Hp_Object::MergeFrom(const Hp_Object& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Hp_Object)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Hp_Object::UnsafeMergeFrom(const Hp_Object& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_ischanged()) {
+      set_ischanged(from.ischanged());
+    }
+    if (from.has_changevalue()) {
+      set_changevalue(from.changevalue());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Hp_Object::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Hp_Object)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Hp_Object::CopyFrom(const Hp_Object& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Hp_Object)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Hp_Object::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void Hp_Object::Swap(Hp_Object* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Hp_Object::InternalSwap(Hp_Object* other) {
+  std::swap(ischanged_, other->ischanged_);
+  std::swap(changevalue_, other->changevalue_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Hp_Object::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Hp_Object_descriptor_;
+  metadata.reflection = Hp_Object_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Hp_Object
+
+// required bool ischanged = 1;
+bool Hp_Object::has_ischanged() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Hp_Object::set_has_ischanged() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Hp_Object::clear_has_ischanged() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Hp_Object::clear_ischanged() {
+  ischanged_ = false;
+  clear_has_ischanged();
+}
+bool Hp_Object::ischanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Hp_Object.ischanged)
+  return ischanged_;
+}
+void Hp_Object::set_ischanged(bool value) {
+  set_has_ischanged();
+  ischanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Hp_Object.ischanged)
+}
+
+// required float changevalue = 2;
+bool Hp_Object::has_changevalue() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Hp_Object::set_has_changevalue() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Hp_Object::clear_has_changevalue() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Hp_Object::clear_changevalue() {
+  changevalue_ = 0;
+  clear_has_changevalue();
+}
+float Hp_Object::changevalue() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Hp_Object.changevalue)
+  return changevalue_;
+}
+void Hp_Object::set_changevalue(float value) {
+  set_has_changevalue();
+  changevalue_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Hp_Object.changevalue)
+}
+
+inline const Hp_Object* Hp_Object::internal_default_instance() {
+  return &Hp_Object_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Client_Frame::kIpFieldNumber;
+const int Client_Frame::kDiedFieldNumber;
+const int Client_Frame::kMovedFieldNumber;
 const int Client_Frame::kDirectionFieldNumber;
+const int Client_Frame::kHpchangedFieldNumber;
+const int Client_Frame::kPlayertypeFieldNumber;
+const int Client_Frame::kChangevalueFieldNumber;
+const int Client_Frame::kGeneratedFieldNumber;
+const int Client_Frame::kObjecttypeFieldNumber;
+const int Client_Frame::kPosFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Client_Frame::Client_Frame()
@@ -249,6 +2115,10 @@ Client_Frame::Client_Frame()
 }
 
 void Client_Frame::InitAsDefaultInstance() {
+  direction_ = const_cast< ::CodeBattle::Move_Direction*>(
+      ::CodeBattle::Move_Direction::internal_default_instance());
+  pos_ = const_cast< ::CodeBattle::Generated_Position*>(
+      ::CodeBattle::Generated_Position::internal_default_instance());
 }
 
 Client_Frame::Client_Frame(const Client_Frame& from)
@@ -262,7 +2132,10 @@ Client_Frame::Client_Frame(const Client_Frame& from)
 void Client_Frame::SharedCtor() {
   _cached_size_ = 0;
   ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  direction_ = 0;
+  direction_ = NULL;
+  pos_ = NULL;
+  ::memset(&died_, 0, reinterpret_cast<char*>(&objecttype_) -
+    reinterpret_cast<char*>(&died_) + sizeof(objecttype_));
 }
 
 Client_Frame::~Client_Frame() {
@@ -272,6 +2145,10 @@ Client_Frame::~Client_Frame() {
 
 void Client_Frame::SharedDtor() {
   ip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != &Client_Frame_default_instance_.get()) {
+    delete direction_;
+    delete pos_;
+  }
 }
 
 void Client_Frame::SetCachedSize(int size) const {
@@ -301,12 +2178,41 @@ Client_Frame* Client_Frame::New(::google::protobuf::Arena* arena) const {
 
 void Client_Frame::Clear() {
 // @@protoc_insertion_point(message_clear_start:CodeBattle.Client_Frame)
-  if (_has_bits_[0 / 32] & 3u) {
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Client_Frame, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Client_Frame*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  if (_has_bits_[0 / 32] & 255u) {
+    ZR_(died_, generated_);
     if (has_ip()) {
       ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
-    direction_ = 0;
+    if (has_direction()) {
+      if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
+    }
   }
+  if (_has_bits_[8 / 32] & 768u) {
+    objecttype_ = 0;
+    if (has_pos()) {
+      if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+    }
+  }
+
+#undef ZR_HELPER_
+#undef ZR_
+
   _has_bits_.Clear();
   if (_internal_metadata_.have_unknown_fields()) {
     mutable_unknown_fields()->Clear();
@@ -335,18 +2241,134 @@ bool Client_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_direction;
+        if (input->ExpectTag(16)) goto parse_died;
         break;
       }
 
-      // required int32 direction = 2;
+      // required bool died = 2;
       case 2: {
         if (tag == 16) {
+         parse_died:
+          set_has_died();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &died_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_moved;
+        break;
+      }
+
+      // required bool moved = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_moved:
+          set_has_moved();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &moved_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_direction;
+        break;
+      }
+
+      // required .CodeBattle.Move_Direction direction = 4;
+      case 4: {
+        if (tag == 34) {
          parse_direction:
-          set_has_direction();
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_direction()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_hpchanged;
+        break;
+      }
+
+      // required bool hpchanged = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_hpchanged:
+          set_has_hpchanged();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &hpchanged_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_playertype;
+        break;
+      }
+
+      // required bool playertype = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_playertype:
+          set_has_playertype();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &playertype_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(61)) goto parse_changevalue;
+        break;
+      }
+
+      // required float changevalue = 7;
+      case 7: {
+        if (tag == 61) {
+         parse_changevalue:
+          set_has_changevalue();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &changevalue_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(64)) goto parse_generated;
+        break;
+      }
+
+      // required bool generated = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_generated:
+          set_has_generated();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &generated_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(72)) goto parse_objecttype;
+        break;
+      }
+
+      // required int32 objecttype = 9;
+      case 9: {
+        if (tag == 72) {
+         parse_objecttype:
+          set_has_objecttype();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &direction_)));
+                 input, &objecttype_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(82)) goto parse_pos;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Position pos = 10;
+      case 10: {
+        if (tag == 82) {
+         parse_pos:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_pos()));
         } else {
           goto handle_unusual;
         }
@@ -389,9 +2411,51 @@ void Client_Frame::SerializeWithCachedSizes(
       1, this->ip(), output);
   }
 
-  // required int32 direction = 2;
+  // required bool died = 2;
+  if (has_died()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->died(), output);
+  }
+
+  // required bool moved = 3;
+  if (has_moved()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->moved(), output);
+  }
+
+  // required .CodeBattle.Move_Direction direction = 4;
   if (has_direction()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->direction(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, *this->direction_, output);
+  }
+
+  // required bool hpchanged = 5;
+  if (has_hpchanged()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->hpchanged(), output);
+  }
+
+  // required bool playertype = 6;
+  if (has_playertype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->playertype(), output);
+  }
+
+  // required float changevalue = 7;
+  if (has_changevalue()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->changevalue(), output);
+  }
+
+  // required bool generated = 8;
+  if (has_generated()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(8, this->generated(), output);
+  }
+
+  // required int32 objecttype = 9;
+  if (has_objecttype()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->objecttype(), output);
+  }
+
+  // required .CodeBattle.Generated_Position pos = 10;
+  if (has_pos()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10, *this->pos_, output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -416,9 +2480,53 @@ void Client_Frame::SerializeWithCachedSizes(
         1, this->ip(), target);
   }
 
-  // required int32 direction = 2;
+  // required bool died = 2;
+  if (has_died()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->died(), target);
+  }
+
+  // required bool moved = 3;
+  if (has_moved()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->moved(), target);
+  }
+
+  // required .CodeBattle.Move_Direction direction = 4;
   if (has_direction()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->direction(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->direction_, false, target);
+  }
+
+  // required bool hpchanged = 5;
+  if (has_hpchanged()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->hpchanged(), target);
+  }
+
+  // required bool playertype = 6;
+  if (has_playertype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->playertype(), target);
+  }
+
+  // required float changevalue = 7;
+  if (has_changevalue()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->changevalue(), target);
+  }
+
+  // required bool generated = 8;
+  if (has_generated()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(8, this->generated(), target);
+  }
+
+  // required int32 objecttype = 9;
+  if (has_objecttype()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->objecttype(), target);
+  }
+
+  // required .CodeBattle.Generated_Position pos = 10;
+  if (has_pos()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        10, *this->pos_, false, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -440,11 +2548,55 @@ size_t Client_Frame::RequiredFieldsByteSizeFallback() const {
         this->ip());
   }
 
+  if (has_died()) {
+    // required bool died = 2;
+    total_size += 1 + 1;
+  }
+
+  if (has_moved()) {
+    // required bool moved = 3;
+    total_size += 1 + 1;
+  }
+
   if (has_direction()) {
-    // required int32 direction = 2;
+    // required .CodeBattle.Move_Direction direction = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->direction_);
+  }
+
+  if (has_hpchanged()) {
+    // required bool hpchanged = 5;
+    total_size += 1 + 1;
+  }
+
+  if (has_playertype()) {
+    // required bool playertype = 6;
+    total_size += 1 + 1;
+  }
+
+  if (has_changevalue()) {
+    // required float changevalue = 7;
+    total_size += 1 + 4;
+  }
+
+  if (has_generated()) {
+    // required bool generated = 8;
+    total_size += 1 + 1;
+  }
+
+  if (has_objecttype()) {
+    // required int32 objecttype = 9;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->direction());
+        this->objecttype());
+  }
+
+  if (has_pos()) {
+    // required .CodeBattle.Generated_Position pos = 10;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pos_);
   }
 
   return total_size;
@@ -453,16 +2605,44 @@ size_t Client_Frame::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CodeBattle.Client_Frame)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (((_has_bits_[0] & 0x000003ff) ^ 0x000003ff) == 0) {  // All required fields are present.
     // required string ip = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->ip());
 
-    // required int32 direction = 2;
+    // required bool died = 2;
+    total_size += 1 + 1;
+
+    // required bool moved = 3;
+    total_size += 1 + 1;
+
+    // required .CodeBattle.Move_Direction direction = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->direction_);
+
+    // required bool hpchanged = 5;
+    total_size += 1 + 1;
+
+    // required bool playertype = 6;
+    total_size += 1 + 1;
+
+    // required float changevalue = 7;
+    total_size += 1 + 4;
+
+    // required bool generated = 8;
+    total_size += 1 + 1;
+
+    // required int32 objecttype = 9;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->direction());
+        this->objecttype());
+
+    // required .CodeBattle.Generated_Position pos = 10;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->pos_);
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
@@ -510,8 +2690,34 @@ void Client_Frame::UnsafeMergeFrom(const Client_Frame& from) {
       set_has_ip();
       ip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_);
     }
+    if (from.has_died()) {
+      set_died(from.died());
+    }
+    if (from.has_moved()) {
+      set_moved(from.moved());
+    }
     if (from.has_direction()) {
-      set_direction(from.direction());
+      mutable_direction()->::CodeBattle::Move_Direction::MergeFrom(from.direction());
+    }
+    if (from.has_hpchanged()) {
+      set_hpchanged(from.hpchanged());
+    }
+    if (from.has_playertype()) {
+      set_playertype(from.playertype());
+    }
+    if (from.has_changevalue()) {
+      set_changevalue(from.changevalue());
+    }
+    if (from.has_generated()) {
+      set_generated(from.generated());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_objecttype()) {
+      set_objecttype(from.objecttype());
+    }
+    if (from.has_pos()) {
+      mutable_pos()->::CodeBattle::Generated_Position::MergeFrom(from.pos());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -535,8 +2741,14 @@ void Client_Frame::CopyFrom(const Client_Frame& from) {
 }
 
 bool Client_Frame::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x000003ff) != 0x000003ff) return false;
 
+  if (has_direction()) {
+    if (!this->direction_->IsInitialized()) return false;
+  }
+  if (has_pos()) {
+    if (!this->pos_->IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -546,7 +2758,15 @@ void Client_Frame::Swap(Client_Frame* other) {
 }
 void Client_Frame::InternalSwap(Client_Frame* other) {
   ip_.Swap(&other->ip_);
+  std::swap(died_, other->died_);
+  std::swap(moved_, other->moved_);
   std::swap(direction_, other->direction_);
+  std::swap(hpchanged_, other->hpchanged_);
+  std::swap(playertype_, other->playertype_);
+  std::swap(changevalue_, other->changevalue_);
+  std::swap(generated_, other->generated_);
+  std::swap(objecttype_, other->objecttype_);
+  std::swap(pos_, other->pos_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -617,28 +2837,262 @@ void Client_Frame::set_allocated_ip(::std::string* ip) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.ip)
 }
 
-// required int32 direction = 2;
-bool Client_Frame::has_direction() const {
+// required bool died = 2;
+bool Client_Frame::has_died() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-void Client_Frame::set_has_direction() {
+void Client_Frame::set_has_died() {
   _has_bits_[0] |= 0x00000002u;
 }
-void Client_Frame::clear_has_direction() {
+void Client_Frame::clear_has_died() {
   _has_bits_[0] &= ~0x00000002u;
 }
+void Client_Frame::clear_died() {
+  died_ = false;
+  clear_has_died();
+}
+bool Client_Frame::died() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.died)
+  return died_;
+}
+void Client_Frame::set_died(bool value) {
+  set_has_died();
+  died_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.died)
+}
+
+// required bool moved = 3;
+bool Client_Frame::has_moved() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Client_Frame::set_has_moved() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Client_Frame::clear_has_moved() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Client_Frame::clear_moved() {
+  moved_ = false;
+  clear_has_moved();
+}
+bool Client_Frame::moved() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.moved)
+  return moved_;
+}
+void Client_Frame::set_moved(bool value) {
+  set_has_moved();
+  moved_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.moved)
+}
+
+// required .CodeBattle.Move_Direction direction = 4;
+bool Client_Frame::has_direction() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Client_Frame::set_has_direction() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Client_Frame::clear_has_direction() {
+  _has_bits_[0] &= ~0x00000008u;
+}
 void Client_Frame::clear_direction() {
-  direction_ = 0;
+  if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
   clear_has_direction();
 }
-::google::protobuf::int32 Client_Frame::direction() const {
+const ::CodeBattle::Move_Direction& Client_Frame::direction() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.direction)
+  return direction_ != NULL ? *direction_
+                         : *::CodeBattle::Move_Direction::internal_default_instance();
+}
+::CodeBattle::Move_Direction* Client_Frame::mutable_direction() {
+  set_has_direction();
+  if (direction_ == NULL) {
+    direction_ = new ::CodeBattle::Move_Direction;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Client_Frame.direction)
   return direction_;
 }
-void Client_Frame::set_direction(::google::protobuf::int32 value) {
-  set_has_direction();
-  direction_ = value;
-  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.direction)
+::CodeBattle::Move_Direction* Client_Frame::release_direction() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Client_Frame.direction)
+  clear_has_direction();
+  ::CodeBattle::Move_Direction* temp = direction_;
+  direction_ = NULL;
+  return temp;
+}
+void Client_Frame::set_allocated_direction(::CodeBattle::Move_Direction* direction) {
+  delete direction_;
+  direction_ = direction;
+  if (direction) {
+    set_has_direction();
+  } else {
+    clear_has_direction();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.direction)
+}
+
+// required bool hpchanged = 5;
+bool Client_Frame::has_hpchanged() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Client_Frame::set_has_hpchanged() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Client_Frame::clear_has_hpchanged() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Client_Frame::clear_hpchanged() {
+  hpchanged_ = false;
+  clear_has_hpchanged();
+}
+bool Client_Frame::hpchanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.hpchanged)
+  return hpchanged_;
+}
+void Client_Frame::set_hpchanged(bool value) {
+  set_has_hpchanged();
+  hpchanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.hpchanged)
+}
+
+// required bool playertype = 6;
+bool Client_Frame::has_playertype() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Client_Frame::set_has_playertype() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Client_Frame::clear_has_playertype() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Client_Frame::clear_playertype() {
+  playertype_ = false;
+  clear_has_playertype();
+}
+bool Client_Frame::playertype() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.playertype)
+  return playertype_;
+}
+void Client_Frame::set_playertype(bool value) {
+  set_has_playertype();
+  playertype_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.playertype)
+}
+
+// required float changevalue = 7;
+bool Client_Frame::has_changevalue() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Client_Frame::set_has_changevalue() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Client_Frame::clear_has_changevalue() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Client_Frame::clear_changevalue() {
+  changevalue_ = 0;
+  clear_has_changevalue();
+}
+float Client_Frame::changevalue() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.changevalue)
+  return changevalue_;
+}
+void Client_Frame::set_changevalue(float value) {
+  set_has_changevalue();
+  changevalue_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.changevalue)
+}
+
+// required bool generated = 8;
+bool Client_Frame::has_generated() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Client_Frame::set_has_generated() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Client_Frame::clear_has_generated() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Client_Frame::clear_generated() {
+  generated_ = false;
+  clear_has_generated();
+}
+bool Client_Frame::generated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.generated)
+  return generated_;
+}
+void Client_Frame::set_generated(bool value) {
+  set_has_generated();
+  generated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.generated)
+}
+
+// required int32 objecttype = 9;
+bool Client_Frame::has_objecttype() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+void Client_Frame::set_has_objecttype() {
+  _has_bits_[0] |= 0x00000100u;
+}
+void Client_Frame::clear_has_objecttype() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+void Client_Frame::clear_objecttype() {
+  objecttype_ = 0;
+  clear_has_objecttype();
+}
+::google::protobuf::int32 Client_Frame::objecttype() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.objecttype)
+  return objecttype_;
+}
+void Client_Frame::set_objecttype(::google::protobuf::int32 value) {
+  set_has_objecttype();
+  objecttype_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.objecttype)
+}
+
+// required .CodeBattle.Generated_Position pos = 10;
+bool Client_Frame::has_pos() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void Client_Frame::set_has_pos() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void Client_Frame::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void Client_Frame::clear_pos() {
+  if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+  clear_has_pos();
+}
+const ::CodeBattle::Generated_Position& Client_Frame::pos() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.pos)
+  return pos_ != NULL ? *pos_
+                         : *::CodeBattle::Generated_Position::internal_default_instance();
+}
+::CodeBattle::Generated_Position* Client_Frame::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) {
+    pos_ = new ::CodeBattle::Generated_Position;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Client_Frame.pos)
+  return pos_;
+}
+::CodeBattle::Generated_Position* Client_Frame::release_pos() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Client_Frame.pos)
+  clear_has_pos();
+  ::CodeBattle::Generated_Position* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+void Client_Frame::set_allocated_pos(::CodeBattle::Generated_Position* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.pos)
 }
 
 inline const Client_Frame* Client_Frame::internal_default_instance() {
@@ -649,10 +3103,1662 @@ inline const Client_Frame* Client_Frame::internal_default_instance() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Common_Frame::kGeneratedFieldNumber;
+const int Common_Frame::kChooseipFieldNumber;
+const int Common_Frame::kAnimalFieldNumber;
+const int Common_Frame::kBirdFieldNumber;
+const int Common_Frame::kFoodFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Common_Frame::Common_Frame()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Common_Frame)
+}
+
+void Common_Frame::InitAsDefaultInstance() {
+  animal_ = const_cast< ::CodeBattle::Generated_Object*>(
+      ::CodeBattle::Generated_Object::internal_default_instance());
+  bird_ = const_cast< ::CodeBattle::Generated_Object*>(
+      ::CodeBattle::Generated_Object::internal_default_instance());
+  food_ = const_cast< ::CodeBattle::Generated_Object*>(
+      ::CodeBattle::Generated_Object::internal_default_instance());
+}
+
+Common_Frame::Common_Frame(const Common_Frame& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Common_Frame)
+}
+
+void Common_Frame::SharedCtor() {
+  _cached_size_ = 0;
+  chooseip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  animal_ = NULL;
+  bird_ = NULL;
+  food_ = NULL;
+  generated_ = false;
+}
+
+Common_Frame::~Common_Frame() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Common_Frame)
+  SharedDtor();
+}
+
+void Common_Frame::SharedDtor() {
+  chooseip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != &Common_Frame_default_instance_.get()) {
+    delete animal_;
+    delete bird_;
+    delete food_;
+  }
+}
+
+void Common_Frame::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Common_Frame::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Common_Frame_descriptor_;
+}
+
+const Common_Frame& Common_Frame::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Common_Frame> Common_Frame_default_instance_;
+
+Common_Frame* Common_Frame::New(::google::protobuf::Arena* arena) const {
+  Common_Frame* n = new Common_Frame;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Common_Frame::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Common_Frame)
+  if (_has_bits_[0 / 32] & 31u) {
+    generated_ = false;
+    if (has_chooseip()) {
+      chooseip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    }
+    if (has_animal()) {
+      if (animal_ != NULL) animal_->::CodeBattle::Generated_Object::Clear();
+    }
+    if (has_bird()) {
+      if (bird_ != NULL) bird_->::CodeBattle::Generated_Object::Clear();
+    }
+    if (has_food()) {
+      if (food_ != NULL) food_->::CodeBattle::Generated_Object::Clear();
+    }
+  }
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Common_Frame::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Common_Frame)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool generated = 1;
+      case 1: {
+        if (tag == 8) {
+          set_has_generated();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &generated_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_chooseip;
+        break;
+      }
+
+      // required string chooseip = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_chooseip:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_chooseip()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->chooseip().data(), this->chooseip().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "CodeBattle.Common_Frame.chooseip");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_animal;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Object animal = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_animal:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_animal()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_bird;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Object bird = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_bird:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_bird()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_food;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Object food = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_food:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_food()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Common_Frame)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Common_Frame)
+  return false;
+#undef DO_
+}
+
+void Common_Frame::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Common_Frame)
+  // required bool generated = 1;
+  if (has_generated()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->generated(), output);
+  }
+
+  // required string chooseip = 2;
+  if (has_chooseip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->chooseip().data(), this->chooseip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Common_Frame.chooseip");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->chooseip(), output);
+  }
+
+  // required .CodeBattle.Generated_Object animal = 3;
+  if (has_animal()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, *this->animal_, output);
+  }
+
+  // required .CodeBattle.Generated_Object bird = 4;
+  if (has_bird()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, *this->bird_, output);
+  }
+
+  // required .CodeBattle.Generated_Object food = 5;
+  if (has_food()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, *this->food_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Common_Frame)
+}
+
+::google::protobuf::uint8* Common_Frame::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Common_Frame)
+  // required bool generated = 1;
+  if (has_generated()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->generated(), target);
+  }
+
+  // required string chooseip = 2;
+  if (has_chooseip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->chooseip().data(), this->chooseip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Common_Frame.chooseip");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->chooseip(), target);
+  }
+
+  // required .CodeBattle.Generated_Object animal = 3;
+  if (has_animal()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->animal_, false, target);
+  }
+
+  // required .CodeBattle.Generated_Object bird = 4;
+  if (has_bird()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->bird_, false, target);
+  }
+
+  // required .CodeBattle.Generated_Object food = 5;
+  if (has_food()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        5, *this->food_, false, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Common_Frame)
+  return target;
+}
+
+size_t Common_Frame::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Common_Frame)
+  size_t total_size = 0;
+
+  if (has_generated()) {
+    // required bool generated = 1;
+    total_size += 1 + 1;
+  }
+
+  if (has_chooseip()) {
+    // required string chooseip = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->chooseip());
+  }
+
+  if (has_animal()) {
+    // required .CodeBattle.Generated_Object animal = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->animal_);
+  }
+
+  if (has_bird()) {
+    // required .CodeBattle.Generated_Object bird = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->bird_);
+  }
+
+  if (has_food()) {
+    // required .CodeBattle.Generated_Object food = 5;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->food_);
+  }
+
+  return total_size;
+}
+size_t Common_Frame::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Common_Frame)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x0000001f) ^ 0x0000001f) == 0) {  // All required fields are present.
+    // required bool generated = 1;
+    total_size += 1 + 1;
+
+    // required string chooseip = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->chooseip());
+
+    // required .CodeBattle.Generated_Object animal = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->animal_);
+
+    // required .CodeBattle.Generated_Object bird = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->bird_);
+
+    // required .CodeBattle.Generated_Object food = 5;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->food_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Common_Frame::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Common_Frame)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Common_Frame* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Common_Frame>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Common_Frame)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Common_Frame)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Common_Frame::MergeFrom(const Common_Frame& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Common_Frame)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Common_Frame::UnsafeMergeFrom(const Common_Frame& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_generated()) {
+      set_generated(from.generated());
+    }
+    if (from.has_chooseip()) {
+      set_has_chooseip();
+      chooseip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.chooseip_);
+    }
+    if (from.has_animal()) {
+      mutable_animal()->::CodeBattle::Generated_Object::MergeFrom(from.animal());
+    }
+    if (from.has_bird()) {
+      mutable_bird()->::CodeBattle::Generated_Object::MergeFrom(from.bird());
+    }
+    if (from.has_food()) {
+      mutable_food()->::CodeBattle::Generated_Object::MergeFrom(from.food());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Common_Frame::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Common_Frame)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Common_Frame::CopyFrom(const Common_Frame& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Common_Frame)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Common_Frame::IsInitialized() const {
+  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
+
+  if (has_animal()) {
+    if (!this->animal_->IsInitialized()) return false;
+  }
+  if (has_bird()) {
+    if (!this->bird_->IsInitialized()) return false;
+  }
+  if (has_food()) {
+    if (!this->food_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Common_Frame::Swap(Common_Frame* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Common_Frame::InternalSwap(Common_Frame* other) {
+  std::swap(generated_, other->generated_);
+  chooseip_.Swap(&other->chooseip_);
+  std::swap(animal_, other->animal_);
+  std::swap(bird_, other->bird_);
+  std::swap(food_, other->food_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Common_Frame::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Common_Frame_descriptor_;
+  metadata.reflection = Common_Frame_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Common_Frame
+
+// required bool generated = 1;
+bool Common_Frame::has_generated() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Common_Frame::set_has_generated() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Common_Frame::clear_has_generated() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Common_Frame::clear_generated() {
+  generated_ = false;
+  clear_has_generated();
+}
+bool Common_Frame::generated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.generated)
+  return generated_;
+}
+void Common_Frame::set_generated(bool value) {
+  set_has_generated();
+  generated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Common_Frame.generated)
+}
+
+// required string chooseip = 2;
+bool Common_Frame::has_chooseip() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Common_Frame::set_has_chooseip() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Common_Frame::clear_has_chooseip() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Common_Frame::clear_chooseip() {
+  chooseip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_chooseip();
+}
+const ::std::string& Common_Frame::chooseip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.chooseip)
+  return chooseip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Common_Frame::set_chooseip(const ::std::string& value) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Common_Frame.chooseip)
+}
+void Common_Frame::set_chooseip(const char* value) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Common_Frame.chooseip)
+}
+void Common_Frame::set_chooseip(const char* value, size_t size) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Common_Frame.chooseip)
+}
+::std::string* Common_Frame::mutable_chooseip() {
+  set_has_chooseip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.chooseip)
+  return chooseip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Common_Frame::release_chooseip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.chooseip)
+  clear_has_chooseip();
+  return chooseip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Common_Frame::set_allocated_chooseip(::std::string* chooseip) {
+  if (chooseip != NULL) {
+    set_has_chooseip();
+  } else {
+    clear_has_chooseip();
+  }
+  chooseip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chooseip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.chooseip)
+}
+
+// required .CodeBattle.Generated_Object animal = 3;
+bool Common_Frame::has_animal() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Common_Frame::set_has_animal() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Common_Frame::clear_has_animal() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Common_Frame::clear_animal() {
+  if (animal_ != NULL) animal_->::CodeBattle::Generated_Object::Clear();
+  clear_has_animal();
+}
+const ::CodeBattle::Generated_Object& Common_Frame::animal() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.animal)
+  return animal_ != NULL ? *animal_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+::CodeBattle::Generated_Object* Common_Frame::mutable_animal() {
+  set_has_animal();
+  if (animal_ == NULL) {
+    animal_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.animal)
+  return animal_;
+}
+::CodeBattle::Generated_Object* Common_Frame::release_animal() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.animal)
+  clear_has_animal();
+  ::CodeBattle::Generated_Object* temp = animal_;
+  animal_ = NULL;
+  return temp;
+}
+void Common_Frame::set_allocated_animal(::CodeBattle::Generated_Object* animal) {
+  delete animal_;
+  animal_ = animal;
+  if (animal) {
+    set_has_animal();
+  } else {
+    clear_has_animal();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.animal)
+}
+
+// required .CodeBattle.Generated_Object bird = 4;
+bool Common_Frame::has_bird() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Common_Frame::set_has_bird() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Common_Frame::clear_has_bird() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Common_Frame::clear_bird() {
+  if (bird_ != NULL) bird_->::CodeBattle::Generated_Object::Clear();
+  clear_has_bird();
+}
+const ::CodeBattle::Generated_Object& Common_Frame::bird() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.bird)
+  return bird_ != NULL ? *bird_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+::CodeBattle::Generated_Object* Common_Frame::mutable_bird() {
+  set_has_bird();
+  if (bird_ == NULL) {
+    bird_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.bird)
+  return bird_;
+}
+::CodeBattle::Generated_Object* Common_Frame::release_bird() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.bird)
+  clear_has_bird();
+  ::CodeBattle::Generated_Object* temp = bird_;
+  bird_ = NULL;
+  return temp;
+}
+void Common_Frame::set_allocated_bird(::CodeBattle::Generated_Object* bird) {
+  delete bird_;
+  bird_ = bird;
+  if (bird) {
+    set_has_bird();
+  } else {
+    clear_has_bird();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.bird)
+}
+
+// required .CodeBattle.Generated_Object food = 5;
+bool Common_Frame::has_food() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Common_Frame::set_has_food() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Common_Frame::clear_has_food() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Common_Frame::clear_food() {
+  if (food_ != NULL) food_->::CodeBattle::Generated_Object::Clear();
+  clear_has_food();
+}
+const ::CodeBattle::Generated_Object& Common_Frame::food() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.food)
+  return food_ != NULL ? *food_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+::CodeBattle::Generated_Object* Common_Frame::mutable_food() {
+  set_has_food();
+  if (food_ == NULL) {
+    food_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.food)
+  return food_;
+}
+::CodeBattle::Generated_Object* Common_Frame::release_food() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.food)
+  clear_has_food();
+  ::CodeBattle::Generated_Object* temp = food_;
+  food_ = NULL;
+  return temp;
+}
+void Common_Frame::set_allocated_food(::CodeBattle::Generated_Object* food) {
+  delete food_;
+  food_ = food;
+  if (food) {
+    set_has_food();
+  } else {
+    clear_has_food();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.food)
+}
+
+inline const Common_Frame* Common_Frame::internal_default_instance() {
+  return &Common_Frame_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Single_Frame::kIpFieldNumber;
+const int Single_Frame::kDiedFieldNumber;
+const int Single_Frame::kMovedFieldNumber;
+const int Single_Frame::kDirectionFieldNumber;
+const int Single_Frame::kHpchangedFieldNumber;
+const int Single_Frame::kPlayerhpFieldNumber;
+const int Single_Frame::kEnemyhpFieldNumber;
+const int Single_Frame::kSnowFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Single_Frame::Single_Frame()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Single_Frame)
+}
+
+void Single_Frame::InitAsDefaultInstance() {
+  direction_ = const_cast< ::CodeBattle::Move_Direction*>(
+      ::CodeBattle::Move_Direction::internal_default_instance());
+  playerhp_ = const_cast< ::CodeBattle::Hp_Object*>(
+      ::CodeBattle::Hp_Object::internal_default_instance());
+  enemyhp_ = const_cast< ::CodeBattle::Hp_Object*>(
+      ::CodeBattle::Hp_Object::internal_default_instance());
+  snow_ = const_cast< ::CodeBattle::Generated_Object*>(
+      ::CodeBattle::Generated_Object::internal_default_instance());
+}
+
+Single_Frame::Single_Frame(const Single_Frame& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Single_Frame)
+}
+
+void Single_Frame::SharedCtor() {
+  _cached_size_ = 0;
+  ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  direction_ = NULL;
+  playerhp_ = NULL;
+  enemyhp_ = NULL;
+  snow_ = NULL;
+  ::memset(&died_, 0, reinterpret_cast<char*>(&hpchanged_) -
+    reinterpret_cast<char*>(&died_) + sizeof(hpchanged_));
+}
+
+Single_Frame::~Single_Frame() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Single_Frame)
+  SharedDtor();
+}
+
+void Single_Frame::SharedDtor() {
+  ip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != &Single_Frame_default_instance_.get()) {
+    delete direction_;
+    delete playerhp_;
+    delete enemyhp_;
+    delete snow_;
+  }
+}
+
+void Single_Frame::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Single_Frame::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Single_Frame_descriptor_;
+}
+
+const Single_Frame& Single_Frame::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Single_Frame> Single_Frame_default_instance_;
+
+Single_Frame* Single_Frame::New(::google::protobuf::Arena* arena) const {
+  Single_Frame* n = new Single_Frame;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Single_Frame::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Single_Frame)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(Single_Frame, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<Single_Frame*>(16)->f)
+#endif
+
+#define ZR_(first, last) do {\
+  ::memset(&(first), 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
+
+  if (_has_bits_[0 / 32] & 255u) {
+    ZR_(died_, hpchanged_);
+    if (has_ip()) {
+      ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    }
+    if (has_direction()) {
+      if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
+    }
+    if (has_playerhp()) {
+      if (playerhp_ != NULL) playerhp_->::CodeBattle::Hp_Object::Clear();
+    }
+    if (has_enemyhp()) {
+      if (enemyhp_ != NULL) enemyhp_->::CodeBattle::Hp_Object::Clear();
+    }
+    if (has_snow()) {
+      if (snow_ != NULL) snow_->::CodeBattle::Generated_Object::Clear();
+    }
+  }
+
+#undef ZR_HELPER_
+#undef ZR_
+
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Single_Frame::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Single_Frame)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string ip = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ip()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->ip().data(), this->ip().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "CodeBattle.Single_Frame.ip");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_died;
+        break;
+      }
+
+      // required bool died = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_died:
+          set_has_died();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &died_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_moved;
+        break;
+      }
+
+      // required bool moved = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_moved:
+          set_has_moved();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &moved_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_direction;
+        break;
+      }
+
+      // required .CodeBattle.Move_Direction direction = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_direction:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_direction()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_hpchanged;
+        break;
+      }
+
+      // required bool hpchanged = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_hpchanged:
+          set_has_hpchanged();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &hpchanged_)));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_playerhp;
+        break;
+      }
+
+      // required .CodeBattle.Hp_Object playerhp = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_playerhp:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_playerhp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_enemyhp;
+        break;
+      }
+
+      // required .CodeBattle.Hp_Object enemyhp = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_enemyhp:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_enemyhp()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(66)) goto parse_snow;
+        break;
+      }
+
+      // required .CodeBattle.Generated_Object snow = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_snow:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_snow()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Single_Frame)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Single_Frame)
+  return false;
+#undef DO_
+}
+
+void Single_Frame::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Single_Frame)
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Single_Frame.ip");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->ip(), output);
+  }
+
+  // required bool died = 2;
+  if (has_died()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->died(), output);
+  }
+
+  // required bool moved = 3;
+  if (has_moved()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->moved(), output);
+  }
+
+  // required .CodeBattle.Move_Direction direction = 4;
+  if (has_direction()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, *this->direction_, output);
+  }
+
+  // required bool hpchanged = 5;
+  if (has_hpchanged()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->hpchanged(), output);
+  }
+
+  // required .CodeBattle.Hp_Object playerhp = 6;
+  if (has_playerhp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, *this->playerhp_, output);
+  }
+
+  // required .CodeBattle.Hp_Object enemyhp = 7;
+  if (has_enemyhp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, *this->enemyhp_, output);
+  }
+
+  // required .CodeBattle.Generated_Object snow = 8;
+  if (has_snow()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, *this->snow_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Single_Frame)
+}
+
+::google::protobuf::uint8* Single_Frame::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Single_Frame)
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Single_Frame.ip");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->ip(), target);
+  }
+
+  // required bool died = 2;
+  if (has_died()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->died(), target);
+  }
+
+  // required bool moved = 3;
+  if (has_moved()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->moved(), target);
+  }
+
+  // required .CodeBattle.Move_Direction direction = 4;
+  if (has_direction()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        4, *this->direction_, false, target);
+  }
+
+  // required bool hpchanged = 5;
+  if (has_hpchanged()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->hpchanged(), target);
+  }
+
+  // required .CodeBattle.Hp_Object playerhp = 6;
+  if (has_playerhp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        6, *this->playerhp_, false, target);
+  }
+
+  // required .CodeBattle.Hp_Object enemyhp = 7;
+  if (has_enemyhp()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        7, *this->enemyhp_, false, target);
+  }
+
+  // required .CodeBattle.Generated_Object snow = 8;
+  if (has_snow()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        8, *this->snow_, false, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Single_Frame)
+  return target;
+}
+
+size_t Single_Frame::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Single_Frame)
+  size_t total_size = 0;
+
+  if (has_ip()) {
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+  }
+
+  if (has_died()) {
+    // required bool died = 2;
+    total_size += 1 + 1;
+  }
+
+  if (has_moved()) {
+    // required bool moved = 3;
+    total_size += 1 + 1;
+  }
+
+  if (has_direction()) {
+    // required .CodeBattle.Move_Direction direction = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->direction_);
+  }
+
+  if (has_hpchanged()) {
+    // required bool hpchanged = 5;
+    total_size += 1 + 1;
+  }
+
+  if (has_playerhp()) {
+    // required .CodeBattle.Hp_Object playerhp = 6;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->playerhp_);
+  }
+
+  if (has_enemyhp()) {
+    // required .CodeBattle.Hp_Object enemyhp = 7;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->enemyhp_);
+  }
+
+  if (has_snow()) {
+    // required .CodeBattle.Generated_Object snow = 8;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->snow_);
+  }
+
+  return total_size;
+}
+size_t Single_Frame::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Single_Frame)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x000000ff) ^ 0x000000ff) == 0) {  // All required fields are present.
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+
+    // required bool died = 2;
+    total_size += 1 + 1;
+
+    // required bool moved = 3;
+    total_size += 1 + 1;
+
+    // required .CodeBattle.Move_Direction direction = 4;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->direction_);
+
+    // required bool hpchanged = 5;
+    total_size += 1 + 1;
+
+    // required .CodeBattle.Hp_Object playerhp = 6;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->playerhp_);
+
+    // required .CodeBattle.Hp_Object enemyhp = 7;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->enemyhp_);
+
+    // required .CodeBattle.Generated_Object snow = 8;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->snow_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Single_Frame::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Single_Frame)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Single_Frame* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Single_Frame>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Single_Frame)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Single_Frame)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Single_Frame::MergeFrom(const Single_Frame& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Single_Frame)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Single_Frame::UnsafeMergeFrom(const Single_Frame& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_ip()) {
+      set_has_ip();
+      ip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_);
+    }
+    if (from.has_died()) {
+      set_died(from.died());
+    }
+    if (from.has_moved()) {
+      set_moved(from.moved());
+    }
+    if (from.has_direction()) {
+      mutable_direction()->::CodeBattle::Move_Direction::MergeFrom(from.direction());
+    }
+    if (from.has_hpchanged()) {
+      set_hpchanged(from.hpchanged());
+    }
+    if (from.has_playerhp()) {
+      mutable_playerhp()->::CodeBattle::Hp_Object::MergeFrom(from.playerhp());
+    }
+    if (from.has_enemyhp()) {
+      mutable_enemyhp()->::CodeBattle::Hp_Object::MergeFrom(from.enemyhp());
+    }
+    if (from.has_snow()) {
+      mutable_snow()->::CodeBattle::Generated_Object::MergeFrom(from.snow());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Single_Frame::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Single_Frame)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Single_Frame::CopyFrom(const Single_Frame& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Single_Frame)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Single_Frame::IsInitialized() const {
+  if ((_has_bits_[0] & 0x000000ff) != 0x000000ff) return false;
+
+  if (has_direction()) {
+    if (!this->direction_->IsInitialized()) return false;
+  }
+  if (has_playerhp()) {
+    if (!this->playerhp_->IsInitialized()) return false;
+  }
+  if (has_enemyhp()) {
+    if (!this->enemyhp_->IsInitialized()) return false;
+  }
+  if (has_snow()) {
+    if (!this->snow_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Single_Frame::Swap(Single_Frame* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Single_Frame::InternalSwap(Single_Frame* other) {
+  ip_.Swap(&other->ip_);
+  std::swap(died_, other->died_);
+  std::swap(moved_, other->moved_);
+  std::swap(direction_, other->direction_);
+  std::swap(hpchanged_, other->hpchanged_);
+  std::swap(playerhp_, other->playerhp_);
+  std::swap(enemyhp_, other->enemyhp_);
+  std::swap(snow_, other->snow_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Single_Frame::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Single_Frame_descriptor_;
+  metadata.reflection = Single_Frame_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Single_Frame
+
+// required string ip = 1;
+bool Single_Frame::has_ip() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Single_Frame::set_has_ip() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Single_Frame::clear_has_ip() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Single_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+const ::std::string& Single_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Single_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.ip)
+}
+void Single_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Single_Frame.ip)
+}
+void Single_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Single_Frame.ip)
+}
+::std::string* Single_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Single_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Single_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.ip)
+}
+
+// required bool died = 2;
+bool Single_Frame::has_died() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Single_Frame::set_has_died() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Single_Frame::clear_has_died() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Single_Frame::clear_died() {
+  died_ = false;
+  clear_has_died();
+}
+bool Single_Frame::died() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.died)
+  return died_;
+}
+void Single_Frame::set_died(bool value) {
+  set_has_died();
+  died_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.died)
+}
+
+// required bool moved = 3;
+bool Single_Frame::has_moved() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void Single_Frame::set_has_moved() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void Single_Frame::clear_has_moved() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void Single_Frame::clear_moved() {
+  moved_ = false;
+  clear_has_moved();
+}
+bool Single_Frame::moved() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.moved)
+  return moved_;
+}
+void Single_Frame::set_moved(bool value) {
+  set_has_moved();
+  moved_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.moved)
+}
+
+// required .CodeBattle.Move_Direction direction = 4;
+bool Single_Frame::has_direction() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void Single_Frame::set_has_direction() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void Single_Frame::clear_has_direction() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void Single_Frame::clear_direction() {
+  if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
+  clear_has_direction();
+}
+const ::CodeBattle::Move_Direction& Single_Frame::direction() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.direction)
+  return direction_ != NULL ? *direction_
+                         : *::CodeBattle::Move_Direction::internal_default_instance();
+}
+::CodeBattle::Move_Direction* Single_Frame::mutable_direction() {
+  set_has_direction();
+  if (direction_ == NULL) {
+    direction_ = new ::CodeBattle::Move_Direction;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.direction)
+  return direction_;
+}
+::CodeBattle::Move_Direction* Single_Frame::release_direction() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.direction)
+  clear_has_direction();
+  ::CodeBattle::Move_Direction* temp = direction_;
+  direction_ = NULL;
+  return temp;
+}
+void Single_Frame::set_allocated_direction(::CodeBattle::Move_Direction* direction) {
+  delete direction_;
+  direction_ = direction;
+  if (direction) {
+    set_has_direction();
+  } else {
+    clear_has_direction();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.direction)
+}
+
+// required bool hpchanged = 5;
+bool Single_Frame::has_hpchanged() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Single_Frame::set_has_hpchanged() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Single_Frame::clear_has_hpchanged() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Single_Frame::clear_hpchanged() {
+  hpchanged_ = false;
+  clear_has_hpchanged();
+}
+bool Single_Frame::hpchanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.hpchanged)
+  return hpchanged_;
+}
+void Single_Frame::set_hpchanged(bool value) {
+  set_has_hpchanged();
+  hpchanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.hpchanged)
+}
+
+// required .CodeBattle.Hp_Object playerhp = 6;
+bool Single_Frame::has_playerhp() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void Single_Frame::set_has_playerhp() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void Single_Frame::clear_has_playerhp() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void Single_Frame::clear_playerhp() {
+  if (playerhp_ != NULL) playerhp_->::CodeBattle::Hp_Object::Clear();
+  clear_has_playerhp();
+}
+const ::CodeBattle::Hp_Object& Single_Frame::playerhp() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.playerhp)
+  return playerhp_ != NULL ? *playerhp_
+                         : *::CodeBattle::Hp_Object::internal_default_instance();
+}
+::CodeBattle::Hp_Object* Single_Frame::mutable_playerhp() {
+  set_has_playerhp();
+  if (playerhp_ == NULL) {
+    playerhp_ = new ::CodeBattle::Hp_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.playerhp)
+  return playerhp_;
+}
+::CodeBattle::Hp_Object* Single_Frame::release_playerhp() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.playerhp)
+  clear_has_playerhp();
+  ::CodeBattle::Hp_Object* temp = playerhp_;
+  playerhp_ = NULL;
+  return temp;
+}
+void Single_Frame::set_allocated_playerhp(::CodeBattle::Hp_Object* playerhp) {
+  delete playerhp_;
+  playerhp_ = playerhp;
+  if (playerhp) {
+    set_has_playerhp();
+  } else {
+    clear_has_playerhp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.playerhp)
+}
+
+// required .CodeBattle.Hp_Object enemyhp = 7;
+bool Single_Frame::has_enemyhp() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void Single_Frame::set_has_enemyhp() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void Single_Frame::clear_has_enemyhp() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void Single_Frame::clear_enemyhp() {
+  if (enemyhp_ != NULL) enemyhp_->::CodeBattle::Hp_Object::Clear();
+  clear_has_enemyhp();
+}
+const ::CodeBattle::Hp_Object& Single_Frame::enemyhp() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.enemyhp)
+  return enemyhp_ != NULL ? *enemyhp_
+                         : *::CodeBattle::Hp_Object::internal_default_instance();
+}
+::CodeBattle::Hp_Object* Single_Frame::mutable_enemyhp() {
+  set_has_enemyhp();
+  if (enemyhp_ == NULL) {
+    enemyhp_ = new ::CodeBattle::Hp_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.enemyhp)
+  return enemyhp_;
+}
+::CodeBattle::Hp_Object* Single_Frame::release_enemyhp() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.enemyhp)
+  clear_has_enemyhp();
+  ::CodeBattle::Hp_Object* temp = enemyhp_;
+  enemyhp_ = NULL;
+  return temp;
+}
+void Single_Frame::set_allocated_enemyhp(::CodeBattle::Hp_Object* enemyhp) {
+  delete enemyhp_;
+  enemyhp_ = enemyhp;
+  if (enemyhp) {
+    set_has_enemyhp();
+  } else {
+    clear_has_enemyhp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.enemyhp)
+}
+
+// required .CodeBattle.Generated_Object snow = 8;
+bool Single_Frame::has_snow() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void Single_Frame::set_has_snow() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void Single_Frame::clear_has_snow() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void Single_Frame::clear_snow() {
+  if (snow_ != NULL) snow_->::CodeBattle::Generated_Object::Clear();
+  clear_has_snow();
+}
+const ::CodeBattle::Generated_Object& Single_Frame::snow() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.snow)
+  return snow_ != NULL ? *snow_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+::CodeBattle::Generated_Object* Single_Frame::mutable_snow() {
+  set_has_snow();
+  if (snow_ == NULL) {
+    snow_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.snow)
+  return snow_;
+}
+::CodeBattle::Generated_Object* Single_Frame::release_snow() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.snow)
+  clear_has_snow();
+  ::CodeBattle::Generated_Object* temp = snow_;
+  snow_ = NULL;
+  return temp;
+}
+void Single_Frame::set_allocated_snow(::CodeBattle::Generated_Object* snow) {
+  delete snow_;
+  snow_ = snow;
+  if (snow) {
+    set_has_snow();
+  } else {
+    clear_has_snow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.snow)
+}
+
+inline const Single_Frame* Single_Frame::internal_default_instance() {
+  return &Single_Frame_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Server_Frame::kEmptyFieldNumber;
 const int Server_Frame::kFrameseqFieldNumber;
 const int Server_Frame::kPreframeFieldNumber;
 const int Server_Frame::kLaterframeFieldNumber;
+const int Server_Frame::kComframeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Server_Frame::Server_Frame()
@@ -663,10 +4769,12 @@ Server_Frame::Server_Frame()
 }
 
 void Server_Frame::InitAsDefaultInstance() {
-  preframe_ = const_cast< ::CodeBattle::Client_Frame*>(
-      ::CodeBattle::Client_Frame::internal_default_instance());
-  laterframe_ = const_cast< ::CodeBattle::Client_Frame*>(
-      ::CodeBattle::Client_Frame::internal_default_instance());
+  preframe_ = const_cast< ::CodeBattle::Single_Frame*>(
+      ::CodeBattle::Single_Frame::internal_default_instance());
+  laterframe_ = const_cast< ::CodeBattle::Single_Frame*>(
+      ::CodeBattle::Single_Frame::internal_default_instance());
+  comframe_ = const_cast< ::CodeBattle::Common_Frame*>(
+      ::CodeBattle::Common_Frame::internal_default_instance());
 }
 
 Server_Frame::Server_Frame(const Server_Frame& from)
@@ -681,6 +4789,7 @@ void Server_Frame::SharedCtor() {
   _cached_size_ = 0;
   preframe_ = NULL;
   laterframe_ = NULL;
+  comframe_ = NULL;
   ::memset(&empty_, 0, reinterpret_cast<char*>(&frameseq_) -
     reinterpret_cast<char*>(&empty_) + sizeof(frameseq_));
 }
@@ -694,6 +4803,7 @@ void Server_Frame::SharedDtor() {
   if (this != &Server_Frame_default_instance_.get()) {
     delete preframe_;
     delete laterframe_;
+    delete comframe_;
   }
 }
 
@@ -740,13 +4850,16 @@ void Server_Frame::Clear() {
            ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
 } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 31u) {
     ZR_(empty_, frameseq_);
     if (has_preframe()) {
-      if (preframe_ != NULL) preframe_->::CodeBattle::Client_Frame::Clear();
+      if (preframe_ != NULL) preframe_->::CodeBattle::Single_Frame::Clear();
     }
     if (has_laterframe()) {
-      if (laterframe_ != NULL) laterframe_->::CodeBattle::Client_Frame::Clear();
+      if (laterframe_ != NULL) laterframe_->::CodeBattle::Single_Frame::Clear();
+    }
+    if (has_comframe()) {
+      if (comframe_ != NULL) comframe_->::CodeBattle::Common_Frame::Clear();
     }
   }
 
@@ -798,7 +4911,7 @@ bool Server_Frame::MergePartialFromCodedStream(
         break;
       }
 
-      // required .CodeBattle.Client_Frame preframe = 3;
+      // required .CodeBattle.Single_Frame preframe = 3;
       case 3: {
         if (tag == 26) {
          parse_preframe:
@@ -811,12 +4924,25 @@ bool Server_Frame::MergePartialFromCodedStream(
         break;
       }
 
-      // required .CodeBattle.Client_Frame laterframe = 4;
+      // required .CodeBattle.Single_Frame laterframe = 4;
       case 4: {
         if (tag == 34) {
          parse_laterframe:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_laterframe()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_comframe;
+        break;
+      }
+
+      // required .CodeBattle.Common_Frame comframe = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_comframe:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_comframe()));
         } else {
           goto handle_unusual;
         }
@@ -859,16 +4985,22 @@ void Server_Frame::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->frameseq(), output);
   }
 
-  // required .CodeBattle.Client_Frame preframe = 3;
+  // required .CodeBattle.Single_Frame preframe = 3;
   if (has_preframe()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, *this->preframe_, output);
   }
 
-  // required .CodeBattle.Client_Frame laterframe = 4;
+  // required .CodeBattle.Single_Frame laterframe = 4;
   if (has_laterframe()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, *this->laterframe_, output);
+  }
+
+  // required .CodeBattle.Common_Frame comframe = 5;
+  if (has_comframe()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, *this->comframe_, output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -892,18 +5024,25 @@ void Server_Frame::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->frameseq(), target);
   }
 
-  // required .CodeBattle.Client_Frame preframe = 3;
+  // required .CodeBattle.Single_Frame preframe = 3;
   if (has_preframe()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         3, *this->preframe_, false, target);
   }
 
-  // required .CodeBattle.Client_Frame laterframe = 4;
+  // required .CodeBattle.Single_Frame laterframe = 4;
   if (has_laterframe()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageNoVirtualToArray(
         4, *this->laterframe_, false, target);
+  }
+
+  // required .CodeBattle.Common_Frame comframe = 5;
+  if (has_comframe()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        5, *this->comframe_, false, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -931,17 +5070,24 @@ size_t Server_Frame::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_preframe()) {
-    // required .CodeBattle.Client_Frame preframe = 3;
+    // required .CodeBattle.Single_Frame preframe = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->preframe_);
   }
 
   if (has_laterframe()) {
-    // required .CodeBattle.Client_Frame laterframe = 4;
+    // required .CodeBattle.Single_Frame laterframe = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->laterframe_);
+  }
+
+  if (has_comframe()) {
+    // required .CodeBattle.Common_Frame comframe = 5;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->comframe_);
   }
 
   return total_size;
@@ -950,7 +5096,7 @@ size_t Server_Frame::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CodeBattle.Server_Frame)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+  if (((_has_bits_[0] & 0x0000001f) ^ 0x0000001f) == 0) {  // All required fields are present.
     // required bool empty = 1;
     total_size += 1 + 1;
 
@@ -959,15 +5105,20 @@ size_t Server_Frame::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->frameseq());
 
-    // required .CodeBattle.Client_Frame preframe = 3;
+    // required .CodeBattle.Single_Frame preframe = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->preframe_);
 
-    // required .CodeBattle.Client_Frame laterframe = 4;
+    // required .CodeBattle.Single_Frame laterframe = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         *this->laterframe_);
+
+    // required .CodeBattle.Common_Frame comframe = 5;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->comframe_);
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();
@@ -1018,10 +5169,13 @@ void Server_Frame::UnsafeMergeFrom(const Server_Frame& from) {
       set_frameseq(from.frameseq());
     }
     if (from.has_preframe()) {
-      mutable_preframe()->::CodeBattle::Client_Frame::MergeFrom(from.preframe());
+      mutable_preframe()->::CodeBattle::Single_Frame::MergeFrom(from.preframe());
     }
     if (from.has_laterframe()) {
-      mutable_laterframe()->::CodeBattle::Client_Frame::MergeFrom(from.laterframe());
+      mutable_laterframe()->::CodeBattle::Single_Frame::MergeFrom(from.laterframe());
+    }
+    if (from.has_comframe()) {
+      mutable_comframe()->::CodeBattle::Common_Frame::MergeFrom(from.comframe());
     }
   }
   if (from._internal_metadata_.have_unknown_fields()) {
@@ -1045,13 +5199,16 @@ void Server_Frame::CopyFrom(const Server_Frame& from) {
 }
 
 bool Server_Frame::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
 
   if (has_preframe()) {
     if (!this->preframe_->IsInitialized()) return false;
   }
   if (has_laterframe()) {
     if (!this->laterframe_->IsInitialized()) return false;
+  }
+  if (has_comframe()) {
+    if (!this->comframe_->IsInitialized()) return false;
   }
   return true;
 }
@@ -1065,6 +5222,7 @@ void Server_Frame::InternalSwap(Server_Frame* other) {
   std::swap(frameseq_, other->frameseq_);
   std::swap(preframe_, other->preframe_);
   std::swap(laterframe_, other->laterframe_);
+  std::swap(comframe_, other->comframe_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
@@ -1129,7 +5287,7 @@ void Server_Frame::set_frameseq(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Server_Frame.frameseq)
 }
 
-// required .CodeBattle.Client_Frame preframe = 3;
+// required .CodeBattle.Single_Frame preframe = 3;
 bool Server_Frame::has_preframe() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -1140,30 +5298,30 @@ void Server_Frame::clear_has_preframe() {
   _has_bits_[0] &= ~0x00000004u;
 }
 void Server_Frame::clear_preframe() {
-  if (preframe_ != NULL) preframe_->::CodeBattle::Client_Frame::Clear();
+  if (preframe_ != NULL) preframe_->::CodeBattle::Single_Frame::Clear();
   clear_has_preframe();
 }
-const ::CodeBattle::Client_Frame& Server_Frame::preframe() const {
+const ::CodeBattle::Single_Frame& Server_Frame::preframe() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.preframe)
   return preframe_ != NULL ? *preframe_
-                         : *::CodeBattle::Client_Frame::internal_default_instance();
+                         : *::CodeBattle::Single_Frame::internal_default_instance();
 }
-::CodeBattle::Client_Frame* Server_Frame::mutable_preframe() {
+::CodeBattle::Single_Frame* Server_Frame::mutable_preframe() {
   set_has_preframe();
   if (preframe_ == NULL) {
-    preframe_ = new ::CodeBattle::Client_Frame;
+    preframe_ = new ::CodeBattle::Single_Frame;
   }
   // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.preframe)
   return preframe_;
 }
-::CodeBattle::Client_Frame* Server_Frame::release_preframe() {
+::CodeBattle::Single_Frame* Server_Frame::release_preframe() {
   // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.preframe)
   clear_has_preframe();
-  ::CodeBattle::Client_Frame* temp = preframe_;
+  ::CodeBattle::Single_Frame* temp = preframe_;
   preframe_ = NULL;
   return temp;
 }
-void Server_Frame::set_allocated_preframe(::CodeBattle::Client_Frame* preframe) {
+void Server_Frame::set_allocated_preframe(::CodeBattle::Single_Frame* preframe) {
   delete preframe_;
   preframe_ = preframe;
   if (preframe) {
@@ -1174,7 +5332,7 @@ void Server_Frame::set_allocated_preframe(::CodeBattle::Client_Frame* preframe) 
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.preframe)
 }
 
-// required .CodeBattle.Client_Frame laterframe = 4;
+// required .CodeBattle.Single_Frame laterframe = 4;
 bool Server_Frame::has_laterframe() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -1185,30 +5343,30 @@ void Server_Frame::clear_has_laterframe() {
   _has_bits_[0] &= ~0x00000008u;
 }
 void Server_Frame::clear_laterframe() {
-  if (laterframe_ != NULL) laterframe_->::CodeBattle::Client_Frame::Clear();
+  if (laterframe_ != NULL) laterframe_->::CodeBattle::Single_Frame::Clear();
   clear_has_laterframe();
 }
-const ::CodeBattle::Client_Frame& Server_Frame::laterframe() const {
+const ::CodeBattle::Single_Frame& Server_Frame::laterframe() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.laterframe)
   return laterframe_ != NULL ? *laterframe_
-                         : *::CodeBattle::Client_Frame::internal_default_instance();
+                         : *::CodeBattle::Single_Frame::internal_default_instance();
 }
-::CodeBattle::Client_Frame* Server_Frame::mutable_laterframe() {
+::CodeBattle::Single_Frame* Server_Frame::mutable_laterframe() {
   set_has_laterframe();
   if (laterframe_ == NULL) {
-    laterframe_ = new ::CodeBattle::Client_Frame;
+    laterframe_ = new ::CodeBattle::Single_Frame;
   }
   // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.laterframe)
   return laterframe_;
 }
-::CodeBattle::Client_Frame* Server_Frame::release_laterframe() {
+::CodeBattle::Single_Frame* Server_Frame::release_laterframe() {
   // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.laterframe)
   clear_has_laterframe();
-  ::CodeBattle::Client_Frame* temp = laterframe_;
+  ::CodeBattle::Single_Frame* temp = laterframe_;
   laterframe_ = NULL;
   return temp;
 }
-void Server_Frame::set_allocated_laterframe(::CodeBattle::Client_Frame* laterframe) {
+void Server_Frame::set_allocated_laterframe(::CodeBattle::Single_Frame* laterframe) {
   delete laterframe_;
   laterframe_ = laterframe;
   if (laterframe) {
@@ -1219,6 +5377,51 @@ void Server_Frame::set_allocated_laterframe(::CodeBattle::Client_Frame* laterfra
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.laterframe)
 }
 
+// required .CodeBattle.Common_Frame comframe = 5;
+bool Server_Frame::has_comframe() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void Server_Frame::set_has_comframe() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void Server_Frame::clear_has_comframe() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void Server_Frame::clear_comframe() {
+  if (comframe_ != NULL) comframe_->::CodeBattle::Common_Frame::Clear();
+  clear_has_comframe();
+}
+const ::CodeBattle::Common_Frame& Server_Frame::comframe() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.comframe)
+  return comframe_ != NULL ? *comframe_
+                         : *::CodeBattle::Common_Frame::internal_default_instance();
+}
+::CodeBattle::Common_Frame* Server_Frame::mutable_comframe() {
+  set_has_comframe();
+  if (comframe_ == NULL) {
+    comframe_ = new ::CodeBattle::Common_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.comframe)
+  return comframe_;
+}
+::CodeBattle::Common_Frame* Server_Frame::release_comframe() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.comframe)
+  clear_has_comframe();
+  ::CodeBattle::Common_Frame* temp = comframe_;
+  comframe_ = NULL;
+  return temp;
+}
+void Server_Frame::set_allocated_comframe(::CodeBattle::Common_Frame* comframe) {
+  delete comframe_;
+  comframe_ = comframe;
+  if (comframe) {
+    set_has_comframe();
+  } else {
+    clear_has_comframe();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.comframe)
+}
+
 inline const Server_Frame* Server_Frame::internal_default_instance() {
   return &Server_Frame_default_instance_.get();
 }
@@ -1227,6 +5430,7 @@ inline const Server_Frame* Server_Frame::internal_default_instance() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Login_Frame::kIpFieldNumber;
 const int Login_Frame::kLoginFieldNumber;
 const int Login_Frame::kUsernameFieldNumber;
 const int Login_Frame::kPasswordFieldNumber;
@@ -1252,6 +5456,7 @@ Login_Frame::Login_Frame(const Login_Frame& from)
 
 void Login_Frame::SharedCtor() {
   _cached_size_ = 0;
+  ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   username_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   password_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   login_ = false;
@@ -1263,6 +5468,7 @@ Login_Frame::~Login_Frame() {
 }
 
 void Login_Frame::SharedDtor() {
+  ip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   username_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   password_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1294,7 +5500,10 @@ Login_Frame* Login_Frame::New(::google::protobuf::Arena* arena) const {
 
 void Login_Frame::Clear() {
 // @@protoc_insertion_point(message_clear_start:CodeBattle.Login_Frame)
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 15u) {
+    if (has_ip()) {
+      ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    }
     login_ = false;
     if (has_username()) {
       username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1319,9 +5528,26 @@ bool Login_Frame::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required bool login = 1;
+      // required string ip = 1;
       case 1: {
-        if (tag == 8) {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ip()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->ip().data(), this->ip().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "CodeBattle.Login_Frame.ip");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_login;
+        break;
+      }
+
+      // required bool login = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_login:
           set_has_login();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -1329,13 +5555,13 @@ bool Login_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_username;
+        if (input->ExpectTag(26)) goto parse_username;
         break;
       }
 
-      // required string username = 2;
-      case 2: {
-        if (tag == 18) {
+      // required string username = 3;
+      case 3: {
+        if (tag == 26) {
          parse_username:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_username()));
@@ -1346,13 +5572,13 @@ bool Login_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_password;
+        if (input->ExpectTag(34)) goto parse_password;
         break;
       }
 
-      // required string password = 3;
-      case 3: {
-        if (tag == 26) {
+      // required string password = 4;
+      case 4: {
+        if (tag == 34) {
          parse_password:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_password()));
@@ -1392,29 +5618,39 @@ failure:
 void Login_Frame::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CodeBattle.Login_Frame)
-  // required bool login = 1;
-  if (has_login()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->login(), output);
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Login_Frame.ip");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->ip(), output);
   }
 
-  // required string username = 2;
+  // required bool login = 2;
+  if (has_login()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->login(), output);
+  }
+
+  // required string username = 3;
   if (has_username()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->username().data(), this->username().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "CodeBattle.Login_Frame.username");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->username(), output);
+      3, this->username(), output);
   }
 
-  // required string password = 3;
+  // required string password = 4;
   if (has_password()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->password().data(), this->password().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "CodeBattle.Login_Frame.password");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->password(), output);
+      4, this->password(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1428,12 +5664,23 @@ void Login_Frame::SerializeWithCachedSizes(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Login_Frame)
-  // required bool login = 1;
-  if (has_login()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->login(), target);
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Login_Frame.ip");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->ip(), target);
   }
 
-  // required string username = 2;
+  // required bool login = 2;
+  if (has_login()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->login(), target);
+  }
+
+  // required string username = 3;
   if (has_username()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->username().data(), this->username().length(),
@@ -1441,10 +5688,10 @@ void Login_Frame::SerializeWithCachedSizes(
       "CodeBattle.Login_Frame.username");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->username(), target);
+        3, this->username(), target);
   }
 
-  // required string password = 3;
+  // required string password = 4;
   if (has_password()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->password().data(), this->password().length(),
@@ -1452,7 +5699,7 @@ void Login_Frame::SerializeWithCachedSizes(
       "CodeBattle.Login_Frame.password");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->password(), target);
+        4, this->password(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1467,20 +5714,27 @@ size_t Login_Frame::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Login_Frame)
   size_t total_size = 0;
 
+  if (has_ip()) {
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+  }
+
   if (has_login()) {
-    // required bool login = 1;
+    // required bool login = 2;
     total_size += 1 + 1;
   }
 
   if (has_username()) {
-    // required string username = 2;
+    // required string username = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->username());
   }
 
   if (has_password()) {
-    // required string password = 3;
+    // required string password = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->password());
@@ -1492,16 +5746,21 @@ size_t Login_Frame::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CodeBattle.Login_Frame)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required bool login = 1;
+  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+
+    // required bool login = 2;
     total_size += 1 + 1;
 
-    // required string username = 2;
+    // required string username = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->username());
 
-    // required string password = 3;
+    // required string password = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->password());
@@ -1548,6 +5807,10 @@ void Login_Frame::MergeFrom(const Login_Frame& from) {
 void Login_Frame::UnsafeMergeFrom(const Login_Frame& from) {
   GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_ip()) {
+      set_has_ip();
+      ip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_);
+    }
     if (from.has_login()) {
       set_login(from.login());
     }
@@ -1581,7 +5844,7 @@ void Login_Frame::CopyFrom(const Login_Frame& from) {
 }
 
 bool Login_Frame::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
 
   return true;
 }
@@ -1591,6 +5854,7 @@ void Login_Frame::Swap(Login_Frame* other) {
   InternalSwap(other);
 }
 void Login_Frame::InternalSwap(Login_Frame* other) {
+  ip_.Swap(&other->ip_);
   std::swap(login_, other->login_);
   username_.Swap(&other->username_);
   password_.Swap(&other->password_);
@@ -1610,15 +5874,69 @@ void Login_Frame::InternalSwap(Login_Frame* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Login_Frame
 
-// required bool login = 1;
-bool Login_Frame::has_login() const {
+// required string ip = 1;
+bool Login_Frame::has_ip() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Login_Frame::set_has_login() {
+void Login_Frame::set_has_ip() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Login_Frame::clear_has_login() {
+void Login_Frame::clear_has_ip() {
   _has_bits_[0] &= ~0x00000001u;
+}
+void Login_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+const ::std::string& Login_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Login_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.ip)
+}
+void Login_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Login_Frame.ip)
+}
+void Login_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Login_Frame.ip)
+}
+::std::string* Login_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Login_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Login_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Login_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Login_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.ip)
+}
+
+// required bool login = 2;
+bool Login_Frame::has_login() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Login_Frame::set_has_login() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Login_Frame::clear_has_login() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 void Login_Frame::clear_login() {
   login_ = false;
@@ -1634,15 +5952,15 @@ void Login_Frame::set_login(bool value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.login)
 }
 
-// required string username = 2;
+// required string username = 3;
 bool Login_Frame::has_username() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 void Login_Frame::set_has_username() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 void Login_Frame::clear_has_username() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 void Login_Frame::clear_username() {
   username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1688,15 +6006,15 @@ void Login_Frame::set_allocated_username(::std::string* username) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.username)
 }
 
-// required string password = 3;
+// required string password = 4;
 bool Login_Frame::has_password() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 void Login_Frame::set_has_password() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 void Login_Frame::clear_has_password() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 void Login_Frame::clear_password() {
   password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1750,6 +6068,7 @@ inline const Login_Frame* Login_Frame::internal_default_instance() {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Userinfo_Frame::kIpFieldNumber;
 const int Userinfo_Frame::kIdFieldNumber;
 const int Userinfo_Frame::kUsernameFieldNumber;
 const int Userinfo_Frame::kWinnumbersFieldNumber;
@@ -1777,6 +6096,7 @@ Userinfo_Frame::Userinfo_Frame(const Userinfo_Frame& from)
 
 void Userinfo_Frame::SharedCtor() {
   _cached_size_ = 0;
+  ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   username_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, reinterpret_cast<char*>(&winrate_) -
     reinterpret_cast<char*>(&id_) + sizeof(winrate_));
@@ -1788,6 +6108,7 @@ Userinfo_Frame::~Userinfo_Frame() {
 }
 
 void Userinfo_Frame::SharedDtor() {
+  ip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   username_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1834,8 +6155,11 @@ void Userinfo_Frame::Clear() {
            ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
 } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 63u) {
     ZR_(id_, winrate_);
+    if (has_ip()) {
+      ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    }
     if (has_username()) {
       username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
@@ -1860,9 +6184,26 @@ bool Userinfo_Frame::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 id = 1;
+      // required string ip = 1;
       case 1: {
-        if (tag == 8) {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_ip()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->ip().data(), this->ip().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "CodeBattle.Userinfo_Frame.ip");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_id;
+        break;
+      }
+
+      // required int32 id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_id:
           set_has_id();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -1870,13 +6211,13 @@ bool Userinfo_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_username;
+        if (input->ExpectTag(26)) goto parse_username;
         break;
       }
 
-      // required string username = 2;
-      case 2: {
-        if (tag == 18) {
+      // required string username = 3;
+      case 3: {
+        if (tag == 26) {
          parse_username:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_username()));
@@ -1887,13 +6228,13 @@ bool Userinfo_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_winnumbers;
+        if (input->ExpectTag(32)) goto parse_winnumbers;
         break;
       }
 
-      // required int32 winnumbers = 3;
-      case 3: {
-        if (tag == 24) {
+      // required int32 winnumbers = 4;
+      case 4: {
+        if (tag == 32) {
          parse_winnumbers:
           set_has_winnumbers();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -1902,13 +6243,13 @@ bool Userinfo_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(32)) goto parse_losenumbers;
+        if (input->ExpectTag(40)) goto parse_losenumbers;
         break;
       }
 
-      // required int32 losenumbers = 4;
-      case 4: {
-        if (tag == 32) {
+      // required int32 losenumbers = 5;
+      case 5: {
+        if (tag == 40) {
          parse_losenumbers:
           set_has_losenumbers();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -1917,13 +6258,13 @@ bool Userinfo_Frame::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_winrate;
+        if (input->ExpectTag(48)) goto parse_winrate;
         break;
       }
 
-      // required int32 winrate = 5;
-      case 5: {
-        if (tag == 40) {
+      // required int32 winrate = 6;
+      case 6: {
+        if (tag == 48) {
          parse_winrate:
           set_has_winrate();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -1961,34 +6302,44 @@ failure:
 void Userinfo_Frame::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CodeBattle.Userinfo_Frame)
-  // required int32 id = 1;
-  if (has_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Userinfo_Frame.ip");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->ip(), output);
   }
 
-  // required string username = 2;
+  // required int32 id = 2;
+  if (has_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->id(), output);
+  }
+
+  // required string username = 3;
   if (has_username()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->username().data(), this->username().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "CodeBattle.Userinfo_Frame.username");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->username(), output);
+      3, this->username(), output);
   }
 
-  // required int32 winnumbers = 3;
+  // required int32 winnumbers = 4;
   if (has_winnumbers()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->winnumbers(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->winnumbers(), output);
   }
 
-  // required int32 losenumbers = 4;
+  // required int32 losenumbers = 5;
   if (has_losenumbers()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->losenumbers(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->losenumbers(), output);
   }
 
-  // required int32 winrate = 5;
+  // required int32 winrate = 6;
   if (has_winrate()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->winrate(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->winrate(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2002,12 +6353,23 @@ void Userinfo_Frame::SerializeWithCachedSizes(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
   // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Userinfo_Frame)
-  // required int32 id = 1;
-  if (has_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+  // required string ip = 1;
+  if (has_ip()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->ip().data(), this->ip().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "CodeBattle.Userinfo_Frame.ip");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->ip(), target);
   }
 
-  // required string username = 2;
+  // required int32 id = 2;
+  if (has_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->id(), target);
+  }
+
+  // required string username = 3;
   if (has_username()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->username().data(), this->username().length(),
@@ -2015,22 +6377,22 @@ void Userinfo_Frame::SerializeWithCachedSizes(
       "CodeBattle.Userinfo_Frame.username");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->username(), target);
+        3, this->username(), target);
   }
 
-  // required int32 winnumbers = 3;
+  // required int32 winnumbers = 4;
   if (has_winnumbers()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->winnumbers(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->winnumbers(), target);
   }
 
-  // required int32 losenumbers = 4;
+  // required int32 losenumbers = 5;
   if (has_losenumbers()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->losenumbers(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->losenumbers(), target);
   }
 
-  // required int32 winrate = 5;
+  // required int32 winrate = 6;
   if (has_winrate()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->winrate(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->winrate(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2045,36 +6407,43 @@ size_t Userinfo_Frame::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Userinfo_Frame)
   size_t total_size = 0;
 
+  if (has_ip()) {
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+  }
+
   if (has_id()) {
-    // required int32 id = 1;
+    // required int32 id = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->id());
   }
 
   if (has_username()) {
-    // required string username = 2;
+    // required string username = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->username());
   }
 
   if (has_winnumbers()) {
-    // required int32 winnumbers = 3;
+    // required int32 winnumbers = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->winnumbers());
   }
 
   if (has_losenumbers()) {
-    // required int32 losenumbers = 4;
+    // required int32 losenumbers = 5;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->losenumbers());
   }
 
   if (has_winrate()) {
-    // required int32 winrate = 5;
+    // required int32 winrate = 6;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->winrate());
@@ -2086,28 +6455,33 @@ size_t Userinfo_Frame::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CodeBattle.Userinfo_Frame)
   size_t total_size = 0;
 
-  if (((_has_bits_[0] & 0x0000001f) ^ 0x0000001f) == 0) {  // All required fields are present.
-    // required int32 id = 1;
+  if (((_has_bits_[0] & 0x0000003f) ^ 0x0000003f) == 0) {  // All required fields are present.
+    // required string ip = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->ip());
+
+    // required int32 id = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->id());
 
-    // required string username = 2;
+    // required string username = 3;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->username());
 
-    // required int32 winnumbers = 3;
+    // required int32 winnumbers = 4;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->winnumbers());
 
-    // required int32 losenumbers = 4;
+    // required int32 losenumbers = 5;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->losenumbers());
 
-    // required int32 winrate = 5;
+    // required int32 winrate = 6;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->winrate());
@@ -2154,6 +6528,10 @@ void Userinfo_Frame::MergeFrom(const Userinfo_Frame& from) {
 void Userinfo_Frame::UnsafeMergeFrom(const Userinfo_Frame& from) {
   GOOGLE_DCHECK(&from != this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_ip()) {
+      set_has_ip();
+      ip_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.ip_);
+    }
     if (from.has_id()) {
       set_id(from.id());
     }
@@ -2192,7 +6570,7 @@ void Userinfo_Frame::CopyFrom(const Userinfo_Frame& from) {
 }
 
 bool Userinfo_Frame::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
+  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
   return true;
 }
@@ -2202,6 +6580,7 @@ void Userinfo_Frame::Swap(Userinfo_Frame* other) {
   InternalSwap(other);
 }
 void Userinfo_Frame::InternalSwap(Userinfo_Frame* other) {
+  ip_.Swap(&other->ip_);
   std::swap(id_, other->id_);
   username_.Swap(&other->username_);
   std::swap(winnumbers_, other->winnumbers_);
@@ -2223,15 +6602,69 @@ void Userinfo_Frame::InternalSwap(Userinfo_Frame* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // Userinfo_Frame
 
-// required int32 id = 1;
-bool Userinfo_Frame::has_id() const {
+// required string ip = 1;
+bool Userinfo_Frame::has_ip() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-void Userinfo_Frame::set_has_id() {
+void Userinfo_Frame::set_has_ip() {
   _has_bits_[0] |= 0x00000001u;
 }
-void Userinfo_Frame::clear_has_id() {
+void Userinfo_Frame::clear_has_ip() {
   _has_bits_[0] &= ~0x00000001u;
+}
+void Userinfo_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+const ::std::string& Userinfo_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Userinfo_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.ip)
+}
+void Userinfo_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Userinfo_Frame.ip)
+}
+void Userinfo_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Userinfo_Frame.ip)
+}
+::std::string* Userinfo_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Userinfo_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* Userinfo_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Userinfo_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void Userinfo_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Userinfo_Frame.ip)
+}
+
+// required int32 id = 2;
+bool Userinfo_Frame::has_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Userinfo_Frame::set_has_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Userinfo_Frame::clear_has_id() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 void Userinfo_Frame::clear_id() {
   id_ = 0;
@@ -2247,15 +6680,15 @@ void Userinfo_Frame::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.id)
 }
 
-// required string username = 2;
+// required string username = 3;
 bool Userinfo_Frame::has_username() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 void Userinfo_Frame::set_has_username() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 void Userinfo_Frame::clear_has_username() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 void Userinfo_Frame::clear_username() {
   username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -2301,15 +6734,15 @@ void Userinfo_Frame::set_allocated_username(::std::string* username) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Userinfo_Frame.username)
 }
 
-// required int32 winnumbers = 3;
+// required int32 winnumbers = 4;
 bool Userinfo_Frame::has_winnumbers() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 void Userinfo_Frame::set_has_winnumbers() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 void Userinfo_Frame::clear_has_winnumbers() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 void Userinfo_Frame::clear_winnumbers() {
   winnumbers_ = 0;
@@ -2325,15 +6758,15 @@ void Userinfo_Frame::set_winnumbers(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.winnumbers)
 }
 
-// required int32 losenumbers = 4;
+// required int32 losenumbers = 5;
 bool Userinfo_Frame::has_losenumbers() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void Userinfo_Frame::set_has_losenumbers() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void Userinfo_Frame::clear_has_losenumbers() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void Userinfo_Frame::clear_losenumbers() {
   losenumbers_ = 0;
@@ -2349,15 +6782,15 @@ void Userinfo_Frame::set_losenumbers(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.losenumbers)
 }
 
-// required int32 winrate = 5;
+// required int32 winrate = 6;
 bool Userinfo_Frame::has_winrate() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 void Userinfo_Frame::set_has_winrate() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 void Userinfo_Frame::clear_has_winrate() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 void Userinfo_Frame::clear_winrate() {
   winrate_ = 0;
@@ -2375,6 +6808,433 @@ void Userinfo_Frame::set_winrate(::google::protobuf::int32 value) {
 
 inline const Userinfo_Frame* Userinfo_Frame::internal_default_instance() {
   return &Userinfo_Frame_default_instance_.get();
+}
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Totalinfo_Frame::kPreinfoFieldNumber;
+const int Totalinfo_Frame::kLaterinfoFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Totalinfo_Frame::Totalinfo_Frame()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (this != internal_default_instance()) protobuf_InitDefaults_msg_2eproto();
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CodeBattle.Totalinfo_Frame)
+}
+
+void Totalinfo_Frame::InitAsDefaultInstance() {
+  preinfo_ = const_cast< ::CodeBattle::Userinfo_Frame*>(
+      ::CodeBattle::Userinfo_Frame::internal_default_instance());
+  laterinfo_ = const_cast< ::CodeBattle::Userinfo_Frame*>(
+      ::CodeBattle::Userinfo_Frame::internal_default_instance());
+}
+
+Totalinfo_Frame::Totalinfo_Frame(const Totalinfo_Frame& from)
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
+  SharedCtor();
+  UnsafeMergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CodeBattle.Totalinfo_Frame)
+}
+
+void Totalinfo_Frame::SharedCtor() {
+  _cached_size_ = 0;
+  preinfo_ = NULL;
+  laterinfo_ = NULL;
+}
+
+Totalinfo_Frame::~Totalinfo_Frame() {
+  // @@protoc_insertion_point(destructor:CodeBattle.Totalinfo_Frame)
+  SharedDtor();
+}
+
+void Totalinfo_Frame::SharedDtor() {
+  if (this != &Totalinfo_Frame_default_instance_.get()) {
+    delete preinfo_;
+    delete laterinfo_;
+  }
+}
+
+void Totalinfo_Frame::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* Totalinfo_Frame::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Totalinfo_Frame_descriptor_;
+}
+
+const Totalinfo_Frame& Totalinfo_Frame::default_instance() {
+  protobuf_InitDefaults_msg_2eproto();
+  return *internal_default_instance();
+}
+
+::google::protobuf::internal::ExplicitlyConstructed<Totalinfo_Frame> Totalinfo_Frame_default_instance_;
+
+Totalinfo_Frame* Totalinfo_Frame::New(::google::protobuf::Arena* arena) const {
+  Totalinfo_Frame* n = new Totalinfo_Frame;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void Totalinfo_Frame::Clear() {
+// @@protoc_insertion_point(message_clear_start:CodeBattle.Totalinfo_Frame)
+  if (_has_bits_[0 / 32] & 3u) {
+    if (has_preinfo()) {
+      if (preinfo_ != NULL) preinfo_->::CodeBattle::Userinfo_Frame::Clear();
+    }
+    if (has_laterinfo()) {
+      if (laterinfo_ != NULL) laterinfo_->::CodeBattle::Userinfo_Frame::Clear();
+    }
+  }
+  _has_bits_.Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
+}
+
+bool Totalinfo_Frame::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CodeBattle.Totalinfo_Frame)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required .CodeBattle.Userinfo_Frame preinfo = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_preinfo()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_laterinfo;
+        break;
+      }
+
+      // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_laterinfo:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_laterinfo()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CodeBattle.Totalinfo_Frame)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CodeBattle.Totalinfo_Frame)
+  return false;
+#undef DO_
+}
+
+void Totalinfo_Frame::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CodeBattle.Totalinfo_Frame)
+  // required .CodeBattle.Userinfo_Frame preinfo = 1;
+  if (has_preinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->preinfo_, output);
+  }
+
+  // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+  if (has_laterinfo()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->laterinfo_, output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CodeBattle.Totalinfo_Frame)
+}
+
+::google::protobuf::uint8* Totalinfo_Frame::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:CodeBattle.Totalinfo_Frame)
+  // required .CodeBattle.Userinfo_Frame preinfo = 1;
+  if (has_preinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->preinfo_, false, target);
+  }
+
+  // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+  if (has_laterinfo()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->laterinfo_, false, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CodeBattle.Totalinfo_Frame)
+  return target;
+}
+
+size_t Totalinfo_Frame::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CodeBattle.Totalinfo_Frame)
+  size_t total_size = 0;
+
+  if (has_preinfo()) {
+    // required .CodeBattle.Userinfo_Frame preinfo = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->preinfo_);
+  }
+
+  if (has_laterinfo()) {
+    // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->laterinfo_);
+  }
+
+  return total_size;
+}
+size_t Totalinfo_Frame::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CodeBattle.Totalinfo_Frame)
+  size_t total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required .CodeBattle.Userinfo_Frame preinfo = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->preinfo_);
+
+    // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->laterinfo_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void Totalinfo_Frame::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CodeBattle.Totalinfo_Frame)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  const Totalinfo_Frame* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Totalinfo_Frame>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CodeBattle.Totalinfo_Frame)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CodeBattle.Totalinfo_Frame)
+    UnsafeMergeFrom(*source);
+  }
+}
+
+void Totalinfo_Frame::MergeFrom(const Totalinfo_Frame& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CodeBattle.Totalinfo_Frame)
+  if (GOOGLE_PREDICT_TRUE(&from != this)) {
+    UnsafeMergeFrom(from);
+  } else {
+    MergeFromFail(__LINE__);
+  }
+}
+
+void Totalinfo_Frame::UnsafeMergeFrom(const Totalinfo_Frame& from) {
+  GOOGLE_DCHECK(&from != this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_preinfo()) {
+      mutable_preinfo()->::CodeBattle::Userinfo_Frame::MergeFrom(from.preinfo());
+    }
+    if (from.has_laterinfo()) {
+      mutable_laterinfo()->::CodeBattle::Userinfo_Frame::MergeFrom(from.laterinfo());
+    }
+  }
+  if (from._internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::UnknownFieldSet::MergeToInternalMetdata(
+      from.unknown_fields(), &_internal_metadata_);
+  }
+}
+
+void Totalinfo_Frame::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CodeBattle.Totalinfo_Frame)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Totalinfo_Frame::CopyFrom(const Totalinfo_Frame& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CodeBattle.Totalinfo_Frame)
+  if (&from == this) return;
+  Clear();
+  UnsafeMergeFrom(from);
+}
+
+bool Totalinfo_Frame::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  if (has_preinfo()) {
+    if (!this->preinfo_->IsInitialized()) return false;
+  }
+  if (has_laterinfo()) {
+    if (!this->laterinfo_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void Totalinfo_Frame::Swap(Totalinfo_Frame* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Totalinfo_Frame::InternalSwap(Totalinfo_Frame* other) {
+  std::swap(preinfo_, other->preinfo_);
+  std::swap(laterinfo_, other->laterinfo_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata Totalinfo_Frame::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = Totalinfo_Frame_descriptor_;
+  metadata.reflection = Totalinfo_Frame_reflection_;
+  return metadata;
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Totalinfo_Frame
+
+// required .CodeBattle.Userinfo_Frame preinfo = 1;
+bool Totalinfo_Frame::has_preinfo() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void Totalinfo_Frame::set_has_preinfo() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void Totalinfo_Frame::clear_has_preinfo() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void Totalinfo_Frame::clear_preinfo() {
+  if (preinfo_ != NULL) preinfo_->::CodeBattle::Userinfo_Frame::Clear();
+  clear_has_preinfo();
+}
+const ::CodeBattle::Userinfo_Frame& Totalinfo_Frame::preinfo() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Totalinfo_Frame.preinfo)
+  return preinfo_ != NULL ? *preinfo_
+                         : *::CodeBattle::Userinfo_Frame::internal_default_instance();
+}
+::CodeBattle::Userinfo_Frame* Totalinfo_Frame::mutable_preinfo() {
+  set_has_preinfo();
+  if (preinfo_ == NULL) {
+    preinfo_ = new ::CodeBattle::Userinfo_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Totalinfo_Frame.preinfo)
+  return preinfo_;
+}
+::CodeBattle::Userinfo_Frame* Totalinfo_Frame::release_preinfo() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Totalinfo_Frame.preinfo)
+  clear_has_preinfo();
+  ::CodeBattle::Userinfo_Frame* temp = preinfo_;
+  preinfo_ = NULL;
+  return temp;
+}
+void Totalinfo_Frame::set_allocated_preinfo(::CodeBattle::Userinfo_Frame* preinfo) {
+  delete preinfo_;
+  preinfo_ = preinfo;
+  if (preinfo) {
+    set_has_preinfo();
+  } else {
+    clear_has_preinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Totalinfo_Frame.preinfo)
+}
+
+// required .CodeBattle.Userinfo_Frame laterinfo = 2;
+bool Totalinfo_Frame::has_laterinfo() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void Totalinfo_Frame::set_has_laterinfo() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void Totalinfo_Frame::clear_has_laterinfo() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void Totalinfo_Frame::clear_laterinfo() {
+  if (laterinfo_ != NULL) laterinfo_->::CodeBattle::Userinfo_Frame::Clear();
+  clear_has_laterinfo();
+}
+const ::CodeBattle::Userinfo_Frame& Totalinfo_Frame::laterinfo() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Totalinfo_Frame.laterinfo)
+  return laterinfo_ != NULL ? *laterinfo_
+                         : *::CodeBattle::Userinfo_Frame::internal_default_instance();
+}
+::CodeBattle::Userinfo_Frame* Totalinfo_Frame::mutable_laterinfo() {
+  set_has_laterinfo();
+  if (laterinfo_ == NULL) {
+    laterinfo_ = new ::CodeBattle::Userinfo_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Totalinfo_Frame.laterinfo)
+  return laterinfo_;
+}
+::CodeBattle::Userinfo_Frame* Totalinfo_Frame::release_laterinfo() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Totalinfo_Frame.laterinfo)
+  clear_has_laterinfo();
+  ::CodeBattle::Userinfo_Frame* temp = laterinfo_;
+  laterinfo_ = NULL;
+  return temp;
+}
+void Totalinfo_Frame::set_allocated_laterinfo(::CodeBattle::Userinfo_Frame* laterinfo) {
+  delete laterinfo_;
+  laterinfo_ = laterinfo;
+  if (laterinfo) {
+    set_has_laterinfo();
+  } else {
+    clear_has_laterinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Totalinfo_Frame.laterinfo)
+}
+
+inline const Totalinfo_Frame* Totalinfo_Frame::internal_default_instance() {
+  return &Totalinfo_Frame_default_instance_.get();
 }
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 

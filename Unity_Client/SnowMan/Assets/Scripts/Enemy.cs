@@ -81,6 +81,14 @@ public class Enemy : MonoBehaviour {
     private float die_count;
     private GameObject ladder;
 
+    //hp
+    //public Slider healthSlider;
+    private float barDisplay;
+    //public Vector2 pos = new Vector2(20, 40);
+    //public Vector2 size = new Vector2(100, 20);
+    public Texture2D emptyTex;
+    public Texture2D fullTex;
+
     // Use this for initialization
     void Start()
     {
@@ -119,6 +127,7 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        barDisplay = HP * 0.01f;
         if (Is_died)
         {
             if (die_count >= die_time)
@@ -398,10 +407,23 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void OnGUI()
     {
-        GUI.color = Color.red;
+        //GUI.color = Color.red;
 
-        GUI.Label(new Rect(870, 0, 200, 30), "Enemy HP: " + HP.ToString());
-        
+        //GUI.Label(new Rect(870, 0, 200, 30), "Enemy HP: " + HP.ToString());
+
+        Vector2 pos = new Vector2(870, 30);
+        Vector2 size = new Vector2(100, 30);
+
+        //draw the background:
+        GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
+        GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
+
+        //draw the filled-in part:
+        GUI.BeginGroup(new Rect(0, 0, size.x * barDisplay, size.y));
+        GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
+        GUI.EndGroup();
+        GUI.EndGroup();
+
         //EditorGUILayout.Vector2Field("HP:"+HP.ToString(),p1);
     }
 

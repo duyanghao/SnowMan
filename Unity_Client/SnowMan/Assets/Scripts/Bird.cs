@@ -12,8 +12,15 @@ public class Bird : MonoBehaviour {
     private Vector3 target;
     //eps
     private float eps;
+    //sprite
+    //SpriteRenderer
+    private SpriteRenderer spriteRenderer;
+    public Sprite forward_sprites;
+    public Sprite backward_sprites;
+
     void Start ()
     {
+        spriteRenderer = gameObject.GetComponent<Renderer>() as SpriteRenderer;
         Debug.Log("bird created position:"+transform.position);
         player = GameObject.FindWithTag("player");
         if (!player)
@@ -27,11 +34,15 @@ public class Bird : MonoBehaviour {
         {
             //right move
             target = new Vector3(-1*left_border,transform.position.y,transform.position.z);
+            //forward_sprites
+            spriteRenderer.sprite = forward_sprites;
         }
         else
         {
             //left move
             target = new Vector3(left_border,transform.position.y,transform.position.z);
+            //backward_sprites
+            spriteRenderer.sprite = backward_sprites;
         }
         eps = 0.001f;
         //repeated create bird

@@ -16,6 +16,11 @@ public class button_click : MonoBehaviour {
     public GameObject player_win_again;
     public GameObject player_lose_again;
 
+    //attack time
+    public float attack_time;
+    private float attack_count;
+    private bool is_attack;
+
     // Use this for initialization
     void Start () {
         _player = GameObject.FindWithTag("player");
@@ -26,12 +31,24 @@ public class button_click : MonoBehaviour {
         player= _player.GetComponent<Player>();
         //init the ui
         InitPanel();
+        //init the attack
+        is_attack = true;
+        attack_count = 0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        //...
+        if (!is_attack)
+        {
+            attack_count += Time.deltaTime;
+            if (attack_count >= attack_time)
+            {
+                attack_count = 0f;
+                is_attack = true;
+            }
+        }
+    }
     //button click
     public void OnMyButtonClickLeft()
     {
@@ -51,8 +68,14 @@ public class button_click : MonoBehaviour {
     }
     public void OnMyButtonClickAttack()
     {
+        if (!is_attack)
+        {
+            return;
+        }
         Debug.Log("attack Button click");
         player.Set_Player_OpeState(Player.OpeState.ATTACK);
+        //set attack
+        is_attack = false;
     }
 
     //external panel function

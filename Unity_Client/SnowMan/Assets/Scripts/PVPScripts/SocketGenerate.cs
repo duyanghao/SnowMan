@@ -10,29 +10,38 @@ public class SocketGenerate : MonoBehaviour {
     private SocketHelper socket_instance = SocketHelper.GetInstance();
 
     //player
-    private GameObject _player;
-    private Player player;
-    private Enemy enemy;
+    private GameObject _pvpplayer;
+    private PvpPlayer pvpplayer;
+    private PvpEnemy pvpenemy;
 
     //ip
-    public string ip;
-    
+    public static string ip;
+
+    //animal
+    public GameObject AnimalPrefab;
+    //bird
+    public GameObject BirdPrefab;
+    //food
+    public GameObject FoodPrefab;
+    //generate
+    //public GameObject GenerateObject;
+
     // Use this for initialization
     void Start () {
         //player
-        _player = GameObject.FindWithTag("player");
-        if (!_player)
+        _pvpplayer = GameObject.FindWithTag("player");
+        if (!_pvpplayer)
         {
             Debug.LogError("no player available");
         }
-        player = _player.GetComponent<Player>();
+        pvpplayer = _pvpplayer.GetComponent<PvpPlayer>();
         //enemy
-        _player = GameObject.FindWithTag("enemy");
-        if (!_player)
+        _pvpplayer = GameObject.FindWithTag("enemy");
+        if (!_pvpplayer)
         {
             Debug.LogError("no enemy available");
         }
-        enemy = _player.GetComponent<Enemy>();
+        pvpenemy = _pvpplayer.GetComponent<PvpEnemy>();
         //get ip
         ip = GetInternalIP();
         if (ip == "")
@@ -168,130 +177,286 @@ public class SocketGenerate : MonoBehaviour {
         else if (serverframe.Frameseq > 0 && !serverframe.Empty)
         {
             Debug.Log("frame receive:" + serverframe);
+            if (serverframe.Preframe.Died || serverframe.Laterframe.Died)
+            {
+                //do not generate object
+                //GenerateObject.SetActive(false);
+                //do something about finish the game
+                if (serverframe.Preframe.Died)
+                {
+                    if (ip == serverframe.Preframe.Ip)
+                    {
+                        //show lose panel
+                        pvpplayer.Die();
+                        pvpplayer.Set_died(true);
+                    }
+                    else
+                    {
+                        //show success panel
+                        pvpenemy.Die();
+                        pvpenemy.Set_died(true);
+                    }
+                }
+                else
+                {
+                    if (ip == serverframe.Laterframe.Ip)
+                    {
+                        //show lose panel
+                        pvpplayer.Die();
+                        pvpplayer.Set_died(true);
+                    }
+                    else
+                    {
+                        //show success panel
+                        pvpenemy.Die();
+                        pvpenemy.Set_died(true);
+                    }
+                }
+                return;
+            }
+            //the game is not over...
             if (serverframe.Preframe.Ip != "")
             {
                 if (serverframe.Preframe.Ip == ip)
-                {
-                    switch (serverframe.Preframe.Direction)
+                {   
+                    //moved
+                    if (serverframe.Preframe.Moved)
                     {
-                        case 1:
-                            //Debug.Log("left Button click receive");
+                        if (serverframe.Preframe.Direction.Left)
+                        {
                             print("player left Button click receive:\n" + serverframe.Preframe);
-                            player.Set_Player_MoveState(Player.MoveState.LEFT);
-                            break;
-                        case 2:
-                            //Debug.Log("right Button click receive");
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.LEFT);
+                        }   
+                        else if (serverframe.Preframe.Direction.Right)
+                        {
                             print("player right Button click receive:\n" + serverframe.Preframe);
-                            player.Set_Player_MoveState(Player.MoveState.RIGHT);
-                            break;
-                        case 3:
-                            //Debug.Log("up Button click receive");
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.RIGHT);
+                        }
+                        else if (serverframe.Preframe.Direction.Up)
+                        {
                             print("player up Button click receive:\n" + serverframe.Preframe);
-                            player.Set_Player_MoveState(Player.MoveState.UP);
-                            break;
-                        case 4:
-                            //Debug.Log("attack Button click receive");
-                            print("player attack Button click receive:\n" + serverframe.Preframe);
-                            player.Set_Player_OpeState(Player.OpeState.ATTACK);
-                            break;
-                        default:
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.UP);
+                        }
+                        else
+                        {
                             Debug.LogError("invalid direction:" + serverframe.Preframe.Direction);
-                            break;
+                        }
+                    }
+                    //player snow created
+                    if (serverframe.Preframe.Snow.Isgenerated)
+                    {
+                        //attack
+                        print("player-side create snow:\n" + serverframe.Preframe);
+                        //pvpplayer.Set_Player_OpeState(Player.OpeState.ATTACK);
+                        Vector3 start_pos = new Vector3(serverframe.Preframe.Snow.Pos.X, serverframe.Preframe.Snow.Pos.Y, serverframe.Preframe.Snow.Pos.Z);
+                        pvpplayer.Throw_Snow(start_pos);
+                    }
+                    //hpchanged
+                    if (serverframe.Preframe.Hpchanged)
+                    {
+                        if (serverframe.Preframe.Playerhp.Ischanged)
+                        {
+                            pvpplayer.TakeDamage(serverframe.Preframe.Playerhp.Changevalue);
+                        }
+                        if (serverframe.Preframe.Enemyhp.Ischanged)
+                        {
+                            pvpenemy.TakeDamage(serverframe.Preframe.Enemyhp.Changevalue);
+                        }
                     }
                 }
                 else
                 {
-                    switch (serverframe.Preframe.Direction)
+                    //enemy moved
+                    if (serverframe.Preframe.Moved)
                     {
-                        case 1:
+                        if (serverframe.Preframe.Direction.Left)
+                        {
                             print("enemy right Button click receive:\n" + serverframe.Preframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.RIGHT);
-                            break;
-                        case 2:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.RIGHT);
+                        }
+                        else if (serverframe.Preframe.Direction.Right)
+                        {
                             print("enemy left Button click receive:\n" + serverframe.Preframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.LEFT);
-                            break;
-                        case 3:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.LEFT);
+                        }
+                        else if (serverframe.Preframe.Direction.Up)
+                        {
                             print("enemy up Button click receive:\n" + serverframe.Preframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.UP);
-                            break;
-                        case 4:
-                            print("enemy attack Button click receive:\n" + serverframe.Preframe);
-                            enemy.Set_Player_OpeState(Enemy.OpeState.ATTACK);
-                            break;
-                        default:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.UP);
+                        }
+                        else
+                        {
                             Debug.LogError("invalid direction:" + serverframe.Preframe.Direction);
-                            break;
+                        }
+                    }
+                    //enemy snow created
+                    if (serverframe.Preframe.Snow.Isgenerated)
+                    {
+                        //attack
+                        print("enemy-side create snow:\n" + serverframe.Preframe);
+                        //pvpenemy.Set_Player_OpeState(Enemy.OpeState.ATTACK);
+                        Vector3 start_pos = new Vector3(-1*serverframe.Preframe.Snow.Pos.X, serverframe.Preframe.Snow.Pos.Y, serverframe.Preframe.Snow.Pos.Z);
+                        pvpenemy.Throw_Snow(start_pos);
+                    }
+                    //hpchanged
+                    if (serverframe.Preframe.Hpchanged)
+                    {
+                        if (serverframe.Preframe.Playerhp.Ischanged)
+                        {
+                            pvpenemy.TakeDamage(serverframe.Preframe.Playerhp.Changevalue);
+                        }
+                        if (serverframe.Preframe.Enemyhp.Ischanged)
+                        {
+                            pvpplayer.TakeDamage(serverframe.Preframe.Enemyhp.Changevalue);
+                        }
                     }
                 }
             }
-            if (serverframe.Laterframe.Ip != "" )
+            if (serverframe.Laterframe.Ip != "")
             {
                 if (serverframe.Laterframe.Ip == ip)
                 {
-                    switch (serverframe.Laterframe.Direction)
+                    //moved
+                    if (serverframe.Laterframe.Moved)
                     {
-                        case 1:
-                            //Debug.Log("left Button click receive");
+                        if (serverframe.Laterframe.Direction.Left)
+                        {
                             print("player left Button click receive:\n" + serverframe.Laterframe);
-                            player.Set_Player_MoveState(Player.MoveState.LEFT);
-                            break;
-                        case 2:
-                            //Debug.Log("right Button click receive");
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.LEFT);
+                        }
+                        else if (serverframe.Laterframe.Direction.Right)
+                        {
                             print("player right Button click receive:\n" + serverframe.Laterframe);
-                            player.Set_Player_MoveState(Player.MoveState.RIGHT);
-                            break;
-                        case 3:
-                            //Debug.Log("up Button click receive");
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.RIGHT);
+                        }
+                        else if (serverframe.Laterframe.Direction.Up)
+                        {
                             print("player up Button click receive:\n" + serverframe.Laterframe);
-                            player.Set_Player_MoveState(Player.MoveState.UP);
-                            break;
-                        case 4:
-                            //Debug.Log("attack Button click receive");
-                            print("player attack Button click receive:\n" + serverframe.Laterframe);
-                            player.Set_Player_OpeState(Player.OpeState.ATTACK);
-                            break;
-                        default:
+                            pvpplayer.Set_Player_MoveState(PvpPlayer.MoveState.UP);
+                        }
+                        else
+                        {
                             Debug.LogError("invalid direction:" + serverframe.Laterframe.Direction);
-                            break;
+                        }
+                    }
+                    //player snow created
+                    if (serverframe.Laterframe.Snow.Isgenerated)
+                    {
+                        //attack
+                        print("player-side create snow:\n" + serverframe.Laterframe);
+                        Vector3 start_pos = new Vector3(serverframe.Laterframe.Snow.Pos.X, serverframe.Laterframe.Snow.Pos.Y, serverframe.Laterframe.Snow.Pos.Z);
+                        pvpplayer.Throw_Snow(start_pos);
+                    }
+                    //hpchanged
+                    if (serverframe.Laterframe.Hpchanged)
+                    {
+                        if (serverframe.Laterframe.Playerhp.Ischanged)
+                        {
+                            pvpplayer.TakeDamage(serverframe.Laterframe.Playerhp.Changevalue);
+                        }
+                        if (serverframe.Laterframe.Enemyhp.Ischanged)
+                        {
+                            pvpenemy.TakeDamage(serverframe.Laterframe.Enemyhp.Changevalue);
+                        }
                     }
                 }
                 else
                 {
-                    switch (serverframe.Laterframe.Direction)
+                    //moved
+                    if (serverframe.Laterframe.Moved)
                     {
-                        case 1:
+                        if (serverframe.Laterframe.Direction.Left)
+                        {
                             print("enemy right Button click receive:\n" + serverframe.Laterframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.RIGHT);
-                            break;
-                        case 2:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.RIGHT);
+                        }
+                        else if (serverframe.Laterframe.Direction.Right)
+                        {
                             print("enemy left Button click receive:\n" + serverframe.Laterframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.LEFT);
-                            break;
-                        case 3:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.LEFT);
+                        }
+                        else if (serverframe.Laterframe.Direction.Up)
+                        {
                             print("enemy up Button click receive:\n" + serverframe.Laterframe);
-                            enemy.Set_Player_MoveState(Enemy.MoveState.UP);
-                            break;
-                        case 4:
-                            print("enemy attack Button click receive:\n" + serverframe.Laterframe);
-                            enemy.Set_Player_OpeState(Enemy.OpeState.ATTACK);
-                            break;
-                        default:
+                            pvpenemy.Set_Player_MoveState(PvpEnemy.MoveState.UP);
+                        }
+                        else
+                        {
                             Debug.LogError("invalid direction:" + serverframe.Laterframe.Direction);
-                            break;
+                        }
+                    }
+                    //enemy snow created
+                    if (serverframe.Laterframe.Snow.Isgenerated)
+                    {
+                        //attack
+                        print("enemy-side create snow:\n" + serverframe.Laterframe);
+                        Vector3 start_pos = new Vector3(-1*serverframe.Laterframe.Snow.Pos.X, serverframe.Laterframe.Snow.Pos.Y, serverframe.Laterframe.Snow.Pos.Z);
+                        pvpenemy.Throw_Snow(start_pos);
+                    }
+                    //hpchanged
+                    if (serverframe.Laterframe.Hpchanged)
+                    {
+                        if (serverframe.Laterframe.Playerhp.Ischanged)
+                        {
+                            pvpenemy.TakeDamage(serverframe.Laterframe.Playerhp.Changevalue);
+                        }
+                        if (serverframe.Laterframe.Enemyhp.Ischanged)
+                        {
+                            pvpplayer.TakeDamage(serverframe.Laterframe.Enemyhp.Changevalue);
+                        }
                     }
                 }
             }
-            
-            /*
-            else
+
+            //produce common frame
+            if (serverframe.Comframe.Generated)
             {
-                Debug.LogError("invalid ip received");
-                Debug.LogError("local ip:" + ip);
-                Debug.LogError("preframe ip:" + serverframe.Preframe.Ip);
-                Debug.LogError("laterframe ip:" + serverframe.Laterframe.Ip);
+                Vector3 start_position;
+                if (serverframe.Comframe.Animal.Isgenerated)
+                {
+                    Debug.Log("Animal created");
+                    //create animal
+                    if (ip == serverframe.Comframe.Chooseip)
+                    {
+                        start_position = new Vector3(serverframe.Comframe.Animal.Pos.X, serverframe.Comframe.Animal.Pos.Y, serverframe.Comframe.Animal.Pos.Z);
+                    }
+                    else
+                    {
+                        start_position = new Vector3(-1 * serverframe.Comframe.Animal.Pos.X, serverframe.Comframe.Animal.Pos.Y, serverframe.Comframe.Animal.Pos.Z);
+                    }
+                    
+                    Instantiate(AnimalPrefab, start_position, gameObject.transform.rotation);
+                }
+                if (serverframe.Comframe.Bird.Isgenerated)
+                {
+                    Debug.Log("Bird created");
+                    //create bird
+                    if (ip == serverframe.Comframe.Chooseip)
+                    {
+                        start_position = new Vector3(serverframe.Comframe.Bird.Pos.X, serverframe.Comframe.Bird.Pos.Y, serverframe.Comframe.Bird.Pos.Z);
+                    }
+                    else
+                    {
+                        start_position = new Vector3(-1 * serverframe.Comframe.Bird.Pos.X, serverframe.Comframe.Bird.Pos.Y, serverframe.Comframe.Bird.Pos.Z);
+                    }
+                    Instantiate(BirdPrefab, start_position, gameObject.transform.rotation);
+                }
+                if (serverframe.Comframe.Food.Isgenerated)
+                {
+                    Debug.Log("Food created");
+                    //create food
+                    if (ip == serverframe.Comframe.Chooseip)
+                    {
+                        start_position = new Vector3(serverframe.Comframe.Food.Pos.X, serverframe.Comframe.Food.Pos.Y, serverframe.Comframe.Food.Pos.Z);
+                    }
+                    else
+                    {
+                        start_position = new Vector3(-1 * serverframe.Comframe.Food.Pos.X, serverframe.Comframe.Food.Pos.Y, serverframe.Comframe.Food.Pos.Z);
+                    }
+                    Instantiate(FoodPrefab, start_position, gameObject.transform.rotation);
+                }
             }
-            */
+
         }
         else
         {

@@ -32,7 +32,8 @@ public class SocketHelper {
             return socketHelper;
     }
 
-    private SocketHelper()
+    //session socket(5000)
+    public void CreateNormalSocket()
     {
         server_ip = "x.x.x.x";
         server_port = xxxx;
@@ -68,7 +69,49 @@ public class SocketHelper {
             thread.Start();
         }
         */
+    }
 
+    //login socket(8080)
+    public void CreateLoginSocket()
+    {
+        server_ip = "x.x.x.x";
+        server_port = xxxx;
+
+        //采用TCP方式连接  
+        socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+        //服务器IP地址  
+        IPAddress address = IPAddress.Parse(server_ip);
+
+        //服务器端口  
+        IPEndPoint endpoint = new IPEndPoint(address, server_port);
+
+        //异步连接,连接成功调用connectCallback方法  
+        IAsyncResult result = socket.BeginConnect(endpoint, new AsyncCallback(ConnectCallback), socket);
+
+        //这里做一个超时的监测，当连接超过50毫秒还没成功表示超时  
+        bool success = result.AsyncWaitHandle.WaitOne(100, true);
+        if (!success)
+        {
+            //超时  
+            Closed();
+            is_connected = false;
+            Debug.Log("connect Time Out");
+        }
+        is_connected = true;
+        /*
+        else
+        {
+            //与socket建立连接成功，开启线程接受服务端数据。  
+            Thread thread = new Thread(new ThreadStart(ReceiveSorket));
+            thread.IsBackground = true;
+            thread.Start();
+        }
+        */
+    }
+    private SocketHelper()
+    {
+        CreateLoginSocket();
     }
 
     private void ConnectCallback(IAsyncResult asyncConnect)
@@ -129,7 +172,7 @@ public class SocketHelper {
     }
 
     //关闭Socket  
-    private void Closed()
+    public void Closed()
     {
         if (socket != null && socket.Connected)
         {

@@ -38,12 +38,485 @@ void protobuf_AssignDesc_msg_2eproto();
 void protobuf_ShutdownFile_msg_2eproto();
 
 class Client_Frame;
+class Common_Frame;
+class Generated_Object;
+class Generated_Position;
+class Hp_Object;
 class Login_Frame;
 class Login_Response;
+class Move_Direction;
 class Server_Frame;
+class Single_Frame;
+class Totalinfo_Frame;
 class Userinfo_Frame;
 
 // ===================================================================
+
+class Move_Direction : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Move_Direction) */ {
+ public:
+  Move_Direction();
+  virtual ~Move_Direction();
+
+  Move_Direction(const Move_Direction& from);
+
+  inline Move_Direction& operator=(const Move_Direction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Move_Direction& default_instance();
+
+  static const Move_Direction* internal_default_instance();
+
+  void Swap(Move_Direction* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Move_Direction* New() const { return New(NULL); }
+
+  Move_Direction* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Move_Direction& from);
+  void MergeFrom(const Move_Direction& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Move_Direction* other);
+  void UnsafeMergeFrom(const Move_Direction& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool left = 1;
+  bool has_left() const;
+  void clear_left();
+  static const int kLeftFieldNumber = 1;
+  bool left() const;
+  void set_left(bool value);
+
+  // required bool right = 2;
+  bool has_right() const;
+  void clear_right();
+  static const int kRightFieldNumber = 2;
+  bool right() const;
+  void set_right(bool value);
+
+  // required bool up = 3;
+  bool has_up() const;
+  void clear_up();
+  static const int kUpFieldNumber = 3;
+  bool up() const;
+  void set_up(bool value);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Move_Direction)
+ private:
+  inline void set_has_left();
+  inline void clear_has_left();
+  inline void set_has_right();
+  inline void clear_has_right();
+  inline void set_has_up();
+  inline void clear_has_up();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  bool left_;
+  bool right_;
+  bool up_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Move_Direction> Move_Direction_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Generated_Position : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Generated_Position) */ {
+ public:
+  Generated_Position();
+  virtual ~Generated_Position();
+
+  Generated_Position(const Generated_Position& from);
+
+  inline Generated_Position& operator=(const Generated_Position& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Generated_Position& default_instance();
+
+  static const Generated_Position* internal_default_instance();
+
+  void Swap(Generated_Position* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Generated_Position* New() const { return New(NULL); }
+
+  Generated_Position* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Generated_Position& from);
+  void MergeFrom(const Generated_Position& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Generated_Position* other);
+  void UnsafeMergeFrom(const Generated_Position& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required float x = 1;
+  bool has_x() const;
+  void clear_x();
+  static const int kXFieldNumber = 1;
+  float x() const;
+  void set_x(float value);
+
+  // required float y = 2;
+  bool has_y() const;
+  void clear_y();
+  static const int kYFieldNumber = 2;
+  float y() const;
+  void set_y(float value);
+
+  // required float z = 3;
+  bool has_z() const;
+  void clear_z();
+  static const int kZFieldNumber = 3;
+  float z() const;
+  void set_z(float value);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Generated_Position)
+ private:
+  inline void set_has_x();
+  inline void clear_has_x();
+  inline void set_has_y();
+  inline void clear_has_y();
+  inline void set_has_z();
+  inline void clear_has_z();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  float x_;
+  float y_;
+  float z_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Generated_Position> Generated_Position_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Generated_Object : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Generated_Object) */ {
+ public:
+  Generated_Object();
+  virtual ~Generated_Object();
+
+  Generated_Object(const Generated_Object& from);
+
+  inline Generated_Object& operator=(const Generated_Object& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Generated_Object& default_instance();
+
+  static const Generated_Object* internal_default_instance();
+
+  void Swap(Generated_Object* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Generated_Object* New() const { return New(NULL); }
+
+  Generated_Object* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Generated_Object& from);
+  void MergeFrom(const Generated_Object& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Generated_Object* other);
+  void UnsafeMergeFrom(const Generated_Object& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool isgenerated = 1;
+  bool has_isgenerated() const;
+  void clear_isgenerated();
+  static const int kIsgeneratedFieldNumber = 1;
+  bool isgenerated() const;
+  void set_isgenerated(bool value);
+
+  // required .CodeBattle.Generated_Position pos = 2;
+  bool has_pos() const;
+  void clear_pos();
+  static const int kPosFieldNumber = 2;
+  const ::CodeBattle::Generated_Position& pos() const;
+  ::CodeBattle::Generated_Position* mutable_pos();
+  ::CodeBattle::Generated_Position* release_pos();
+  void set_allocated_pos(::CodeBattle::Generated_Position* pos);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Generated_Object)
+ private:
+  inline void set_has_isgenerated();
+  inline void clear_has_isgenerated();
+  inline void set_has_pos();
+  inline void clear_has_pos();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::CodeBattle::Generated_Position* pos_;
+  bool isgenerated_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Generated_Object> Generated_Object_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Hp_Object : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Hp_Object) */ {
+ public:
+  Hp_Object();
+  virtual ~Hp_Object();
+
+  Hp_Object(const Hp_Object& from);
+
+  inline Hp_Object& operator=(const Hp_Object& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Hp_Object& default_instance();
+
+  static const Hp_Object* internal_default_instance();
+
+  void Swap(Hp_Object* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Hp_Object* New() const { return New(NULL); }
+
+  Hp_Object* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Hp_Object& from);
+  void MergeFrom(const Hp_Object& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Hp_Object* other);
+  void UnsafeMergeFrom(const Hp_Object& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool ischanged = 1;
+  bool has_ischanged() const;
+  void clear_ischanged();
+  static const int kIschangedFieldNumber = 1;
+  bool ischanged() const;
+  void set_ischanged(bool value);
+
+  // required float changevalue = 2;
+  bool has_changevalue() const;
+  void clear_changevalue();
+  static const int kChangevalueFieldNumber = 2;
+  float changevalue() const;
+  void set_changevalue(float value);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Hp_Object)
+ private:
+  inline void set_has_ischanged();
+  inline void clear_has_ischanged();
+  inline void set_has_changevalue();
+  inline void clear_has_changevalue();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  bool ischanged_;
+  float changevalue_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Hp_Object> Hp_Object_default_instance_;
+
+// -------------------------------------------------------------------
 
 class Client_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Client_Frame) */ {
  public:
@@ -128,19 +601,95 @@ class Client_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::std::string* release_ip();
   void set_allocated_ip(::std::string* ip);
 
-  // required int32 direction = 2;
+  // required bool died = 2;
+  bool has_died() const;
+  void clear_died();
+  static const int kDiedFieldNumber = 2;
+  bool died() const;
+  void set_died(bool value);
+
+  // required bool moved = 3;
+  bool has_moved() const;
+  void clear_moved();
+  static const int kMovedFieldNumber = 3;
+  bool moved() const;
+  void set_moved(bool value);
+
+  // required .CodeBattle.Move_Direction direction = 4;
   bool has_direction() const;
   void clear_direction();
-  static const int kDirectionFieldNumber = 2;
-  ::google::protobuf::int32 direction() const;
-  void set_direction(::google::protobuf::int32 value);
+  static const int kDirectionFieldNumber = 4;
+  const ::CodeBattle::Move_Direction& direction() const;
+  ::CodeBattle::Move_Direction* mutable_direction();
+  ::CodeBattle::Move_Direction* release_direction();
+  void set_allocated_direction(::CodeBattle::Move_Direction* direction);
+
+  // required bool hpchanged = 5;
+  bool has_hpchanged() const;
+  void clear_hpchanged();
+  static const int kHpchangedFieldNumber = 5;
+  bool hpchanged() const;
+  void set_hpchanged(bool value);
+
+  // required bool playertype = 6;
+  bool has_playertype() const;
+  void clear_playertype();
+  static const int kPlayertypeFieldNumber = 6;
+  bool playertype() const;
+  void set_playertype(bool value);
+
+  // required float changevalue = 7;
+  bool has_changevalue() const;
+  void clear_changevalue();
+  static const int kChangevalueFieldNumber = 7;
+  float changevalue() const;
+  void set_changevalue(float value);
+
+  // required bool generated = 8;
+  bool has_generated() const;
+  void clear_generated();
+  static const int kGeneratedFieldNumber = 8;
+  bool generated() const;
+  void set_generated(bool value);
+
+  // required int32 objecttype = 9;
+  bool has_objecttype() const;
+  void clear_objecttype();
+  static const int kObjecttypeFieldNumber = 9;
+  ::google::protobuf::int32 objecttype() const;
+  void set_objecttype(::google::protobuf::int32 value);
+
+  // required .CodeBattle.Generated_Position pos = 10;
+  bool has_pos() const;
+  void clear_pos();
+  static const int kPosFieldNumber = 10;
+  const ::CodeBattle::Generated_Position& pos() const;
+  ::CodeBattle::Generated_Position* mutable_pos();
+  ::CodeBattle::Generated_Position* release_pos();
+  void set_allocated_pos(::CodeBattle::Generated_Position* pos);
 
   // @@protoc_insertion_point(class_scope:CodeBattle.Client_Frame)
  private:
   inline void set_has_ip();
   inline void clear_has_ip();
+  inline void set_has_died();
+  inline void clear_has_died();
+  inline void set_has_moved();
+  inline void clear_has_moved();
   inline void set_has_direction();
   inline void clear_has_direction();
+  inline void set_has_hpchanged();
+  inline void clear_has_hpchanged();
+  inline void set_has_playertype();
+  inline void clear_has_playertype();
+  inline void set_has_changevalue();
+  inline void clear_has_changevalue();
+  inline void set_has_generated();
+  inline void clear_has_generated();
+  inline void set_has_objecttype();
+  inline void clear_has_objecttype();
+  inline void set_has_pos();
+  inline void clear_has_pos();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -149,7 +698,15 @@ class Client_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr ip_;
-  ::google::protobuf::int32 direction_;
+  ::CodeBattle::Move_Direction* direction_;
+  ::CodeBattle::Generated_Position* pos_;
+  bool died_;
+  bool moved_;
+  bool hpchanged_;
+  bool playertype_;
+  float changevalue_;
+  bool generated_;
+  ::google::protobuf::int32 objecttype_;
   friend void  protobuf_InitDefaults_msg_2eproto_impl();
   friend void  protobuf_AddDesc_msg_2eproto_impl();
   friend void protobuf_AssignDesc_msg_2eproto();
@@ -158,6 +715,342 @@ class Client_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   void InitAsDefaultInstance();
 };
 extern ::google::protobuf::internal::ExplicitlyConstructed<Client_Frame> Client_Frame_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Common_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Common_Frame) */ {
+ public:
+  Common_Frame();
+  virtual ~Common_Frame();
+
+  Common_Frame(const Common_Frame& from);
+
+  inline Common_Frame& operator=(const Common_Frame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Common_Frame& default_instance();
+
+  static const Common_Frame* internal_default_instance();
+
+  void Swap(Common_Frame* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Common_Frame* New() const { return New(NULL); }
+
+  Common_Frame* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Common_Frame& from);
+  void MergeFrom(const Common_Frame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Common_Frame* other);
+  void UnsafeMergeFrom(const Common_Frame& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool generated = 1;
+  bool has_generated() const;
+  void clear_generated();
+  static const int kGeneratedFieldNumber = 1;
+  bool generated() const;
+  void set_generated(bool value);
+
+  // required string chooseip = 2;
+  bool has_chooseip() const;
+  void clear_chooseip();
+  static const int kChooseipFieldNumber = 2;
+  const ::std::string& chooseip() const;
+  void set_chooseip(const ::std::string& value);
+  void set_chooseip(const char* value);
+  void set_chooseip(const char* value, size_t size);
+  ::std::string* mutable_chooseip();
+  ::std::string* release_chooseip();
+  void set_allocated_chooseip(::std::string* chooseip);
+
+  // required .CodeBattle.Generated_Object animal = 3;
+  bool has_animal() const;
+  void clear_animal();
+  static const int kAnimalFieldNumber = 3;
+  const ::CodeBattle::Generated_Object& animal() const;
+  ::CodeBattle::Generated_Object* mutable_animal();
+  ::CodeBattle::Generated_Object* release_animal();
+  void set_allocated_animal(::CodeBattle::Generated_Object* animal);
+
+  // required .CodeBattle.Generated_Object bird = 4;
+  bool has_bird() const;
+  void clear_bird();
+  static const int kBirdFieldNumber = 4;
+  const ::CodeBattle::Generated_Object& bird() const;
+  ::CodeBattle::Generated_Object* mutable_bird();
+  ::CodeBattle::Generated_Object* release_bird();
+  void set_allocated_bird(::CodeBattle::Generated_Object* bird);
+
+  // required .CodeBattle.Generated_Object food = 5;
+  bool has_food() const;
+  void clear_food();
+  static const int kFoodFieldNumber = 5;
+  const ::CodeBattle::Generated_Object& food() const;
+  ::CodeBattle::Generated_Object* mutable_food();
+  ::CodeBattle::Generated_Object* release_food();
+  void set_allocated_food(::CodeBattle::Generated_Object* food);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Common_Frame)
+ private:
+  inline void set_has_generated();
+  inline void clear_has_generated();
+  inline void set_has_chooseip();
+  inline void clear_has_chooseip();
+  inline void set_has_animal();
+  inline void clear_has_animal();
+  inline void set_has_bird();
+  inline void clear_has_bird();
+  inline void set_has_food();
+  inline void clear_has_food();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr chooseip_;
+  ::CodeBattle::Generated_Object* animal_;
+  ::CodeBattle::Generated_Object* bird_;
+  ::CodeBattle::Generated_Object* food_;
+  bool generated_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Common_Frame> Common_Frame_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Single_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Single_Frame) */ {
+ public:
+  Single_Frame();
+  virtual ~Single_Frame();
+
+  Single_Frame(const Single_Frame& from);
+
+  inline Single_Frame& operator=(const Single_Frame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Single_Frame& default_instance();
+
+  static const Single_Frame* internal_default_instance();
+
+  void Swap(Single_Frame* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Single_Frame* New() const { return New(NULL); }
+
+  Single_Frame* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Single_Frame& from);
+  void MergeFrom(const Single_Frame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Single_Frame* other);
+  void UnsafeMergeFrom(const Single_Frame& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string ip = 1;
+  bool has_ip() const;
+  void clear_ip();
+  static const int kIpFieldNumber = 1;
+  const ::std::string& ip() const;
+  void set_ip(const ::std::string& value);
+  void set_ip(const char* value);
+  void set_ip(const char* value, size_t size);
+  ::std::string* mutable_ip();
+  ::std::string* release_ip();
+  void set_allocated_ip(::std::string* ip);
+
+  // required bool died = 2;
+  bool has_died() const;
+  void clear_died();
+  static const int kDiedFieldNumber = 2;
+  bool died() const;
+  void set_died(bool value);
+
+  // required bool moved = 3;
+  bool has_moved() const;
+  void clear_moved();
+  static const int kMovedFieldNumber = 3;
+  bool moved() const;
+  void set_moved(bool value);
+
+  // required .CodeBattle.Move_Direction direction = 4;
+  bool has_direction() const;
+  void clear_direction();
+  static const int kDirectionFieldNumber = 4;
+  const ::CodeBattle::Move_Direction& direction() const;
+  ::CodeBattle::Move_Direction* mutable_direction();
+  ::CodeBattle::Move_Direction* release_direction();
+  void set_allocated_direction(::CodeBattle::Move_Direction* direction);
+
+  // required bool hpchanged = 5;
+  bool has_hpchanged() const;
+  void clear_hpchanged();
+  static const int kHpchangedFieldNumber = 5;
+  bool hpchanged() const;
+  void set_hpchanged(bool value);
+
+  // required .CodeBattle.Hp_Object playerhp = 6;
+  bool has_playerhp() const;
+  void clear_playerhp();
+  static const int kPlayerhpFieldNumber = 6;
+  const ::CodeBattle::Hp_Object& playerhp() const;
+  ::CodeBattle::Hp_Object* mutable_playerhp();
+  ::CodeBattle::Hp_Object* release_playerhp();
+  void set_allocated_playerhp(::CodeBattle::Hp_Object* playerhp);
+
+  // required .CodeBattle.Hp_Object enemyhp = 7;
+  bool has_enemyhp() const;
+  void clear_enemyhp();
+  static const int kEnemyhpFieldNumber = 7;
+  const ::CodeBattle::Hp_Object& enemyhp() const;
+  ::CodeBattle::Hp_Object* mutable_enemyhp();
+  ::CodeBattle::Hp_Object* release_enemyhp();
+  void set_allocated_enemyhp(::CodeBattle::Hp_Object* enemyhp);
+
+  // required .CodeBattle.Generated_Object snow = 8;
+  bool has_snow() const;
+  void clear_snow();
+  static const int kSnowFieldNumber = 8;
+  const ::CodeBattle::Generated_Object& snow() const;
+  ::CodeBattle::Generated_Object* mutable_snow();
+  ::CodeBattle::Generated_Object* release_snow();
+  void set_allocated_snow(::CodeBattle::Generated_Object* snow);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Single_Frame)
+ private:
+  inline void set_has_ip();
+  inline void clear_has_ip();
+  inline void set_has_died();
+  inline void clear_has_died();
+  inline void set_has_moved();
+  inline void clear_has_moved();
+  inline void set_has_direction();
+  inline void clear_has_direction();
+  inline void set_has_hpchanged();
+  inline void clear_has_hpchanged();
+  inline void set_has_playerhp();
+  inline void clear_has_playerhp();
+  inline void set_has_enemyhp();
+  inline void clear_has_enemyhp();
+  inline void set_has_snow();
+  inline void clear_has_snow();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr ip_;
+  ::CodeBattle::Move_Direction* direction_;
+  ::CodeBattle::Hp_Object* playerhp_;
+  ::CodeBattle::Hp_Object* enemyhp_;
+  ::CodeBattle::Generated_Object* snow_;
+  bool died_;
+  bool moved_;
+  bool hpchanged_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Single_Frame> Single_Frame_default_instance_;
 
 // -------------------------------------------------------------------
 
@@ -246,23 +1139,32 @@ class Server_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::int32 frameseq() const;
   void set_frameseq(::google::protobuf::int32 value);
 
-  // required .CodeBattle.Client_Frame preframe = 3;
+  // required .CodeBattle.Single_Frame preframe = 3;
   bool has_preframe() const;
   void clear_preframe();
   static const int kPreframeFieldNumber = 3;
-  const ::CodeBattle::Client_Frame& preframe() const;
-  ::CodeBattle::Client_Frame* mutable_preframe();
-  ::CodeBattle::Client_Frame* release_preframe();
-  void set_allocated_preframe(::CodeBattle::Client_Frame* preframe);
+  const ::CodeBattle::Single_Frame& preframe() const;
+  ::CodeBattle::Single_Frame* mutable_preframe();
+  ::CodeBattle::Single_Frame* release_preframe();
+  void set_allocated_preframe(::CodeBattle::Single_Frame* preframe);
 
-  // required .CodeBattle.Client_Frame laterframe = 4;
+  // required .CodeBattle.Single_Frame laterframe = 4;
   bool has_laterframe() const;
   void clear_laterframe();
   static const int kLaterframeFieldNumber = 4;
-  const ::CodeBattle::Client_Frame& laterframe() const;
-  ::CodeBattle::Client_Frame* mutable_laterframe();
-  ::CodeBattle::Client_Frame* release_laterframe();
-  void set_allocated_laterframe(::CodeBattle::Client_Frame* laterframe);
+  const ::CodeBattle::Single_Frame& laterframe() const;
+  ::CodeBattle::Single_Frame* mutable_laterframe();
+  ::CodeBattle::Single_Frame* release_laterframe();
+  void set_allocated_laterframe(::CodeBattle::Single_Frame* laterframe);
+
+  // required .CodeBattle.Common_Frame comframe = 5;
+  bool has_comframe() const;
+  void clear_comframe();
+  static const int kComframeFieldNumber = 5;
+  const ::CodeBattle::Common_Frame& comframe() const;
+  ::CodeBattle::Common_Frame* mutable_comframe();
+  ::CodeBattle::Common_Frame* release_comframe();
+  void set_allocated_comframe(::CodeBattle::Common_Frame* comframe);
 
   // @@protoc_insertion_point(class_scope:CodeBattle.Server_Frame)
  private:
@@ -274,6 +1176,8 @@ class Server_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   inline void clear_has_preframe();
   inline void set_has_laterframe();
   inline void clear_has_laterframe();
+  inline void set_has_comframe();
+  inline void clear_has_comframe();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -281,8 +1185,9 @@ class Server_Frame : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
-  ::CodeBattle::Client_Frame* preframe_;
-  ::CodeBattle::Client_Frame* laterframe_;
+  ::CodeBattle::Single_Frame* preframe_;
+  ::CodeBattle::Single_Frame* laterframe_;
+  ::CodeBattle::Common_Frame* comframe_;
   bool empty_;
   ::google::protobuf::int32 frameseq_;
   friend void  protobuf_InitDefaults_msg_2eproto_impl();
@@ -367,17 +1272,29 @@ class Login_Frame : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // required bool login = 1;
+  // required string ip = 1;
+  bool has_ip() const;
+  void clear_ip();
+  static const int kIpFieldNumber = 1;
+  const ::std::string& ip() const;
+  void set_ip(const ::std::string& value);
+  void set_ip(const char* value);
+  void set_ip(const char* value, size_t size);
+  ::std::string* mutable_ip();
+  ::std::string* release_ip();
+  void set_allocated_ip(::std::string* ip);
+
+  // required bool login = 2;
   bool has_login() const;
   void clear_login();
-  static const int kLoginFieldNumber = 1;
+  static const int kLoginFieldNumber = 2;
   bool login() const;
   void set_login(bool value);
 
-  // required string username = 2;
+  // required string username = 3;
   bool has_username() const;
   void clear_username();
-  static const int kUsernameFieldNumber = 2;
+  static const int kUsernameFieldNumber = 3;
   const ::std::string& username() const;
   void set_username(const ::std::string& value);
   void set_username(const char* value);
@@ -386,10 +1303,10 @@ class Login_Frame : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_username();
   void set_allocated_username(::std::string* username);
 
-  // required string password = 3;
+  // required string password = 4;
   bool has_password() const;
   void clear_password();
-  static const int kPasswordFieldNumber = 3;
+  static const int kPasswordFieldNumber = 4;
   const ::std::string& password() const;
   void set_password(const ::std::string& value);
   void set_password(const char* value);
@@ -400,6 +1317,8 @@ class Login_Frame : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // @@protoc_insertion_point(class_scope:CodeBattle.Login_Frame)
  private:
+  inline void set_has_ip();
+  inline void clear_has_ip();
   inline void set_has_login();
   inline void clear_has_login();
   inline void set_has_username();
@@ -413,6 +1332,7 @@ class Login_Frame : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr ip_;
   ::google::protobuf::internal::ArenaStringPtr username_;
   ::google::protobuf::internal::ArenaStringPtr password_;
   bool login_;
@@ -498,17 +1418,29 @@ class Userinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // required int32 id = 1;
+  // required string ip = 1;
+  bool has_ip() const;
+  void clear_ip();
+  static const int kIpFieldNumber = 1;
+  const ::std::string& ip() const;
+  void set_ip(const ::std::string& value);
+  void set_ip(const char* value);
+  void set_ip(const char* value, size_t size);
+  ::std::string* mutable_ip();
+  ::std::string* release_ip();
+  void set_allocated_ip(::std::string* ip);
+
+  // required int32 id = 2;
   bool has_id() const;
   void clear_id();
-  static const int kIdFieldNumber = 1;
+  static const int kIdFieldNumber = 2;
   ::google::protobuf::int32 id() const;
   void set_id(::google::protobuf::int32 value);
 
-  // required string username = 2;
+  // required string username = 3;
   bool has_username() const;
   void clear_username();
-  static const int kUsernameFieldNumber = 2;
+  static const int kUsernameFieldNumber = 3;
   const ::std::string& username() const;
   void set_username(const ::std::string& value);
   void set_username(const char* value);
@@ -517,29 +1449,31 @@ class Userinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_
   ::std::string* release_username();
   void set_allocated_username(::std::string* username);
 
-  // required int32 winnumbers = 3;
+  // required int32 winnumbers = 4;
   bool has_winnumbers() const;
   void clear_winnumbers();
-  static const int kWinnumbersFieldNumber = 3;
+  static const int kWinnumbersFieldNumber = 4;
   ::google::protobuf::int32 winnumbers() const;
   void set_winnumbers(::google::protobuf::int32 value);
 
-  // required int32 losenumbers = 4;
+  // required int32 losenumbers = 5;
   bool has_losenumbers() const;
   void clear_losenumbers();
-  static const int kLosenumbersFieldNumber = 4;
+  static const int kLosenumbersFieldNumber = 5;
   ::google::protobuf::int32 losenumbers() const;
   void set_losenumbers(::google::protobuf::int32 value);
 
-  // required int32 winrate = 5;
+  // required int32 winrate = 6;
   bool has_winrate() const;
   void clear_winrate();
-  static const int kWinrateFieldNumber = 5;
+  static const int kWinrateFieldNumber = 6;
   ::google::protobuf::int32 winrate() const;
   void set_winrate(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:CodeBattle.Userinfo_Frame)
  private:
+  inline void set_has_ip();
+  inline void clear_has_ip();
   inline void set_has_id();
   inline void clear_has_id();
   inline void set_has_username();
@@ -557,6 +1491,7 @@ class Userinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr ip_;
   ::google::protobuf::internal::ArenaStringPtr username_;
   ::google::protobuf::int32 id_;
   ::google::protobuf::int32 winnumbers_;
@@ -570,6 +1505,121 @@ class Userinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_
   void InitAsDefaultInstance();
 };
 extern ::google::protobuf::internal::ExplicitlyConstructed<Userinfo_Frame> Userinfo_Frame_default_instance_;
+
+// -------------------------------------------------------------------
+
+class Totalinfo_Frame : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:CodeBattle.Totalinfo_Frame) */ {
+ public:
+  Totalinfo_Frame();
+  virtual ~Totalinfo_Frame();
+
+  Totalinfo_Frame(const Totalinfo_Frame& from);
+
+  inline Totalinfo_Frame& operator=(const Totalinfo_Frame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Totalinfo_Frame& default_instance();
+
+  static const Totalinfo_Frame* internal_default_instance();
+
+  void Swap(Totalinfo_Frame* other);
+
+  // implements Message ----------------------------------------------
+
+  inline Totalinfo_Frame* New() const { return New(NULL); }
+
+  Totalinfo_Frame* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const Totalinfo_Frame& from);
+  void MergeFrom(const Totalinfo_Frame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  size_t ByteSizeLong() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(Totalinfo_Frame* other);
+  void UnsafeMergeFrom(const Totalinfo_Frame& from);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required .CodeBattle.Userinfo_Frame preinfo = 1;
+  bool has_preinfo() const;
+  void clear_preinfo();
+  static const int kPreinfoFieldNumber = 1;
+  const ::CodeBattle::Userinfo_Frame& preinfo() const;
+  ::CodeBattle::Userinfo_Frame* mutable_preinfo();
+  ::CodeBattle::Userinfo_Frame* release_preinfo();
+  void set_allocated_preinfo(::CodeBattle::Userinfo_Frame* preinfo);
+
+  // required .CodeBattle.Userinfo_Frame laterinfo = 2;
+  bool has_laterinfo() const;
+  void clear_laterinfo();
+  static const int kLaterinfoFieldNumber = 2;
+  const ::CodeBattle::Userinfo_Frame& laterinfo() const;
+  ::CodeBattle::Userinfo_Frame* mutable_laterinfo();
+  ::CodeBattle::Userinfo_Frame* release_laterinfo();
+  void set_allocated_laterinfo(::CodeBattle::Userinfo_Frame* laterinfo);
+
+  // @@protoc_insertion_point(class_scope:CodeBattle.Totalinfo_Frame)
+ private:
+  inline void set_has_preinfo();
+  inline void clear_has_preinfo();
+  inline void set_has_laterinfo();
+  inline void clear_has_laterinfo();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable int _cached_size_;
+  ::CodeBattle::Userinfo_Frame* preinfo_;
+  ::CodeBattle::Userinfo_Frame* laterinfo_;
+  friend void  protobuf_InitDefaults_msg_2eproto_impl();
+  friend void  protobuf_AddDesc_msg_2eproto_impl();
+  friend void protobuf_AssignDesc_msg_2eproto();
+  friend void protobuf_ShutdownFile_msg_2eproto();
+
+  void InitAsDefaultInstance();
+};
+extern ::google::protobuf::internal::ExplicitlyConstructed<Totalinfo_Frame> Totalinfo_Frame_default_instance_;
 
 // -------------------------------------------------------------------
 
@@ -688,6 +1738,295 @@ extern ::google::protobuf::internal::ExplicitlyConstructed<Login_Response> Login
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
+// Move_Direction
+
+// required bool left = 1;
+inline bool Move_Direction::has_left() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Move_Direction::set_has_left() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Move_Direction::clear_has_left() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Move_Direction::clear_left() {
+  left_ = false;
+  clear_has_left();
+}
+inline bool Move_Direction::left() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.left)
+  return left_;
+}
+inline void Move_Direction::set_left(bool value) {
+  set_has_left();
+  left_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.left)
+}
+
+// required bool right = 2;
+inline bool Move_Direction::has_right() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Move_Direction::set_has_right() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Move_Direction::clear_has_right() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Move_Direction::clear_right() {
+  right_ = false;
+  clear_has_right();
+}
+inline bool Move_Direction::right() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.right)
+  return right_;
+}
+inline void Move_Direction::set_right(bool value) {
+  set_has_right();
+  right_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.right)
+}
+
+// required bool up = 3;
+inline bool Move_Direction::has_up() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Move_Direction::set_has_up() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Move_Direction::clear_has_up() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Move_Direction::clear_up() {
+  up_ = false;
+  clear_has_up();
+}
+inline bool Move_Direction::up() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Move_Direction.up)
+  return up_;
+}
+inline void Move_Direction::set_up(bool value) {
+  set_has_up();
+  up_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Move_Direction.up)
+}
+
+inline const Move_Direction* Move_Direction::internal_default_instance() {
+  return &Move_Direction_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Generated_Position
+
+// required float x = 1;
+inline bool Generated_Position::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Generated_Position::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Generated_Position::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Generated_Position::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+inline float Generated_Position::x() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.x)
+  return x_;
+}
+inline void Generated_Position::set_x(float value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.x)
+}
+
+// required float y = 2;
+inline bool Generated_Position::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Generated_Position::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Generated_Position::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Generated_Position::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+inline float Generated_Position::y() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.y)
+  return y_;
+}
+inline void Generated_Position::set_y(float value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.y)
+}
+
+// required float z = 3;
+inline bool Generated_Position::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Generated_Position::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Generated_Position::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Generated_Position::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+inline float Generated_Position::z() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Position.z)
+  return z_;
+}
+inline void Generated_Position::set_z(float value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Position.z)
+}
+
+inline const Generated_Position* Generated_Position::internal_default_instance() {
+  return &Generated_Position_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Generated_Object
+
+// required bool isgenerated = 1;
+inline bool Generated_Object::has_isgenerated() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Generated_Object::set_has_isgenerated() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Generated_Object::clear_has_isgenerated() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Generated_Object::clear_isgenerated() {
+  isgenerated_ = false;
+  clear_has_isgenerated();
+}
+inline bool Generated_Object::isgenerated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Object.isgenerated)
+  return isgenerated_;
+}
+inline void Generated_Object::set_isgenerated(bool value) {
+  set_has_isgenerated();
+  isgenerated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Generated_Object.isgenerated)
+}
+
+// required .CodeBattle.Generated_Position pos = 2;
+inline bool Generated_Object::has_pos() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Generated_Object::set_has_pos() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Generated_Object::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Generated_Object::clear_pos() {
+  if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+  clear_has_pos();
+}
+inline const ::CodeBattle::Generated_Position& Generated_Object::pos() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Generated_Object.pos)
+  return pos_ != NULL ? *pos_
+                         : *::CodeBattle::Generated_Position::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Position* Generated_Object::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) {
+    pos_ = new ::CodeBattle::Generated_Position;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Generated_Object.pos)
+  return pos_;
+}
+inline ::CodeBattle::Generated_Position* Generated_Object::release_pos() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Generated_Object.pos)
+  clear_has_pos();
+  ::CodeBattle::Generated_Position* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+inline void Generated_Object::set_allocated_pos(::CodeBattle::Generated_Position* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Generated_Object.pos)
+}
+
+inline const Generated_Object* Generated_Object::internal_default_instance() {
+  return &Generated_Object_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Hp_Object
+
+// required bool ischanged = 1;
+inline bool Hp_Object::has_ischanged() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Hp_Object::set_has_ischanged() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Hp_Object::clear_has_ischanged() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Hp_Object::clear_ischanged() {
+  ischanged_ = false;
+  clear_has_ischanged();
+}
+inline bool Hp_Object::ischanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Hp_Object.ischanged)
+  return ischanged_;
+}
+inline void Hp_Object::set_ischanged(bool value) {
+  set_has_ischanged();
+  ischanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Hp_Object.ischanged)
+}
+
+// required float changevalue = 2;
+inline bool Hp_Object::has_changevalue() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Hp_Object::set_has_changevalue() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Hp_Object::clear_has_changevalue() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Hp_Object::clear_changevalue() {
+  changevalue_ = 0;
+  clear_has_changevalue();
+}
+inline float Hp_Object::changevalue() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Hp_Object.changevalue)
+  return changevalue_;
+}
+inline void Hp_Object::set_changevalue(float value) {
+  set_has_changevalue();
+  changevalue_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Hp_Object.changevalue)
+}
+
+inline const Hp_Object* Hp_Object::internal_default_instance() {
+  return &Hp_Object_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
 // Client_Frame
 
 // required string ip = 1;
@@ -744,32 +2083,799 @@ inline void Client_Frame::set_allocated_ip(::std::string* ip) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.ip)
 }
 
-// required int32 direction = 2;
-inline bool Client_Frame::has_direction() const {
+// required bool died = 2;
+inline bool Client_Frame::has_died() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void Client_Frame::set_has_direction() {
+inline void Client_Frame::set_has_died() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void Client_Frame::clear_has_direction() {
+inline void Client_Frame::clear_has_died() {
   _has_bits_[0] &= ~0x00000002u;
 }
+inline void Client_Frame::clear_died() {
+  died_ = false;
+  clear_has_died();
+}
+inline bool Client_Frame::died() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.died)
+  return died_;
+}
+inline void Client_Frame::set_died(bool value) {
+  set_has_died();
+  died_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.died)
+}
+
+// required bool moved = 3;
+inline bool Client_Frame::has_moved() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Client_Frame::set_has_moved() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Client_Frame::clear_has_moved() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Client_Frame::clear_moved() {
+  moved_ = false;
+  clear_has_moved();
+}
+inline bool Client_Frame::moved() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.moved)
+  return moved_;
+}
+inline void Client_Frame::set_moved(bool value) {
+  set_has_moved();
+  moved_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.moved)
+}
+
+// required .CodeBattle.Move_Direction direction = 4;
+inline bool Client_Frame::has_direction() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Client_Frame::set_has_direction() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Client_Frame::clear_has_direction() {
+  _has_bits_[0] &= ~0x00000008u;
+}
 inline void Client_Frame::clear_direction() {
-  direction_ = 0;
+  if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
   clear_has_direction();
 }
-inline ::google::protobuf::int32 Client_Frame::direction() const {
+inline const ::CodeBattle::Move_Direction& Client_Frame::direction() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.direction)
+  return direction_ != NULL ? *direction_
+                         : *::CodeBattle::Move_Direction::internal_default_instance();
+}
+inline ::CodeBattle::Move_Direction* Client_Frame::mutable_direction() {
+  set_has_direction();
+  if (direction_ == NULL) {
+    direction_ = new ::CodeBattle::Move_Direction;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Client_Frame.direction)
   return direction_;
 }
-inline void Client_Frame::set_direction(::google::protobuf::int32 value) {
-  set_has_direction();
-  direction_ = value;
-  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.direction)
+inline ::CodeBattle::Move_Direction* Client_Frame::release_direction() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Client_Frame.direction)
+  clear_has_direction();
+  ::CodeBattle::Move_Direction* temp = direction_;
+  direction_ = NULL;
+  return temp;
+}
+inline void Client_Frame::set_allocated_direction(::CodeBattle::Move_Direction* direction) {
+  delete direction_;
+  direction_ = direction;
+  if (direction) {
+    set_has_direction();
+  } else {
+    clear_has_direction();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.direction)
+}
+
+// required bool hpchanged = 5;
+inline bool Client_Frame::has_hpchanged() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Client_Frame::set_has_hpchanged() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Client_Frame::clear_has_hpchanged() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Client_Frame::clear_hpchanged() {
+  hpchanged_ = false;
+  clear_has_hpchanged();
+}
+inline bool Client_Frame::hpchanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.hpchanged)
+  return hpchanged_;
+}
+inline void Client_Frame::set_hpchanged(bool value) {
+  set_has_hpchanged();
+  hpchanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.hpchanged)
+}
+
+// required bool playertype = 6;
+inline bool Client_Frame::has_playertype() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Client_Frame::set_has_playertype() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Client_Frame::clear_has_playertype() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void Client_Frame::clear_playertype() {
+  playertype_ = false;
+  clear_has_playertype();
+}
+inline bool Client_Frame::playertype() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.playertype)
+  return playertype_;
+}
+inline void Client_Frame::set_playertype(bool value) {
+  set_has_playertype();
+  playertype_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.playertype)
+}
+
+// required float changevalue = 7;
+inline bool Client_Frame::has_changevalue() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void Client_Frame::set_has_changevalue() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void Client_Frame::clear_has_changevalue() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void Client_Frame::clear_changevalue() {
+  changevalue_ = 0;
+  clear_has_changevalue();
+}
+inline float Client_Frame::changevalue() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.changevalue)
+  return changevalue_;
+}
+inline void Client_Frame::set_changevalue(float value) {
+  set_has_changevalue();
+  changevalue_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.changevalue)
+}
+
+// required bool generated = 8;
+inline bool Client_Frame::has_generated() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void Client_Frame::set_has_generated() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void Client_Frame::clear_has_generated() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void Client_Frame::clear_generated() {
+  generated_ = false;
+  clear_has_generated();
+}
+inline bool Client_Frame::generated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.generated)
+  return generated_;
+}
+inline void Client_Frame::set_generated(bool value) {
+  set_has_generated();
+  generated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.generated)
+}
+
+// required int32 objecttype = 9;
+inline bool Client_Frame::has_objecttype() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void Client_Frame::set_has_objecttype() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void Client_Frame::clear_has_objecttype() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void Client_Frame::clear_objecttype() {
+  objecttype_ = 0;
+  clear_has_objecttype();
+}
+inline ::google::protobuf::int32 Client_Frame::objecttype() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.objecttype)
+  return objecttype_;
+}
+inline void Client_Frame::set_objecttype(::google::protobuf::int32 value) {
+  set_has_objecttype();
+  objecttype_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Client_Frame.objecttype)
+}
+
+// required .CodeBattle.Generated_Position pos = 10;
+inline bool Client_Frame::has_pos() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void Client_Frame::set_has_pos() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void Client_Frame::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void Client_Frame::clear_pos() {
+  if (pos_ != NULL) pos_->::CodeBattle::Generated_Position::Clear();
+  clear_has_pos();
+}
+inline const ::CodeBattle::Generated_Position& Client_Frame::pos() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Client_Frame.pos)
+  return pos_ != NULL ? *pos_
+                         : *::CodeBattle::Generated_Position::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Position* Client_Frame::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) {
+    pos_ = new ::CodeBattle::Generated_Position;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Client_Frame.pos)
+  return pos_;
+}
+inline ::CodeBattle::Generated_Position* Client_Frame::release_pos() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Client_Frame.pos)
+  clear_has_pos();
+  ::CodeBattle::Generated_Position* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+inline void Client_Frame::set_allocated_pos(::CodeBattle::Generated_Position* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Client_Frame.pos)
 }
 
 inline const Client_Frame* Client_Frame::internal_default_instance() {
   return &Client_Frame_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Common_Frame
+
+// required bool generated = 1;
+inline bool Common_Frame::has_generated() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Common_Frame::set_has_generated() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Common_Frame::clear_has_generated() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Common_Frame::clear_generated() {
+  generated_ = false;
+  clear_has_generated();
+}
+inline bool Common_Frame::generated() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.generated)
+  return generated_;
+}
+inline void Common_Frame::set_generated(bool value) {
+  set_has_generated();
+  generated_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Common_Frame.generated)
+}
+
+// required string chooseip = 2;
+inline bool Common_Frame::has_chooseip() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Common_Frame::set_has_chooseip() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Common_Frame::clear_has_chooseip() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Common_Frame::clear_chooseip() {
+  chooseip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_chooseip();
+}
+inline const ::std::string& Common_Frame::chooseip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.chooseip)
+  return chooseip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Common_Frame::set_chooseip(const ::std::string& value) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Common_Frame.chooseip)
+}
+inline void Common_Frame::set_chooseip(const char* value) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Common_Frame.chooseip)
+}
+inline void Common_Frame::set_chooseip(const char* value, size_t size) {
+  set_has_chooseip();
+  chooseip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Common_Frame.chooseip)
+}
+inline ::std::string* Common_Frame::mutable_chooseip() {
+  set_has_chooseip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.chooseip)
+  return chooseip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Common_Frame::release_chooseip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.chooseip)
+  clear_has_chooseip();
+  return chooseip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Common_Frame::set_allocated_chooseip(::std::string* chooseip) {
+  if (chooseip != NULL) {
+    set_has_chooseip();
+  } else {
+    clear_has_chooseip();
+  }
+  chooseip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), chooseip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.chooseip)
+}
+
+// required .CodeBattle.Generated_Object animal = 3;
+inline bool Common_Frame::has_animal() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Common_Frame::set_has_animal() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Common_Frame::clear_has_animal() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Common_Frame::clear_animal() {
+  if (animal_ != NULL) animal_->::CodeBattle::Generated_Object::Clear();
+  clear_has_animal();
+}
+inline const ::CodeBattle::Generated_Object& Common_Frame::animal() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.animal)
+  return animal_ != NULL ? *animal_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::mutable_animal() {
+  set_has_animal();
+  if (animal_ == NULL) {
+    animal_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.animal)
+  return animal_;
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::release_animal() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.animal)
+  clear_has_animal();
+  ::CodeBattle::Generated_Object* temp = animal_;
+  animal_ = NULL;
+  return temp;
+}
+inline void Common_Frame::set_allocated_animal(::CodeBattle::Generated_Object* animal) {
+  delete animal_;
+  animal_ = animal;
+  if (animal) {
+    set_has_animal();
+  } else {
+    clear_has_animal();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.animal)
+}
+
+// required .CodeBattle.Generated_Object bird = 4;
+inline bool Common_Frame::has_bird() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Common_Frame::set_has_bird() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Common_Frame::clear_has_bird() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Common_Frame::clear_bird() {
+  if (bird_ != NULL) bird_->::CodeBattle::Generated_Object::Clear();
+  clear_has_bird();
+}
+inline const ::CodeBattle::Generated_Object& Common_Frame::bird() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.bird)
+  return bird_ != NULL ? *bird_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::mutable_bird() {
+  set_has_bird();
+  if (bird_ == NULL) {
+    bird_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.bird)
+  return bird_;
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::release_bird() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.bird)
+  clear_has_bird();
+  ::CodeBattle::Generated_Object* temp = bird_;
+  bird_ = NULL;
+  return temp;
+}
+inline void Common_Frame::set_allocated_bird(::CodeBattle::Generated_Object* bird) {
+  delete bird_;
+  bird_ = bird;
+  if (bird) {
+    set_has_bird();
+  } else {
+    clear_has_bird();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.bird)
+}
+
+// required .CodeBattle.Generated_Object food = 5;
+inline bool Common_Frame::has_food() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Common_Frame::set_has_food() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Common_Frame::clear_has_food() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Common_Frame::clear_food() {
+  if (food_ != NULL) food_->::CodeBattle::Generated_Object::Clear();
+  clear_has_food();
+}
+inline const ::CodeBattle::Generated_Object& Common_Frame::food() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Common_Frame.food)
+  return food_ != NULL ? *food_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::mutable_food() {
+  set_has_food();
+  if (food_ == NULL) {
+    food_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Common_Frame.food)
+  return food_;
+}
+inline ::CodeBattle::Generated_Object* Common_Frame::release_food() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Common_Frame.food)
+  clear_has_food();
+  ::CodeBattle::Generated_Object* temp = food_;
+  food_ = NULL;
+  return temp;
+}
+inline void Common_Frame::set_allocated_food(::CodeBattle::Generated_Object* food) {
+  delete food_;
+  food_ = food;
+  if (food) {
+    set_has_food();
+  } else {
+    clear_has_food();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Common_Frame.food)
+}
+
+inline const Common_Frame* Common_Frame::internal_default_instance() {
+  return &Common_Frame_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Single_Frame
+
+// required string ip = 1;
+inline bool Single_Frame::has_ip() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Single_Frame::set_has_ip() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Single_Frame::clear_has_ip() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Single_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+inline const ::std::string& Single_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Single_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.ip)
+}
+inline void Single_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Single_Frame.ip)
+}
+inline void Single_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Single_Frame.ip)
+}
+inline ::std::string* Single_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Single_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Single_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.ip)
+}
+
+// required bool died = 2;
+inline bool Single_Frame::has_died() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Single_Frame::set_has_died() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Single_Frame::clear_has_died() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Single_Frame::clear_died() {
+  died_ = false;
+  clear_has_died();
+}
+inline bool Single_Frame::died() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.died)
+  return died_;
+}
+inline void Single_Frame::set_died(bool value) {
+  set_has_died();
+  died_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.died)
+}
+
+// required bool moved = 3;
+inline bool Single_Frame::has_moved() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Single_Frame::set_has_moved() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Single_Frame::clear_has_moved() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Single_Frame::clear_moved() {
+  moved_ = false;
+  clear_has_moved();
+}
+inline bool Single_Frame::moved() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.moved)
+  return moved_;
+}
+inline void Single_Frame::set_moved(bool value) {
+  set_has_moved();
+  moved_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.moved)
+}
+
+// required .CodeBattle.Move_Direction direction = 4;
+inline bool Single_Frame::has_direction() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Single_Frame::set_has_direction() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Single_Frame::clear_has_direction() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Single_Frame::clear_direction() {
+  if (direction_ != NULL) direction_->::CodeBattle::Move_Direction::Clear();
+  clear_has_direction();
+}
+inline const ::CodeBattle::Move_Direction& Single_Frame::direction() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.direction)
+  return direction_ != NULL ? *direction_
+                         : *::CodeBattle::Move_Direction::internal_default_instance();
+}
+inline ::CodeBattle::Move_Direction* Single_Frame::mutable_direction() {
+  set_has_direction();
+  if (direction_ == NULL) {
+    direction_ = new ::CodeBattle::Move_Direction;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.direction)
+  return direction_;
+}
+inline ::CodeBattle::Move_Direction* Single_Frame::release_direction() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.direction)
+  clear_has_direction();
+  ::CodeBattle::Move_Direction* temp = direction_;
+  direction_ = NULL;
+  return temp;
+}
+inline void Single_Frame::set_allocated_direction(::CodeBattle::Move_Direction* direction) {
+  delete direction_;
+  direction_ = direction;
+  if (direction) {
+    set_has_direction();
+  } else {
+    clear_has_direction();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.direction)
+}
+
+// required bool hpchanged = 5;
+inline bool Single_Frame::has_hpchanged() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Single_Frame::set_has_hpchanged() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Single_Frame::clear_has_hpchanged() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Single_Frame::clear_hpchanged() {
+  hpchanged_ = false;
+  clear_has_hpchanged();
+}
+inline bool Single_Frame::hpchanged() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.hpchanged)
+  return hpchanged_;
+}
+inline void Single_Frame::set_hpchanged(bool value) {
+  set_has_hpchanged();
+  hpchanged_ = value;
+  // @@protoc_insertion_point(field_set:CodeBattle.Single_Frame.hpchanged)
+}
+
+// required .CodeBattle.Hp_Object playerhp = 6;
+inline bool Single_Frame::has_playerhp() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Single_Frame::set_has_playerhp() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Single_Frame::clear_has_playerhp() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void Single_Frame::clear_playerhp() {
+  if (playerhp_ != NULL) playerhp_->::CodeBattle::Hp_Object::Clear();
+  clear_has_playerhp();
+}
+inline const ::CodeBattle::Hp_Object& Single_Frame::playerhp() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.playerhp)
+  return playerhp_ != NULL ? *playerhp_
+                         : *::CodeBattle::Hp_Object::internal_default_instance();
+}
+inline ::CodeBattle::Hp_Object* Single_Frame::mutable_playerhp() {
+  set_has_playerhp();
+  if (playerhp_ == NULL) {
+    playerhp_ = new ::CodeBattle::Hp_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.playerhp)
+  return playerhp_;
+}
+inline ::CodeBattle::Hp_Object* Single_Frame::release_playerhp() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.playerhp)
+  clear_has_playerhp();
+  ::CodeBattle::Hp_Object* temp = playerhp_;
+  playerhp_ = NULL;
+  return temp;
+}
+inline void Single_Frame::set_allocated_playerhp(::CodeBattle::Hp_Object* playerhp) {
+  delete playerhp_;
+  playerhp_ = playerhp;
+  if (playerhp) {
+    set_has_playerhp();
+  } else {
+    clear_has_playerhp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.playerhp)
+}
+
+// required .CodeBattle.Hp_Object enemyhp = 7;
+inline bool Single_Frame::has_enemyhp() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void Single_Frame::set_has_enemyhp() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void Single_Frame::clear_has_enemyhp() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void Single_Frame::clear_enemyhp() {
+  if (enemyhp_ != NULL) enemyhp_->::CodeBattle::Hp_Object::Clear();
+  clear_has_enemyhp();
+}
+inline const ::CodeBattle::Hp_Object& Single_Frame::enemyhp() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.enemyhp)
+  return enemyhp_ != NULL ? *enemyhp_
+                         : *::CodeBattle::Hp_Object::internal_default_instance();
+}
+inline ::CodeBattle::Hp_Object* Single_Frame::mutable_enemyhp() {
+  set_has_enemyhp();
+  if (enemyhp_ == NULL) {
+    enemyhp_ = new ::CodeBattle::Hp_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.enemyhp)
+  return enemyhp_;
+}
+inline ::CodeBattle::Hp_Object* Single_Frame::release_enemyhp() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.enemyhp)
+  clear_has_enemyhp();
+  ::CodeBattle::Hp_Object* temp = enemyhp_;
+  enemyhp_ = NULL;
+  return temp;
+}
+inline void Single_Frame::set_allocated_enemyhp(::CodeBattle::Hp_Object* enemyhp) {
+  delete enemyhp_;
+  enemyhp_ = enemyhp;
+  if (enemyhp) {
+    set_has_enemyhp();
+  } else {
+    clear_has_enemyhp();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.enemyhp)
+}
+
+// required .CodeBattle.Generated_Object snow = 8;
+inline bool Single_Frame::has_snow() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void Single_Frame::set_has_snow() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void Single_Frame::clear_has_snow() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void Single_Frame::clear_snow() {
+  if (snow_ != NULL) snow_->::CodeBattle::Generated_Object::Clear();
+  clear_has_snow();
+}
+inline const ::CodeBattle::Generated_Object& Single_Frame::snow() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Single_Frame.snow)
+  return snow_ != NULL ? *snow_
+                         : *::CodeBattle::Generated_Object::internal_default_instance();
+}
+inline ::CodeBattle::Generated_Object* Single_Frame::mutable_snow() {
+  set_has_snow();
+  if (snow_ == NULL) {
+    snow_ = new ::CodeBattle::Generated_Object;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Single_Frame.snow)
+  return snow_;
+}
+inline ::CodeBattle::Generated_Object* Single_Frame::release_snow() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Single_Frame.snow)
+  clear_has_snow();
+  ::CodeBattle::Generated_Object* temp = snow_;
+  snow_ = NULL;
+  return temp;
+}
+inline void Single_Frame::set_allocated_snow(::CodeBattle::Generated_Object* snow) {
+  delete snow_;
+  snow_ = snow;
+  if (snow) {
+    set_has_snow();
+  } else {
+    clear_has_snow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Single_Frame.snow)
+}
+
+inline const Single_Frame* Single_Frame::internal_default_instance() {
+  return &Single_Frame_default_instance_.get();
 }
 // -------------------------------------------------------------------
 
@@ -823,7 +2929,7 @@ inline void Server_Frame::set_frameseq(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Server_Frame.frameseq)
 }
 
-// required .CodeBattle.Client_Frame preframe = 3;
+// required .CodeBattle.Single_Frame preframe = 3;
 inline bool Server_Frame::has_preframe() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -834,30 +2940,30 @@ inline void Server_Frame::clear_has_preframe() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void Server_Frame::clear_preframe() {
-  if (preframe_ != NULL) preframe_->::CodeBattle::Client_Frame::Clear();
+  if (preframe_ != NULL) preframe_->::CodeBattle::Single_Frame::Clear();
   clear_has_preframe();
 }
-inline const ::CodeBattle::Client_Frame& Server_Frame::preframe() const {
+inline const ::CodeBattle::Single_Frame& Server_Frame::preframe() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.preframe)
   return preframe_ != NULL ? *preframe_
-                         : *::CodeBattle::Client_Frame::internal_default_instance();
+                         : *::CodeBattle::Single_Frame::internal_default_instance();
 }
-inline ::CodeBattle::Client_Frame* Server_Frame::mutable_preframe() {
+inline ::CodeBattle::Single_Frame* Server_Frame::mutable_preframe() {
   set_has_preframe();
   if (preframe_ == NULL) {
-    preframe_ = new ::CodeBattle::Client_Frame;
+    preframe_ = new ::CodeBattle::Single_Frame;
   }
   // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.preframe)
   return preframe_;
 }
-inline ::CodeBattle::Client_Frame* Server_Frame::release_preframe() {
+inline ::CodeBattle::Single_Frame* Server_Frame::release_preframe() {
   // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.preframe)
   clear_has_preframe();
-  ::CodeBattle::Client_Frame* temp = preframe_;
+  ::CodeBattle::Single_Frame* temp = preframe_;
   preframe_ = NULL;
   return temp;
 }
-inline void Server_Frame::set_allocated_preframe(::CodeBattle::Client_Frame* preframe) {
+inline void Server_Frame::set_allocated_preframe(::CodeBattle::Single_Frame* preframe) {
   delete preframe_;
   preframe_ = preframe;
   if (preframe) {
@@ -868,7 +2974,7 @@ inline void Server_Frame::set_allocated_preframe(::CodeBattle::Client_Frame* pre
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.preframe)
 }
 
-// required .CodeBattle.Client_Frame laterframe = 4;
+// required .CodeBattle.Single_Frame laterframe = 4;
 inline bool Server_Frame::has_laterframe() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -879,30 +2985,30 @@ inline void Server_Frame::clear_has_laterframe() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void Server_Frame::clear_laterframe() {
-  if (laterframe_ != NULL) laterframe_->::CodeBattle::Client_Frame::Clear();
+  if (laterframe_ != NULL) laterframe_->::CodeBattle::Single_Frame::Clear();
   clear_has_laterframe();
 }
-inline const ::CodeBattle::Client_Frame& Server_Frame::laterframe() const {
+inline const ::CodeBattle::Single_Frame& Server_Frame::laterframe() const {
   // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.laterframe)
   return laterframe_ != NULL ? *laterframe_
-                         : *::CodeBattle::Client_Frame::internal_default_instance();
+                         : *::CodeBattle::Single_Frame::internal_default_instance();
 }
-inline ::CodeBattle::Client_Frame* Server_Frame::mutable_laterframe() {
+inline ::CodeBattle::Single_Frame* Server_Frame::mutable_laterframe() {
   set_has_laterframe();
   if (laterframe_ == NULL) {
-    laterframe_ = new ::CodeBattle::Client_Frame;
+    laterframe_ = new ::CodeBattle::Single_Frame;
   }
   // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.laterframe)
   return laterframe_;
 }
-inline ::CodeBattle::Client_Frame* Server_Frame::release_laterframe() {
+inline ::CodeBattle::Single_Frame* Server_Frame::release_laterframe() {
   // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.laterframe)
   clear_has_laterframe();
-  ::CodeBattle::Client_Frame* temp = laterframe_;
+  ::CodeBattle::Single_Frame* temp = laterframe_;
   laterframe_ = NULL;
   return temp;
 }
-inline void Server_Frame::set_allocated_laterframe(::CodeBattle::Client_Frame* laterframe) {
+inline void Server_Frame::set_allocated_laterframe(::CodeBattle::Single_Frame* laterframe) {
   delete laterframe_;
   laterframe_ = laterframe;
   if (laterframe) {
@@ -913,6 +3019,51 @@ inline void Server_Frame::set_allocated_laterframe(::CodeBattle::Client_Frame* l
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.laterframe)
 }
 
+// required .CodeBattle.Common_Frame comframe = 5;
+inline bool Server_Frame::has_comframe() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Server_Frame::set_has_comframe() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Server_Frame::clear_has_comframe() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Server_Frame::clear_comframe() {
+  if (comframe_ != NULL) comframe_->::CodeBattle::Common_Frame::Clear();
+  clear_has_comframe();
+}
+inline const ::CodeBattle::Common_Frame& Server_Frame::comframe() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Server_Frame.comframe)
+  return comframe_ != NULL ? *comframe_
+                         : *::CodeBattle::Common_Frame::internal_default_instance();
+}
+inline ::CodeBattle::Common_Frame* Server_Frame::mutable_comframe() {
+  set_has_comframe();
+  if (comframe_ == NULL) {
+    comframe_ = new ::CodeBattle::Common_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Server_Frame.comframe)
+  return comframe_;
+}
+inline ::CodeBattle::Common_Frame* Server_Frame::release_comframe() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Server_Frame.comframe)
+  clear_has_comframe();
+  ::CodeBattle::Common_Frame* temp = comframe_;
+  comframe_ = NULL;
+  return temp;
+}
+inline void Server_Frame::set_allocated_comframe(::CodeBattle::Common_Frame* comframe) {
+  delete comframe_;
+  comframe_ = comframe;
+  if (comframe) {
+    set_has_comframe();
+  } else {
+    clear_has_comframe();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Server_Frame.comframe)
+}
+
 inline const Server_Frame* Server_Frame::internal_default_instance() {
   return &Server_Frame_default_instance_.get();
 }
@@ -920,15 +3071,69 @@ inline const Server_Frame* Server_Frame::internal_default_instance() {
 
 // Login_Frame
 
-// required bool login = 1;
-inline bool Login_Frame::has_login() const {
+// required string ip = 1;
+inline bool Login_Frame::has_ip() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Login_Frame::set_has_login() {
+inline void Login_Frame::set_has_ip() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Login_Frame::clear_has_login() {
+inline void Login_Frame::clear_has_ip() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void Login_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+inline const ::std::string& Login_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Login_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.ip)
+}
+inline void Login_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Login_Frame.ip)
+}
+inline void Login_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Login_Frame.ip)
+}
+inline ::std::string* Login_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Login_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Login_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Login_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Login_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.ip)
+}
+
+// required bool login = 2;
+inline bool Login_Frame::has_login() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Login_Frame::set_has_login() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Login_Frame::clear_has_login() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void Login_Frame::clear_login() {
   login_ = false;
@@ -944,15 +3149,15 @@ inline void Login_Frame::set_login(bool value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Login_Frame.login)
 }
 
-// required string username = 2;
+// required string username = 3;
 inline bool Login_Frame::has_username() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void Login_Frame::set_has_username() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void Login_Frame::clear_has_username() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void Login_Frame::clear_username() {
   username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -998,15 +3203,15 @@ inline void Login_Frame::set_allocated_username(::std::string* username) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Login_Frame.username)
 }
 
-// required string password = 3;
+// required string password = 4;
 inline bool Login_Frame::has_password() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Login_Frame::set_has_password() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Login_Frame::clear_has_password() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Login_Frame::clear_password() {
   password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1059,15 +3264,69 @@ inline const Login_Frame* Login_Frame::internal_default_instance() {
 
 // Userinfo_Frame
 
-// required int32 id = 1;
-inline bool Userinfo_Frame::has_id() const {
+// required string ip = 1;
+inline bool Userinfo_Frame::has_ip() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Userinfo_Frame::set_has_id() {
+inline void Userinfo_Frame::set_has_ip() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Userinfo_Frame::clear_has_id() {
+inline void Userinfo_Frame::clear_has_ip() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void Userinfo_Frame::clear_ip() {
+  ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_ip();
+}
+inline const ::std::string& Userinfo_Frame::ip() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Userinfo_Frame.ip)
+  return ip_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Userinfo_Frame::set_ip(const ::std::string& value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.ip)
+}
+inline void Userinfo_Frame::set_ip(const char* value) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:CodeBattle.Userinfo_Frame.ip)
+}
+inline void Userinfo_Frame::set_ip(const char* value, size_t size) {
+  set_has_ip();
+  ip_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:CodeBattle.Userinfo_Frame.ip)
+}
+inline ::std::string* Userinfo_Frame::mutable_ip() {
+  set_has_ip();
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Userinfo_Frame.ip)
+  return ip_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Userinfo_Frame::release_ip() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Userinfo_Frame.ip)
+  clear_has_ip();
+  return ip_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Userinfo_Frame::set_allocated_ip(::std::string* ip) {
+  if (ip != NULL) {
+    set_has_ip();
+  } else {
+    clear_has_ip();
+  }
+  ip_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ip);
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Userinfo_Frame.ip)
+}
+
+// required int32 id = 2;
+inline bool Userinfo_Frame::has_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Userinfo_Frame::set_has_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Userinfo_Frame::clear_has_id() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void Userinfo_Frame::clear_id() {
   id_ = 0;
@@ -1083,15 +3342,15 @@ inline void Userinfo_Frame::set_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.id)
 }
 
-// required string username = 2;
+// required string username = 3;
 inline bool Userinfo_Frame::has_username() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void Userinfo_Frame::set_has_username() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void Userinfo_Frame::clear_has_username() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void Userinfo_Frame::clear_username() {
   username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1137,15 +3396,15 @@ inline void Userinfo_Frame::set_allocated_username(::std::string* username) {
   // @@protoc_insertion_point(field_set_allocated:CodeBattle.Userinfo_Frame.username)
 }
 
-// required int32 winnumbers = 3;
+// required int32 winnumbers = 4;
 inline bool Userinfo_Frame::has_winnumbers() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Userinfo_Frame::set_has_winnumbers() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Userinfo_Frame::clear_has_winnumbers() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Userinfo_Frame::clear_winnumbers() {
   winnumbers_ = 0;
@@ -1161,15 +3420,15 @@ inline void Userinfo_Frame::set_winnumbers(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.winnumbers)
 }
 
-// required int32 losenumbers = 4;
+// required int32 losenumbers = 5;
 inline bool Userinfo_Frame::has_losenumbers() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Userinfo_Frame::set_has_losenumbers() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Userinfo_Frame::clear_has_losenumbers() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Userinfo_Frame::clear_losenumbers() {
   losenumbers_ = 0;
@@ -1185,15 +3444,15 @@ inline void Userinfo_Frame::set_losenumbers(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:CodeBattle.Userinfo_Frame.losenumbers)
 }
 
-// required int32 winrate = 5;
+// required int32 winrate = 6;
 inline bool Userinfo_Frame::has_winrate() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void Userinfo_Frame::set_has_winrate() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void Userinfo_Frame::clear_has_winrate() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void Userinfo_Frame::clear_winrate() {
   winrate_ = 0;
@@ -1211,6 +3470,103 @@ inline void Userinfo_Frame::set_winrate(::google::protobuf::int32 value) {
 
 inline const Userinfo_Frame* Userinfo_Frame::internal_default_instance() {
   return &Userinfo_Frame_default_instance_.get();
+}
+// -------------------------------------------------------------------
+
+// Totalinfo_Frame
+
+// required .CodeBattle.Userinfo_Frame preinfo = 1;
+inline bool Totalinfo_Frame::has_preinfo() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Totalinfo_Frame::set_has_preinfo() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Totalinfo_Frame::clear_has_preinfo() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Totalinfo_Frame::clear_preinfo() {
+  if (preinfo_ != NULL) preinfo_->::CodeBattle::Userinfo_Frame::Clear();
+  clear_has_preinfo();
+}
+inline const ::CodeBattle::Userinfo_Frame& Totalinfo_Frame::preinfo() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Totalinfo_Frame.preinfo)
+  return preinfo_ != NULL ? *preinfo_
+                         : *::CodeBattle::Userinfo_Frame::internal_default_instance();
+}
+inline ::CodeBattle::Userinfo_Frame* Totalinfo_Frame::mutable_preinfo() {
+  set_has_preinfo();
+  if (preinfo_ == NULL) {
+    preinfo_ = new ::CodeBattle::Userinfo_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Totalinfo_Frame.preinfo)
+  return preinfo_;
+}
+inline ::CodeBattle::Userinfo_Frame* Totalinfo_Frame::release_preinfo() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Totalinfo_Frame.preinfo)
+  clear_has_preinfo();
+  ::CodeBattle::Userinfo_Frame* temp = preinfo_;
+  preinfo_ = NULL;
+  return temp;
+}
+inline void Totalinfo_Frame::set_allocated_preinfo(::CodeBattle::Userinfo_Frame* preinfo) {
+  delete preinfo_;
+  preinfo_ = preinfo;
+  if (preinfo) {
+    set_has_preinfo();
+  } else {
+    clear_has_preinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Totalinfo_Frame.preinfo)
+}
+
+// required .CodeBattle.Userinfo_Frame laterinfo = 2;
+inline bool Totalinfo_Frame::has_laterinfo() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Totalinfo_Frame::set_has_laterinfo() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Totalinfo_Frame::clear_has_laterinfo() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Totalinfo_Frame::clear_laterinfo() {
+  if (laterinfo_ != NULL) laterinfo_->::CodeBattle::Userinfo_Frame::Clear();
+  clear_has_laterinfo();
+}
+inline const ::CodeBattle::Userinfo_Frame& Totalinfo_Frame::laterinfo() const {
+  // @@protoc_insertion_point(field_get:CodeBattle.Totalinfo_Frame.laterinfo)
+  return laterinfo_ != NULL ? *laterinfo_
+                         : *::CodeBattle::Userinfo_Frame::internal_default_instance();
+}
+inline ::CodeBattle::Userinfo_Frame* Totalinfo_Frame::mutable_laterinfo() {
+  set_has_laterinfo();
+  if (laterinfo_ == NULL) {
+    laterinfo_ = new ::CodeBattle::Userinfo_Frame;
+  }
+  // @@protoc_insertion_point(field_mutable:CodeBattle.Totalinfo_Frame.laterinfo)
+  return laterinfo_;
+}
+inline ::CodeBattle::Userinfo_Frame* Totalinfo_Frame::release_laterinfo() {
+  // @@protoc_insertion_point(field_release:CodeBattle.Totalinfo_Frame.laterinfo)
+  clear_has_laterinfo();
+  ::CodeBattle::Userinfo_Frame* temp = laterinfo_;
+  laterinfo_ = NULL;
+  return temp;
+}
+inline void Totalinfo_Frame::set_allocated_laterinfo(::CodeBattle::Userinfo_Frame* laterinfo) {
+  delete laterinfo_;
+  laterinfo_ = laterinfo;
+  if (laterinfo) {
+    set_has_laterinfo();
+  } else {
+    clear_has_laterinfo();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CodeBattle.Totalinfo_Frame.laterinfo)
+}
+
+inline const Totalinfo_Frame* Totalinfo_Frame::internal_default_instance() {
+  return &Totalinfo_Frame_default_instance_.get();
 }
 // -------------------------------------------------------------------
 
@@ -1268,6 +3624,20 @@ inline const Login_Response* Login_Response::internal_default_instance() {
   return &Login_Response_default_instance_.get();
 }
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

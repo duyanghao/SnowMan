@@ -51,7 +51,7 @@ public class GamePanel : MonoBehaviour {
 
     public void PvpBtnClick()
     {
-        SceneManager.LoadScene("pvp-demo");
+        SceneManager.LoadScene("pvp-ui");
     }
 
 }

@@ -1,30 +1,86 @@
 package CodeBattle;
 
-message Client_Frame {
-    required string ip = 1;
-    required int32 direction = 2;
+message Move_Direction {
+    required bool left =1;
+    required bool right =2;
+    required bool up =3;
 }
 
+message Generated_Position {
+    required float x =1;
+    required float y =2;
+    required float z =3;    
+}
+
+message Generated_Object {
+    required bool isgenerated =1;
+    required Generated_Position pos =2;
+}
+
+message Hp_Object {
+    required bool ischanged =1;
+    required float changevalue =2;
+} 
+
+message Client_Frame {
+    required string ip =1;
+    required bool died =2;
+    required bool moved =3;
+    required Move_Direction direction =4;
+    required bool hpchanged =5;
+    required bool playertype =6;
+    required float changevalue =7;
+    required bool generated =8;
+    required int32 objecttype =9;
+    required Generated_Position pos =10;
+}
+
+message Common_Frame {
+    required bool generated =1;
+    required string chooseip =2;
+    required Generated_Object animal =3;
+    required Generated_Object bird =4;
+    required Generated_Object food =5; 
+}
+
+message Single_Frame {
+    required string ip =1;
+    required bool died =2;
+    required bool moved =3;
+    required Move_Direction direction =4;
+    required bool hpchanged =5;
+    required Hp_Object playerhp =6;
+    required Hp_Object enemyhp =7;
+    required Generated_Object snow =8;
+}
 
 message Server_Frame {
     required bool empty =1;
     required int32 frameseq =2;
-    required Client_Frame preframe =3;
-    required Client_Frame laterframe =4;
+    required Single_Frame preframe =3;
+    required Single_Frame laterframe =4;
+    required Common_Frame comframe =5;
 }
 
 message Login_Frame {
-    required bool login =1;
-    required string username =2;
-    required string password =3;
+    required string ip =1;
+    required bool login =2;
+    required string username =3;
+    required string password =4;
 }
 
 message Userinfo_Frame {
-    required int32 id =1;
-    required string username =2;
-    required int32 winnumbers =3;
-    required int32 losenumbers =4;
-    required int32 winrate =5;
+    required string ip =1;
+    required int32 id =2;
+    required string username =3;
+    required int32 winnumbers =4;
+    required int32 losenumbers =5;
+    required int32 winrate =6;
+}
+
+message Totalinfo_Frame{
+    required Userinfo_Frame preinfo =1;
+    required Userinfo_Frame laterinfo =2;
 }
 
 message Login_Response {
