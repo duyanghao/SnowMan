@@ -1,3 +1,4 @@
+syntax = "proto2";
 package CodeBattle;
 
 message Move_Direction {
