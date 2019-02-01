@@ -5,6 +5,10 @@ SnowMan GameServer...
 
 ![](https://raw.githubusercontent.com/duyanghao/SnowMan/master/images/gameserver_arch.png)
 
+## PVP Sequence Diagram
+
+![](https://raw.githubusercontent.com/duyanghao/SnowMan/master/images/pvp_sequence.png)
+
 ## Language
 
 ```
